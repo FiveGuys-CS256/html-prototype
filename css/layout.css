@@ -14,9 +14,8 @@ body {
  * Top navigation
  * Hide default border to remove 1px line.
  */
-.navbar-fixed-top {
+/*.navbar-fixed-top {
     border: 0;
-    /* TODO: put the right colors below */
     background-image: linear-gradient(to bottom, #00569a 0px, #0F70B5 100%);
 }
 
@@ -25,7 +24,7 @@ body {
 }
 #navbar .navbar-nav > li > a {
     color: #dddddd;
-}
+}*/
 
 /* Hide for mobile, show later */
 .sidebar {

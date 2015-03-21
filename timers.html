@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Timer demo</title>
+
+	<!-- include css file here-->
+	<link rel="stylesheet" href="css/timers.css"/>
+
+	<script src="js/timers.js"></script>
+</head>
+
+<body>
+
+	<!-- Sliding div starts here -->
+	<div id="slider" style="right:-342px;">
+		<div id="header">
+            <div id="timers">
+
+            </div>
+            <h2>Timer Settings</h2>
+            <input type="text" name="timer1" value="Timer 1"/>
+
+            <button onclick="addTimer()">Add Timer</button>
+            <button>Delete All Timers</button>
+
+            <div id="timerconfig" onclick="open_panel()">
+                <img height=50px width=50px src="img/timer-settings.png"/>
+            </div>
+		</div>
+	</div>
+	<!-- Sliding div ends here -->
+</body>
+
+</html>
+

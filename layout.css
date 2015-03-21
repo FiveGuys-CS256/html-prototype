@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-/*This is Justin's new stuff.*/
-=======
-/*my changes*/
->>>>>>> changed comment
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
@@ -11,7 +6,10 @@ body {
 /* I'm a comment*/
 body {
     background-color: #0F70B5;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+
+
 /*
  * Top navigation
  * Hide default border to remove 1px line.

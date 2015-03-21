@@ -6,7 +6,10 @@ body {
 
 body {
     background-color: #0F70B5;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+
+
 /*
  * Top navigation
  * Hide default border to remove 1px line.

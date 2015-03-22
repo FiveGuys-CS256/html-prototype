@@ -28,19 +28,44 @@ p{
 	box-shadow: 0 0 8px gray;
 }
 
+#timers{
+    position:absolute;
+    top:0px;
+    left:-77px;
+    margin-top: 10px;
+}
+div#timers div.timer:last-child{
+    margin-bottom: 0px;
+ }
 
-#sidebar{
-	position:absolute;
-	top:180px;
-	left:113px;
+.timer{
+    margin-bottom: 20px;
+    height: 75px;
+    width: 75px;
+    border: 1px black;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 	box-shadow: 0 0 8px gray;
 }
 
-#sidebar1{
+.timer1{
 	position:absolute;
-	top:180px;
-	left:113px;
+	top:500px;
+	left:107px;
 	box-shadow: 0 0 8px gray;
+}
+#timerconfig{
+     position:absolute;
+     bottom:0px;
+     left:-52px;
+     box-shadow: 0 0 8px gray;
+ }
+
+#timerconfig1{
+    position:absolute;
+    bottom:0px;
+    left:-52px;
+    box-shadow: 0 0 8px gray;
 }
 
 

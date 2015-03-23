@@ -13,8 +13,8 @@ function slideIt()
 	
 	if (parseInt(slidingDiv.style.right) < stopPosition )
 	{
-		slidingDiv.style.right = parseInt(slidingDiv.style.right) + 2 + "px";
-		setTimeout(slideIt, 1);	
+		slidingDiv.style.right = parseInt(slidingDiv.style.right) + 6 + "px";
+		setTimeout(slideIt, 1);
 	}
 }
 	
@@ -32,8 +32,8 @@ function slideIn()
 	
 	if (parseInt(slidingDiv.style.right) > stopPosition )
 	{
-		slidingDiv.style.right = parseInt(slidingDiv.style.right) - 2 + "px";
-		setTimeout(slideIn, 1);	
+		slidingDiv.style.right = parseInt(slidingDiv.style.right) - 6 + "px";
+		setTimeout(slideIn, 1);
 	}
 }
 var timercount = 0;
@@ -57,5 +57,7 @@ function addTimer(){
     }
 }
 function removeAllTimers(){
-
+    var timers = document.getElementById("timers");
+    timers.innerHTML="";
+    timercount=0;
 }

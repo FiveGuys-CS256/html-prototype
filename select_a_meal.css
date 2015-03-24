@@ -24,19 +24,6 @@
     text-align:right;
 }
 
-.picture-layout{
-    float:left;
-    height:50%;
-    width:50%;
-}
-
-.picture-layout img{
-    height:30%;
-    width:30%;
-    float:left;
-
-}
-/*
 
 #picture-layout p {float:left;
     width:30%;
@@ -46,7 +33,7 @@
 #picture-layout img{
     vertical-align:middle;
 }
-*/
+
 
 
 

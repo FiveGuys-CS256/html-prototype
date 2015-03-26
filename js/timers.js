@@ -1,59 +1,90 @@
-function open_panel()
-{
-var a=document.getElementById("timerConfigButton");
-a.setAttribute("onclick","close_panel()");
-    document.getElementById("timerConfig").setAttribute("open","true");
-    document.getElementById("timers").setAttribute("open","true");
-    var tcb = document.getElementById("timerConfigButton");
-    document.getElementById("timers").removeChild(tcb);
-    document.getElementById("header").appendChild(tcb);
-}
+var MAX_TIMER_COUNT = 5;
 
-	
-function close_panel(){
-a=document.getElementById("timerConfigButton");
-a.setAttribute("onclick","open_panel()");
-    document.getElementById("timerConfig").setAttribute("open","false");
-    document.getElementById("timers").setAttribute("open","false");
-    var tcb = document.getElementById("timerConfigButton");
-    document.getElementById("header").removeChild(tcb);
-    document.getElementById("timers").appendChild(tcb);
-    var elements = document.getElementsByClassName("timer");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].setAttribute("open","false");
+function openPanel() {
+    var elements = document.querySelectorAll("#timerConfig :not(div)");
+    for (i=0; i<elements.length; ++i) {
+        elements[i].classList.remove("hidden");
     }
-
-}
-function openTimer(mytimer){
-    var elements = document.getElementsByClassName("timer");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].setAttribute("open","false");
+    document.getElementById("timerConfig").dataset.state = "open";
+    document.getElementById("timerConfig").classList.add("timerConfigAnimateIn");
+    document.getElementById("timerConfig").classList.remove("timerConfigAnimateOut");
+    var timers = document.getElementById("timers").children;
+    for (i=0; i<timers.length; ++i) {
+        timers[i].dataset.state = "settings";
     }
-    mytimer.setAttribute("open","true");
 }
-var existingTimerCount = 0;
-function addTimer(){
-    if(existingTimerCount < 5 )
-    {
-        existingTimerCount += 1;
-        var timers = document.getElementById("timers");
 
+function closePanel() {
+    document.getElementById("timerConfig").dataset.state = "closed";
+    document.getElementById("timerConfig").classList.add("timerConfigAnimateOut");
+    document.getElementById("timerConfig").classList.remove("timerConfigAnimateIn");
+}
+
+function hideConfigElements() {
+    // hide the internal elements after closing the panel since it looks better that way
+    if (document.getElementById("timerConfig").dataset.state == "closed") {
+        var timers = document.getElementById("timers").children;
+        for (i=0; i<timers.length; ++i) {
+            timers[i].dataset.state = "closed";
+        }
+        var elements = document.querySelectorAll("#timerConfigBody > :not(div)");
+        for (i = 0; i < elements.length; ++i) {
+            elements[i].classList.add("hidden");
+        }
+    }
+}
+
+function toggleTimer(){
+    if (this.dataset.state != "settings") {
+        var timers = document.getElementsByClassName("timer");
+        var toggle = this.dataset.state == "open";
+        for (var i = 0; i < timers.length; i++) {
+            timers[i].dataset.state = "closed";
+        }
+        this.dataset.state = toggle ? "closed" : "open";
+    }
+}
+
+function addTimer() {
+    var timers = document.getElementById("timers");
+    if (timers.children.length < MAX_TIMER_COUNT) {
         var newtimer = document.createElement("div");
-        newtimer.className="timer";
-        newtimer.setAttribute("open","false");
-        newtimer.setAttribute("onclick","openTimer(this)");
-
-        /*var image = document.createElement("img");
-        image.src = "img/timer-settings.png";
-        image.height = 50;
-        image.width = 50;
-
-        newtimer.appendChild(image);*/
-
+        newtimer.classList.add("timer");
+        if (document.getElementById("timerConfig").dataset.state == "open") {
+            newtimer.dataset.state = "settings";
+        } else {
+            newtimer.dataset.state = "open";
+        }
+        newtimer.addEventListener("click", toggleTimer);
         timers.appendChild(newtimer);
     }
 }
+
 function removeAllTimers(){
-    document.getElementById("timers").innerHTML="";
-    existingTimerCount=0;
+    var el = document.getElementById('timers');
+    while( el.hasChildNodes() ){
+        el.removeChild(el.lastChild);
+    }
 }
+
+function togglePanel() {
+    if (document.getElementById("timerConfig").dataset.state == "closed") {
+        openPanel();
+    } else {
+        closePanel();
+    }
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("timerConfigButton").addEventListener('click', togglePanel);
+    document.getElementById("timerConfig").addEventListener("transitionend", hideConfigElements, true);
+    var add_buttons = document.querySelectorAll("[data-action='add_timer']");
+    for (i=0; i<add_buttons.length; ++i) {
+        add_buttons[i].addEventListener("click", addTimer);
+    }
+    var clear_timers = document.querySelectorAll("[data-action='clear_timers']");
+    for (i=0; i<add_buttons.length; ++i) {
+        clear_timers[i].addEventListener("click", removeAllTimers);
+    }
+
+});

@@ -1,171 +1,73 @@
 body{
-	overflow:hidden;
-	width:960px;
-	margin:10px auto;
+	overflow: hidden;
 }
 
-p{
-	border-bottom: 1px dotted #d8d8d8;
-	padding-bottom: 15px;
-	font-size:17px;
+.hidden {
+    display: none;
 }
 
-.timerConfig[open=false]{
-	width:500px;
-	top:100px;
-    left:100%;
-	position:absolute;
-    transition: 1s ease;
+#timerConfig {
+    top: 100px;
+    width: 300px;
+    left: 100%;
+    position: absolute;
+    border-radius: 3px;
+    padding: 20px 40px;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 0 8px gray;
 }
-.timerConfig[open=true]{
-    width:500px;
-    top:100px;
-    left:100%;
-    position:absolute;
+
+.timerConfigAnimateIn {
     transition: 1s ease;
     transform: translateX(-382px);
 }
-
-#header{
-	width:300px;
-	height:auto;
-	position:absolute;
-	border:1px solid #d8d8d8;
-	padding:20px 40px;
-	border-radius:3px;
-	box-shadow: 0 0 8px gray;
-}
-
-#timers[open=false]{
-    position:absolute;
-    top:0px;
-    left:-77px;
-    margin-top: 10px;
-}
-#timers[open=true]{
-    height: auto;
-     position:relative;
-     top:0px;
-     margin-top: 10px;
-    width: 100%;
-    margin: 0 auto;
-    overflow-y: auto;
- }
-/*
-.timers[open=true]{
-    position:relative;
-    top:0px;
-    margin-top: 10px;
-}
-.timers[open=false]{
-    position:relative;
-    top:0px;
-    left:-77px;
-    margin-top: 10px;
-}*/
-
-.timer[open=false]{
-    margin-bottom: 20px;
-    height: 75px;
-    width: 75px;
-    border: 1px black;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-    box-shadow: 0 0 8px gray;
+.timerConfigAnimateOut {
     transition: 1s ease;
 }
 
-.timer[open=true]{
+#timerConfigButton {
+    position: absolute;
+    bottom: 0px;
+    left: -52px;
+    box-shadow: 0 0 8px gray;
+}
+
+.timerConfigHeader {
+    color: #784a32;
+}
+
+.timer {
+    border: 2px solid #784a32;
     margin-bottom: 20px;
     height: 75px;
+    box-shadow: 0 0 8px gray;
+}
+
+.timer:not([data-state="settings"]) {
+    top: -85px;
+    left: -115px;
+    border: 1px black;
+    transition: 1s ease;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    position: relative;
+}
+
+.timer[data-state="closed"] {
+    width: 75px;
+    transition: 1s ease;
+}
+
+.timer[data-state="open"] {
     width: 200px;
     border: 1px black;
     background-color: #ff9a62;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
-    box-shadow: 0 0 8px gray;
     transition: 1s ease;
     transform: translateX(-125px);
 }
 
-#timers[open=true] .timer{
-    margin: 0 auto;
-    margin-bottom: 0px;
-    height: 75px;
-    width: calc(100% - 4px);
-    border: 2px solid #784a32;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: none;
-}
-
-#timers[open=true] .timer[open=true]{
-     margin: 0 auto;
-     margin-bottom: 0px;
-     height: 75px;
-     width: calc(100% - 4px);
-     border: 2px solid #784a32;
-     background-color: #ff9a62;
-     border-radius: 5px;
-     box-shadow: none;
-    transform: none;
- }
-
-#timers[open=false] #timerConfigButton{
-    position:relative;
-    margin-top:20px;
-    left: 25px;
-    box-shadow: 0 0 8px gray;
-}
-#header #timerConfigButton{
-    position:absolute;
-    bottom:0px;
-    left:-52px;
-    box-shadow: 0 0 8px gray;
-}
-
-
-h3{
-	font-family: 'Roboto Slab', serif;
-}
-
-input[type=text]{ 
-	margin-top: 10px;
-	padding:6px;
-	width:100%;
-	font-size:15px;
-	border-radius:2px;
-	border:3px solid #ff9a62;
-}
-
-h4{
-	font-size:15px;
-}
-div#title{
-	position:absolute;
-	top:300px;
-	left:650px;
-	}
-	
-select{
-	padding:6px;
-	width:100%;
-	font-size:15px;
-	border-radius:2px;
-	border:3px solid #ff9a62;
-}
-
-textarea{
-	padding:6px;
-	font-size:15px;
-	border-radius:2px;
-	border:3px solid #ff9a62;
-	margin-top: 10px;
-	height:80px;
-	width:100%;
-}	
-
-button{
+/* TODO: We don't want all the buttons to look like this so lets make the selector more specific */
+button {
 	background:#ff9a62;
 	border: none;
 	color: #784a32;
@@ -177,12 +79,3 @@ button{
 	cursor: pointer;
 	margin-top:25px;
 }
-/*--------------------------------------
-		Advertisement div
-----------------------------------------*/
-.formget{
-	width:300px;
-	margin-top: 65px;
-	margin-left: 57px;
-	float: left;
-	}

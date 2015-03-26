@@ -1,35 +1,27 @@
 <html>
 <head>
 	<title>Timer demo</title>
-
-	<!-- include css file here-->
 	<link rel="stylesheet" href="css/timers.css"/>
-
 	<script src="js/timers.js"></script>
 </head>
 
 <body>
 
-	<!-- Sliding div starts here -->
-	<div id="timerConfig" class="timerConfig" open="false">
-		<div id="header" open="false">
-            <h2 style="color:#784a32" >Timer Settings</h2>
+	<div id="timerConfig" data-state="closed">
+		<div class="timerConfigHeader">
+            <h2>Timer Settings</h2>
+        </div>
+        <div id="timerConfigBody">
+            <div id="timers" class="timers"></div>
 
-            <div id="timers" open="false" class="timers" open="false">
+            <button data-action="add_timer">Add Timer</button>
+            <button data-action="clear_timers">Delete All Timers</button>
 
-            </div><!--
-            <input type="text" name="timer1" value="Timer 1"/>
-            <input type="text" name="timer1" value="Timer 1"/>-->
-
-            <button onclick="addTimer()">Add Timer</button>
-            <button onclick="removeAllTimers()">Delete All Timers</button>
-
-            <div id="timerConfigButton" onclick="open_panel()">
-                <img height=50px width=50px src="img/timer-settings.png"/>
+            <div id="timerConfigButton">
+                <img height="50" width="50" src="img/timer-settings.png">
             </div>
 		</div>
 	</div>
-	<!-- Sliding div ends here -->
 </body>
 
 </html>

@@ -32,24 +32,24 @@ body{
     box-shadow: 0 0 8px gray;
 }
 
-.timerConfigHeader {
+#timerConfigHeader {
     color: #784a32;
 }
 
 .timer {
     border: 2px solid #784a32;
-    margin-bottom: 20px;
+    border-radius: 15px;
+    margin-bottom: 10px;
     height: 75px;
     box-shadow: 0 0 8px gray;
 }
 
 .timer:not([data-state="settings"]) {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     top: -85px;
     left: -115px;
     border: 1px black;
-    transition: 1s ease;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
     position: relative;
 }
 

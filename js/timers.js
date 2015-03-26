@@ -25,7 +25,9 @@ function hideConfigElements() {
     if (document.getElementById("timerConfig").dataset.state == "closed") {
         var timers = document.getElementById("timers").children;
         for (i=0; i<timers.length; ++i) {
-            timers[i].dataset.state = "closed";
+            if (timers[i].dataset.state == "settings") {
+                timers[i].dataset.state = "closed";
+            }
         }
         var elements = document.querySelectorAll("#timerConfigBody > :not(div)");
         for (i = 0; i < elements.length; ++i) {

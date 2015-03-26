@@ -18,6 +18,10 @@ a.setAttribute("onclick","open_panel()");
     var tcb = document.getElementById("timerConfigButton");
     document.getElementById("header").removeChild(tcb);
     document.getElementById("timers").appendChild(tcb);
+    var elements = document.getElementsByClassName("timer");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].setAttribute("open","false");
+    }
 
 }
 function openTimer(mytimer){

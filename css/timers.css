@@ -10,58 +10,101 @@ p{
 	font-size:17px;
 }
 
-#slider{
+.timerConfig[open=false]{
 	width:500px;
 	top:100px;
+    left:100%;
 	position:absolute;
+    transition: 1s ease;
 }
-   
-#header{ 
-	width:260px;
-	height:520px;
-	position:absolute; 
-	right:0px; 
+.timerConfig[open=true]{
+    width:500px;
+    top:100px;
+    left:100%;
+    position:absolute;
+    transition: 1s ease;
+    transform: translateX(-382px);
+}
+
+#header{
+	width:300px;
+	height:auto;
+	position:absolute;
 	border:1px solid #d8d8d8;
-	margin-left:40px;
 	padding:20px 40px;
 	border-radius:3px;
 	box-shadow: 0 0 8px gray;
 }
 
-#timers{
+#timers[open=false]{
     position:absolute;
     top:0px;
     left:-77px;
     margin-top: 10px;
 }
-div#timers div.timer:last-child{
-    margin-bottom: 0px;
+#timers[open=true]{
+    height: auto;
+     position:relative;
+     top:0px;
+     margin-top: 10px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
  }
+/*
+.timers[open=true]{
+    position:relative;
+    top:0px;
+    margin-top: 10px;
+}
+.timers[open=false]{
+    position:relative;
+    top:0px;
+    left:-77px;
+    margin-top: 10px;
+}*/
 
-.timer{
+.timer[open=false]{
     margin-bottom: 20px;
     height: 75px;
     width: 75px;
     border: 1px black;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
-	box-shadow: 0 0 8px gray;
+    box-shadow: 0 0 8px gray;
+    transition: 1s ease;
 }
 
-.timer1{
-	position:absolute;
-	top:500px;
-	left:107px;
-	box-shadow: 0 0 8px gray;
+.timer[open=true]{
+    margin-bottom: 20px;
+    height: 75px;
+    width: 200px;
+    border: 1px black;
+    background-color: #ff9a62;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0 0 8px gray;
+    transition: 1s ease;
+    transform: translateX(-125px);
 }
-#timerconfig{
-     position:absolute;
-     bottom:0px;
-     left:-52px;
-     box-shadow: 0 0 8px gray;
- }
 
-#timerconfig1{
+#timers[open=true] .timer{
+    margin: 0 auto;
+    margin-bottom: 0px;
+    height: 75px;
+    width: calc(100% - 4px);
+    border: 2px solid #784a32;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: none;
+}
+#timers[open=false] #timerConfigButton{
+    position:relative;
+    margin-top:20px;
+    left: 25px;
+    box-shadow: 0 0 8px gray;
+}
+#header #timerConfigButton{
     position:absolute;
     bottom:0px;
     left:-52px;
@@ -79,7 +122,7 @@ input[type=text]{
 	width:100%;
 	font-size:15px;
 	border-radius:2px;
-	border:3px solid #98d0f1;
+	border:3px solid #ff9a62;
 }
 
 h4{
@@ -96,23 +139,23 @@ select{
 	width:100%;
 	font-size:15px;
 	border-radius:2px;
-	border:3px solid #98d0f1;
+	border:3px solid #ff9a62;
 }
 
 textarea{
 	padding:6px;
 	font-size:15px;
 	border-radius:2px;
-	border:3px solid #98d0f1;
+	border:3px solid #ff9a62;
 	margin-top: 10px;
 	height:80px;
 	width:100%;
 }	
 
 button{
-	background:#2bc1f2;
+	background:#ff9a62;
 	border: none;
-	color: #fff;
+	color: #784a32;
 	width: 100%;
 	font-size: 22px;
 	font-weight: bolder;

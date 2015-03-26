@@ -11,18 +11,20 @@
 <body>
 
 	<!-- Sliding div starts here -->
-	<div id="slider" style="right:-342px;">
-		<div id="header">
-            <div id="timers">
+	<div id="timerConfig" class="timerConfig" open="false">
+		<div id="header" open="false">
+            <h2 style="color:#784a32" >Timer Settings</h2>
 
-            </div>
-            <h2>Timer Settings</h2>
+            <div id="timers" open="false" class="timers" open="false">
+
+            </div><!--
             <input type="text" name="timer1" value="Timer 1"/>
+            <input type="text" name="timer1" value="Timer 1"/>-->
 
             <button onclick="addTimer()">Add Timer</button>
             <button onclick="removeAllTimers()">Delete All Timers</button>
 
-            <div id="timerconfig" onclick="open_panel()">
+            <div id="timerConfigButton" onclick="open_panel()">
                 <img height=50px width=50px src="img/timer-settings.png"/>
             </div>
 		</div>

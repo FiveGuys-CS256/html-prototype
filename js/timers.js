@@ -1,4 +1,4 @@
-var MAX_TIMER_COUNT = 5;
+var MAX_TIMER_COUNT = 9;
 
 function openPanel() {
     var elements = document.querySelectorAll("#timerConfig :not(div)");

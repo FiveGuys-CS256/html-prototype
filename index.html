@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/tabs.css">
+    <link rel="stylesheet" href="css/timers.css"/>
+    <script src="js/timers.js"></script>
 </head>
 <body>
 
@@ -59,6 +61,21 @@
     </div>
   </nav>
   <aside></aside>
+</div>
+<div id="timerConfig" data-state="closed">
+    <div id="timerConfigHeader">
+        <h2>Timer Settings</h2>
+    </div>
+    <div id="timerConfigBody">
+        <div id="timers"></div>
+
+        <button data-action="add_timer">Add Timer</button>
+        <button data-action="clear_timers">Delete All Timers</button>
+
+        <div id="timerConfigButton">
+            <img height="50" width="50" src="img/timer-settings.png">
+        </div>
+    </div>
 </div>
 
 </body>

@@ -7,6 +7,7 @@ body{
 }
 
 #timerConfig {
+    background-color: white;
     top: 100px;
     width: 300px;
     left: 100%;
@@ -26,6 +27,7 @@ body{
 }
 
 #timerConfigButton {
+    background-color: white;
     position: absolute;
     bottom: 0px;
     left: -52px;
@@ -55,6 +57,7 @@ body{
 }
 
 .timer[data-state="closed"] {
+    background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     top: -85px;

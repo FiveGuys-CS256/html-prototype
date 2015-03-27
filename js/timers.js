@@ -25,7 +25,7 @@ function hideConfigElements() {
     if (document.getElementById("timerConfig").dataset.state == "closed") {
         var timers = document.getElementById("timers").children;
         for (i=0; i<timers.length; ++i) {
-            if (timers[i].dataset.state == "settings") {
+            if (timers[i].dataset.state == "settings" || timers[i].dataset.state == "settings-selected") {
                 timers[i].dataset.state = "closed";
             }
         }
@@ -37,13 +37,21 @@ function hideConfigElements() {
 }
 
 function toggleTimer(){
-    if (this.dataset.state != "settings") {
+    if (this.dataset.state == "open" || this.dataset.state == "closed") {
         var timers = document.getElementsByClassName("timer");
         var toggle = this.dataset.state == "open";
         for (var i = 0; i < timers.length; i++) {
             timers[i].dataset.state = "closed";
         }
         this.dataset.state = toggle ? "closed" : "open";
+    }
+    else if(this.dataset.state == "settings"){
+        timers = document.getElementsByClassName("timer");
+        toggle = this.dataset.state == "settings-selected";
+        for (i = 0; i < timers.length; i++) {
+            timers[i].dataset.state = "settings";
+        }
+        this.dataset.state = toggle ? "settings" : "settings-selected";
     }
 }
 

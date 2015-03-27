@@ -37,28 +37,41 @@ body{
 }
 
 .timer {
-    border: 2px solid #784a32;
-    border-radius: 15px;
+    background-color: #e6e6e6;
+    width: calc(100% + 80px);
+    transform: translateX(-40px);
+    border-radius: 0px;
     margin-bottom: 10px;
     height: 75px;
-    box-shadow: 0 0 8px gray;
 }
 
-.timer:not([data-state="settings"]) {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+.timer[data-state="settings-selected"] {
+    background-color: #ff9a62;
+    width: calc(100% + 80px);
+    transform: translateX(-40px);
+    border-radius: 0px;
+    margin-bottom: 10px;
+    height: 75px;
+}
+
+.timer[data-state="closed"] {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     top: -85px;
     left: -115px;
     border: 1px black;
     position: relative;
-}
-
-.timer[data-state="closed"] {
     width: 75px;
     transition: 1s ease;
+    transform: none;
 }
 
 .timer[data-state="open"] {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    top: -85px;
+    left: -115px;
+    position: relative;
     width: 200px;
     border: 1px black;
     background-color: #ff9a62;

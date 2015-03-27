@@ -5,6 +5,9 @@
 .side-bar{
     float: left;
     width: 250px;
+    top:50px;
+    height:600px;
+    overflow:auto;
 
 }
 
@@ -18,19 +21,20 @@
     font-size: 24px;
 }
 
-.side-bar-list ul{
+.side-bar-list li{
     /*border: 1px solid black;*/
-    background:#784a32;
+    background:#313131;
     margin: 1px;
     padding: 20px;
     padding-right: 30px;
     text-align:right;
 }
-.side-bar-list ul:after{
-    background-color:white;
-}
 .side-bar-list :hover{
-    background: #9a6c54;
+    background: #4e4e4e;
+}
+.side-bar-list a{
+
+    color:inherit;
 }
 
 .side-bar-active{
@@ -68,4 +72,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
     text-align:center;
+}
+
+:target{
+    color:pink;
 }

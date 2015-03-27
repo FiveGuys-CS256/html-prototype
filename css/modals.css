@@ -104,6 +104,23 @@
   height: 50px;
   overflow: scroll;
 }
+
+.modal-button  {
+    background-color: #ff9a62; /*peach*/
+    width: 200px;
+    height: 30px;
+    box-shadow: -5px 5px 2px #777777;
+    margin-bottom: 15px;
+}
+
+.modal-textbox  {
+    border-color: #784a32;
+    border-width: 1px;
+    margin-bottom: 15px;
+    width: 200px;
+    height: 30px;
+}
+
 @media (min-width: 768px) {
   .modal-dialog {
     width: 600px;

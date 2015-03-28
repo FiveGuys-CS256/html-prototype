@@ -62,18 +62,18 @@
   </nav>
   <aside></aside>
 </div>
-<div id="timerConfig" data-state="closed">
+<div id="timerConfig" class="timerConfigAnimateOut" data-state="closed">
     <div id="timerConfigHeader">
         <h2>Timer Settings</h2>
     </div>
     <div id="timerConfigBody">
         <div id="timers"></div>
 
-        <button data-action="add_timer">Add Timer</button>
-        <button data-action="clear_timers">Delete All Timers</button>
+        <button data-action="add_timer" class="hidden">Add Timer</button>
+        <button data-action="clear_timers" class="hidden">Delete All Timers</button>
 
         <div id="timerConfigButton">
-            <img height="50" width="50" src="img/timer-settings.png">
+            <span id="stopwatch_brown"><img height="25" width="25" src="img/stopwatch_brown.png">Edit</span>
         </div>
     </div>
 </div>

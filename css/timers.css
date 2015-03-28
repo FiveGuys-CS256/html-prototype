@@ -27,13 +27,29 @@ body{
 }
 
 #timerConfigButton {
-    background-color: white;
-    position: absolute;
-    bottom: 0px;
-    left: -52px;
-    box-shadow: 0 0 8px gray;
+    background-color:white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: -114px;
+    border: 1px black;
+    position: relative;
+    width: 75px;
+    transition: 1s ease;
+    box-shadow: -6px 0 8px gray;
+    height: 75px;
+    transform: translateY(20px);
 }
-
+#stopwatch_brown{
+    cursor: default;
+    color:#784a32;
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
 #timerConfigHeader {
     color: #784a32;
 }
@@ -60,19 +76,19 @@ body{
     background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: -85px;
+    top: 21px;
     left: -115px;
     border: 1px black;
     position: relative;
     width: 75px;
-    transition: 1s ease;
+    transition: 0s ease;
     transform: none;
 }
 
 .timer[data-state="open"] {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: -85px;
+    top: 21px;
     left: -115px;
     position: relative;
     width: 200px;

@@ -93,7 +93,7 @@ body{
 .timer[data-state="open"] {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: 21px;
+    top: 79px;
     left: -115px;
     position: relative;
     width: 200px;

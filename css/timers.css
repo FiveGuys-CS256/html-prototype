@@ -1,0 +1,81 @@
+body{
+	overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+#timerConfig {
+    top: 100px;
+    width: 300px;
+    left: 100%;
+    position: absolute;
+    border-radius: 3px;
+    padding: 20px 40px;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 0 8px gray;
+}
+
+.timerConfigAnimateIn {
+    transition: 1s ease;
+    transform: translateX(-382px);
+}
+.timerConfigAnimateOut {
+    transition: 1s ease;
+}
+
+#timerConfigButton {
+    position: absolute;
+    bottom: 0px;
+    left: -52px;
+    box-shadow: 0 0 8px gray;
+}
+
+#timerConfigHeader {
+    color: #784a32;
+}
+
+.timer {
+    border: 2px solid #784a32;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    height: 75px;
+    box-shadow: 0 0 8px gray;
+}
+
+.timer:not([data-state="settings"]) {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    top: -85px;
+    left: -115px;
+    border: 1px black;
+    position: relative;
+}
+
+.timer[data-state="closed"] {
+    width: 75px;
+    transition: 1s ease;
+}
+
+.timer[data-state="open"] {
+    width: 200px;
+    border: 1px black;
+    background-color: #ff9a62;
+    transition: 1s ease;
+    transform: translateX(-125px);
+}
+
+/* TODO: We don't want all the buttons to look like this so lets make the selector more specific */
+button {
+	background:#ff9a62;
+	border: none;
+	color: #784a32;
+	width: 100%;
+	font-size: 22px;
+	font-weight: bolder;
+	padding: 8px 0 8px 0;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-top:25px;
+}

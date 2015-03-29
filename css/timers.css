@@ -7,7 +7,6 @@ body{
 }
 
 #timerConfigBody{
-    height: auto;
 }
 
 #timerConfig {
@@ -17,14 +16,13 @@ body{
     left: 100%;
     position: absolute;
     border-radius: 3px;
-    padding: 20px 40px;
     border: 1px solid #d8d8d8;
     box-shadow: 0 0 8px gray;
 }
 
 .timerConfigAnimateIn {
     transition: 1s ease;
-    transform: translateX(-382px);
+    transform: translateX(-301px);
 }
 .timerConfigAnimateOut {
     transition: 1s ease;
@@ -42,7 +40,7 @@ body{
     transition: 1s ease;
     box-shadow: -6px 0 8px gray;
     height: 75px;
-    transform: translateY(79px);
+    transform: translateY(17px);
 }
 #stopwatch_brown{
     cursor: default;
@@ -61,17 +59,47 @@ body{
 
 .timer {
     background-color: #e6e6e6;
-    width: calc(100% + 80px);
-    transform: translateX(-40px);
     border-radius: 0px;
     margin-bottom: 10px;
     height: 75px;
 }
+#addtimerbutton {
+    background-color: #e6e6e6;
+    border-radius: 0px;
+    height: 75px;
+    margin-top: 10px;
+}
+
+#timers[data-state="settings"]{
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+}
+.timer[data-state="settings"]:last-of-type{
+     overflow-y: auto;
+     overflow-x: hidden;
+     max-height: 300px;
+     margin-bottom: 0;
+ }
+
+#bottom_fade {
+    z-index: 99;
+    position: fixed;
+    height: 500px;
+    bottom: 0%;
+    background-image: url("../img/bottom-fade.png");
+}
+
+.timercontents{
+    color:#784a32;
+    font-size: 30px;
+    position: relative;
+    top: 25%;
+    left: 25%;
+}
 
 .timer[data-state="settings-selected"] {
     background-color: #ff9a62;
-    width: calc(100% + 80px);
-    transform: translateX(-40px);
     border-radius: 0px;
     margin-bottom: 10px;
     height: 75px;
@@ -81,8 +109,8 @@ body{
     background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: 79px;
-    left: -115px;
+    top: 93px;
+    left: -76px;
     border: 1px black;
     position: relative;
     width: 75px;
@@ -93,8 +121,8 @@ body{
 .timer[data-state="open"] {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: 79px;
-    left: -115px;
+    top: 93px;
+    left: -76px;
     position: relative;
     width: 200px;
     border: 1px black;
@@ -102,7 +130,21 @@ body{
     transition: 1s ease;
     transform: translateX(-125px);
 }
-
+#closeConfigButton{
+    background:#ff9a62;
+    border: none;
+    color: #784a32;
+    width: 20%;
+    font-size: 22px;
+    font-weight: bolder;
+    padding: 8px 0 8px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top:25px;
+    margin-left:40%;
+    margin-right:40%;
+    margin-bottom:25px;
+}
 /* TODO: We don't want all the buttons to look like this so lets make the selector more specific */
 button {
 	background:#ff9a62;

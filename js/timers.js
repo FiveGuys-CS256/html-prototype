@@ -5,9 +5,11 @@ function openPanel() {
     for (i=0; i<elements.length; ++i) {
         elements[i].classList.remove("hidden");
     }
+    document.getElementById("addtimerbutton").classList.remove("hidden");
     document.getElementById("timerConfig").dataset.state = "open";
     document.getElementById("timerConfig").classList.add("timerConfigAnimateIn");
     document.getElementById("timerConfig").classList.remove("timerConfigAnimateOut");
+    document.getElementById("timers").dataset.state = "settings";
     var timers = document.getElementById("timers").children;
     for (i=0; i<timers.length; ++i) {
         timers[i].dataset.state = "settings";
@@ -15,6 +17,7 @@ function openPanel() {
 }
 
 function closePanel() {
+    document.getElementById("timers").dataset.state = "";
     document.getElementById("timerConfig").dataset.state = "closed";
     document.getElementById("timerConfig").classList.add("timerConfigAnimateOut");
     document.getElementById("timerConfig").classList.remove("timerConfigAnimateIn");
@@ -87,13 +90,14 @@ function togglePanel() {
 
 window.addEventListener("DOMContentLoaded", function() {
     document.getElementById("timerConfigButton").addEventListener('click', togglePanel);
+    document.getElementById("closeConfigButton").addEventListener('click', togglePanel);
     document.getElementById("timerConfig").addEventListener("transitionend", hideConfigElements, true);
     var add_buttons = document.querySelectorAll("[data-action='add_timer']");
     for (i=0; i<add_buttons.length; ++i) {
         add_buttons[i].addEventListener("click", addTimer);
     }
     var clear_timers = document.querySelectorAll("[data-action='clear_timers']");
-    for (i=0; i<add_buttons.length; ++i) {
+    for (i=0; i<clear_timers.length; ++i) {
         clear_timers[i].addEventListener("click", removeAllTimers);
     }
 

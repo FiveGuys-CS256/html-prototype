@@ -64,18 +64,21 @@
 </div>
 <div id="timerConfig" class="timerConfigAnimateOut" data-state="closed">
     <div id="timerConfigHeader">
-        <h2>Timer Settings</h2>
+        <div style="height: 10px; background-color: #ff9a62;"></div>
+        <h2>&nbsp;Timer Settings</h2>
     </div>
     <div id="timerConfigBody">
         <div id="timers"></div>
+            <div id="addtimerbutton" data-action="add_timer" data-state="closed" >
+                <span class="timercontents" ><span style="font-size: 25px"><b>+</b> New Timer</span></span>
 
+            </div>
 
         <div id="timerConfigButton">
             <span id="stopwatch_brown"><img height="25" width="25" src="img/stopwatch_brown.png">Edit</span>
         </div>
     </div>
-    <button data-action="add_timer" class="hidden">Add Timer</button>
-    <button data-action="clear_timers" class="hidden">Delete All Timers</button>
+    <button id="closeConfigButton" class="hidden">close</button>
 </div>
 
 </body>

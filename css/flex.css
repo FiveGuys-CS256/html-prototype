@@ -5,7 +5,6 @@ body {
   background-repeat: repeat;
   margin: 0px;
   padding: 0px;
-  color: white;
 }
 
 input[type="text"] {
@@ -25,6 +24,7 @@ input[type="text"] {
 }
 
 .student-information {
+  color: #6C6C6C;
   padding: 15px 0px 0px 0px;
   margin: 0px auto;
   width: 250px;
@@ -60,6 +60,7 @@ input[type="text"] {
 }
 
 #edit-meal {
+  color: white;
   margin: 18px 0px 0px 0px;
   padding: 5px 10px;
   background-color: #ff9a62;
@@ -106,6 +107,7 @@ input[type="text"] {
          flex-flow: row;
 }
 
+
 #main > article {
   /*margin: 4px;*/
   padding: 5px;
@@ -117,18 +119,6 @@ input[type="text"] {
           flex: 3 1 70%;
   -webkit-order: 2;
           order: 2;
-}
-
-#main > nav {
-  /*margin: 4px;*/
-  padding: 5px;
-  border: 1px solid #8888bb;
-  border-radius: 7pt;
-  background: #ccccff;
-  -webkit-flex: 1 6 20%;
-          flex: 1 6 20%;
-  -webkit-order: 1;
-          order: 1;
 }
 
 #main > aside {
@@ -156,9 +146,9 @@ input[type="text"] {
     -webkit-order: 0;
             order: 0;
   }
-
+/*
   #main > nav, #main > aside, header, footer {
     min-height: 50px;
     max-height: 50px;
-  }
+  }*/
 }

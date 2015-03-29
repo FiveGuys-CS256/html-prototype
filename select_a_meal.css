@@ -1,39 +1,73 @@
 
-.div{
-
-}
 .side-bar{
     float: left;
-    width: 15%;
+    width: 250px;
+    top:50px;
+    height:600px;
+    overflow:auto;
 
 }
 
 .side-bar-list{
+    list-style-type: none;
     padding:10px;
+    padding-top:0px;
     color:white;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 300;
     font-size: 24px;
 }
 
-.side-bar-list ul{
-    background:#784a32;
+.side-bar-list li{
+    /*border: 1px solid black;*/
+    background:#313131;
     margin: 1px;
     padding: 20px;
     padding-right: 30px;
     text-align:right;
 }
-
-
-#picture-layout p {float:left;
-    width:30%;
-    padding-right:15px;
-    line-height:150px;
+.side-bar-list :hover{
+    background: #4e4e4e;
 }
-#picture-layout img{
-    vertical-align:middle;
+.side-bar-list a{
+
+    color:inherit;
 }
 
+.side-bar-active{
+    background: sandybrown;
+}
 
+.picture-layout{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    align-items:flex-start;
+    height:100%;
 
+}
 
+.picture-layout img{
+    flex-basis:auto;
+}
+
+.picture{
+    position:relative;
+    width:500px;
+    height:300px;
+}
+
+.picture h2{
+    font-size:32px;
+    position:absolute;
+    bottom:-20px;
+    color: white;
+    background: rgb(0, 0, 0); /* fallback color */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background: rgba(0, 0, 0, 0.4);
+    width:500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align:center;
+}

@@ -75,18 +75,14 @@ p {
   transform: translate(0, 0);
   top: 0%;
 }
+
 .modal-dialog {
   border: none;
   background: #fefefe;
   border-radius: 5px;
   z-index: 11;
-  -webkit-transform: translate(0, -500%);
-  -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.75s ease-in;
   height: 50%;
   width: 50%;
   overflow: auto;

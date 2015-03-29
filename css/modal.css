@@ -1,7 +1,7 @@
-body {
-  color: #333333;
-  font-family: 'Helvetica', arial;
-}
+/*body {*/
+  /*color: #333333;*/
+  /*font-family: 'Helvetica', arial;*/
+/*}*/
 .wrap {
   padding: 40px;
   text-align: center;
@@ -21,27 +21,28 @@ p {
   margin-bottom: 20px;
 }
 .btn {
-  background: #428bca;
-  border: #357ebd solid 1px;
-  border-radius: 3px;
-  color: #fff;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 15px;
-  text-decoration: none;
+  background-color: #FF9A62; /*peach button*/
+  max-height: 40px;
+  min-width: 80px;
+  margin: 60px auto 20px auto;
+  border: none;
   text-align: center;
-  min-width: 60px;
+  color: #FFFFFF; /* white text */
+  font-size: large;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  display: inline-block;
   position: relative;
-  transition: color .1s ease;
   /* top: 40em;*/
 }
 .btn:hover {
-  background: #357ebd;
+  background-color: #ffb78a;
 }
 .btn.btn-big {
   font-size: 18px;
   padding: 15px 20px;
-  min-width: 100px;
+  min-width: 150px;
 }
 .btn-close {
   color: #aaaaaa;
@@ -72,18 +73,13 @@ p {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
-  top: 20%;
+  top: 0%;
 }
 .modal-dialog {
+  border: none;
   background: #fefefe;
-  border: #333333 solid 1px;
   border-radius: 5px;
-  margin-left: -200px;
-  position: fixed;
-  left: 50%;
-  top: -100%;
   z-index: 11;
-  width: 360px;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
@@ -91,7 +87,14 @@ p {
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  height: 50%;
+  width: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
+
 .modal-body {
   padding: 20px;
 }
@@ -100,7 +103,14 @@ p {
   padding: 10px 20px;
 }
 .modal-header {
-  border-bottom: #eeeeee solid 1px;
+    border-top: #FF9A62 solid 10px;
+    box-shadow: 0px 3px 10px #999999;
+    height: 50px;
+    text-align: left;
+    color: #808080;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 40px;
 }
 .modal-header h2 {
   font-size: 20px;
@@ -109,6 +119,28 @@ p {
   border-top: #eeeeee solid 1px;
   text-align: right;
 }
+
+.modal-recipe-container {
+    text-align: left;
+    width: 100%;
+}
+.modal-ingredients {
+    float: left;
+    width: 20%;
+    padding: 20px;
+    border-width: 1px;
+    border-color: #E6E6E6;
+    margin: 10px;
+    line-height: 150%;
+}
+
+.modal-directions {
+    float: left;
+    width: 65%;
+    padding: 20px;
+    margin: 10px;
+}
+
 /*ADDED TO STOP SCROLLING TO TOP*/
 #close {
   display: none;

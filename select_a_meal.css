@@ -1,7 +1,4 @@
 
-.div{
-
-}
 .side-bar{
     float: left;
     width: 250px;
@@ -73,8 +70,4 @@
     padding-top: 10px;
     padding-bottom: 10px;
     text-align:center;
-}
-
-:target{
-    color:pink;
 }

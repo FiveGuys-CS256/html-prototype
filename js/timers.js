@@ -6,6 +6,14 @@ function openPanel() {
         elements[i].classList.remove("hidden");
     }
     document.getElementById("addtimerbutton").classList.remove("hidden");
+
+    var timerelements = document.getElementsByClassName("timer");
+    Array.prototype.forEach.call(timerelements, function(ele){
+            Array.prototype.forEach.call(ele.childNodes, function(el){
+                el.classList.remove("hidden");
+            });
+        }
+    );
     document.getElementById("timerConfig").dataset.state = "open";
     document.getElementById("timerConfig").classList.add("timerConfigAnimateIn");
     document.getElementById("timerConfig").classList.remove("timerConfigAnimateOut");
@@ -36,6 +44,15 @@ function hideConfigElements() {
         for (i = 0; i < elements.length; ++i) {
             elements[i].classList.add("hidden");
         }
+        var timerelements = document.getElementsByClassName("timer");
+        Array.prototype.forEach.call(timerelements, function(ele){
+                Array.prototype.forEach.call(ele.childNodes, function(el){
+                    if(el.classList.contains("timerTitle")){}
+                    else{
+                    el.classList.add("hidden");}
+                });
+            }
+        );
     }
 }
 
@@ -108,12 +125,12 @@ function addTimer() {
         cancelTimerButton.classList.add("cancelTimerButton");
         cancelTimerButton.innerHTML="Cancel";
 
-        timerContents.appendChild(timerTitle);
-        timerContents.appendChild(timerTime);
-        timerContents.appendChild(addMinuteButton);
-        timerContents.appendChild(cancelTimerButton);
+        newtimer.appendChild(timerTitle);
+        newtimer.appendChild(timerTime);
+        newtimer.appendChild(addMinuteButton);
+        newtimer.appendChild(cancelTimerButton);
 
-        newtimer.appendChild(timerContents);
+        //newtimer.appendChild(timerContents);
         timers.appendChild(newtimer);
     }
 }

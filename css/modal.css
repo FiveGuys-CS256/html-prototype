@@ -1,7 +1,7 @@
-body {
-  color: #333333;
-  font-family: 'Helvetica', arial;
-}
+/*body {*/
+  /*color: #333333;*/
+  /*font-family: 'Helvetica', arial;*/
+/*}*/
 .wrap {
   padding: 40px;
   text-align: center;
@@ -73,17 +73,13 @@ p {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
-  top: 20%;
+  top: 0%;
 }
 .modal-dialog {
-  background: #FFFFFF;
   border: none;
-  margin-left: -200px;
-  position: fixed;
-  left: 50%;
-  top: -100%;
+  background: #fefefe;
+  border-radius: 5px;
   z-index: 11;
-  width: 360px;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
@@ -91,7 +87,14 @@ p {
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  height: 50%;
+  width: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
+
 .modal-body {
   padding: 20px;
 }

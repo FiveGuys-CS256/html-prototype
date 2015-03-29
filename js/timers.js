@@ -69,6 +69,51 @@ function addTimer() {
             newtimer.dataset.state = "open";
         }
         newtimer.addEventListener("click", toggleTimer);
+
+        var timerContents = document.createElement("span");
+        timerContents.classList.add("timerContents");
+
+        var timerTitle = document.createElement("span");
+        timerTitle.innerHTML="Title";
+        timerTitle.setAttribute("contenteditable","true");
+        timerTitle.classList.add("timerTitle");
+
+
+        var timerTime = document.createElement("span");
+        timerTime.classList.add("timerTime");
+
+        var timerTimeHour = document.createElement("time");
+        timerTimeHour.classList.add("timerTimeHour");
+        timerTimeHour.setAttribute("contenteditable","true");
+        timerTimeHour.innerHTML="00";
+
+        var timerColon = document.createElement("span");
+        timerColon.classList.add("timerColon");
+        timerColon.innerHTML=":";
+
+        var timerTimeMin = document.createElement("time");
+        timerTimeMin.classList.add("timerTimeMin");
+        timerTimeMin.setAttribute("contenteditable","true");
+        timerTimeMin.innerHTML="00";
+
+        timerTime.appendChild(timerTimeHour);
+        timerTime.appendChild(timerColon);
+        timerTime.appendChild(timerTimeMin);
+
+        var addMinuteButton = document.createElement("button");
+        addMinuteButton.classList.add("addMinuteButton");
+        addMinuteButton.innerHTML="<b>+</b> min";
+
+        var cancelTimerButton = document.createElement("button");
+        cancelTimerButton.classList.add("cancelTimerButton");
+        cancelTimerButton.innerHTML="Cancel";
+
+        timerContents.appendChild(timerTitle);
+        timerContents.appendChild(timerTime);
+        timerContents.appendChild(addMinuteButton);
+        timerContents.appendChild(cancelTimerButton);
+
+        newtimer.appendChild(timerContents);
         timers.appendChild(newtimer);
     }
 }
@@ -102,3 +147,4 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+

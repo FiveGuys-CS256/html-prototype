@@ -1,0 +1,142 @@
+/* ------------ GENERAL ELEMENTS ------------ */
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* ------------ CLASS ------------ */
+.nav {
+  display: inline-block;
+  float: left;
+  height: 50px;
+  width: 150px;
+  margin: 0px 15px;
+}
+
+.student-information {
+  padding: 15px 0px 0px 0px;
+  margin: 0px auto;
+  width: 250px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.button {
+  margin: 40px auto;
+  width: 150px;
+  background-color: #ff9a62;
+  text-align: center;
+  padding: 10px 0px 8px 0px;
+}
+
+/* ------------ ID ------------ */
+#header {
+  height: 70px;
+  background-color: white;
+  box-shadow: 0px 3px 3px #888888;
+}
+
+#decoration {
+  height: 5px;
+  width: 100%;
+  background-color: #784a32;
+}
+
+#title {
+  margin: 10px 0px 0px 20px;
+  font-size: 35px;
+}
+
+#edit-meal {
+  margin: 15px 0px 0px 20px;
+  padding: 5px 25px;
+  background-color: #ff9a62;
+  font-size: 20px;
+  background: #F3EEDB;
+}
+
+/* ---- STUDENT MODAL ---- */
+
+#student-id {
+  margin: 5px 0px 20px 0px;
+}
+
+#class-id {
+  margin: 5px 0px 30px 0px;
+}
+
+#main {
+  min-height: 600px;
+  margin: 30px 0px 0px 0px;
+  padding: 0px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-flex-flow: row;
+         flex-flow: row;
+}
+
+#main > article {
+  /*margin: 4px;*/
+  padding: 5px;
+  /*border: 1px solid #cccc33;*/
+  border-radius: 7pt;
+  /*overflow: hidden;*/
+  background: #dddd88;
+  -webkit-flex: 3 1 70%;
+          flex: 3 1 70%;
+  -webkit-order: 2;
+          order: 2;
+}
+
+#main > nav {
+  /*margin: 4px;*/
+  padding: 5px;
+  border: 1px solid #8888bb;
+  border-radius: 7pt;
+  background: #ccccff;
+  -webkit-flex: 1 6 20%;
+          flex: 1 6 20%;
+  -webkit-order: 1;
+          order: 1;
+}
+
+#main > aside {
+  /*margin: 4px;*/
+  padding: 5px;
+  /*border: 1px solid #8888bb;*/
+  border-radius: 7pt;
+  /*background: #ccccff;*/
+  -webkit-flex: 1 6 10%;
+          flex: 1 6 10%;
+  -webkit-order: 3;
+          order: 3;
+}
+
+/* ------------ MEDIA QUERIES ------------ */
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+  #main, #page {
+    -webkit-flex-flow: column;
+            flex-direction: column;
+  }
+
+  #main > article, #main > nav, #main > aside {
+    /* Return them to document order */
+    -webkit-order: 0;
+            order: 0;
+  }
+
+  #main > nav, #main > aside, header, footer {
+    min-height: 50px;
+    max-height: 50px;
+  }
+}

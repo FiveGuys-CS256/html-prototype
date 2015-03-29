@@ -110,10 +110,10 @@ body{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     top: 93px;
-    left: -76px;
+    left: -126px;
     border: 1px black;
     position: relative;
-    width: 75px;
+    width: 125px;
     transition: 0s ease;
     transform: none;
 }
@@ -153,13 +153,13 @@ body{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     top: 93px;
-    left: -76px;
+    left: -126px;
     position: relative;
-    width: 200px;
+    width: 125px;
     border: 1px black;
     background-color: #ff9a62;
     transition: 1s ease;
-    transform: translateX(-125px);
+    transform: translateX(0px);
 }
 #closeConfigButton{
     background:#ff9a62;

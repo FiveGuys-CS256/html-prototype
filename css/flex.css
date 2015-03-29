@@ -1,6 +1,8 @@
 /* ------------ GENERAL ELEMENTS ------------ */
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-image: url("../img/ricepaper.png");
+  background-repeat: repeat;
   margin: 0px;
   padding: 0px;
   color: white;
@@ -19,7 +21,7 @@ input[type="text"] {
   float: left;
   height: 50px;
   width: 150px;
-  margin: 0px 15px;
+  margin: 0px 0px 0px 15px;
 }
 
 .student-information {
@@ -58,7 +60,7 @@ input[type="text"] {
 }
 
 #edit-meal {
-  margin: 18px 0px 0px 10px;
+  margin: 18px 0px 0px 0px;
   padding: 5px 10px;
   background-color: #ff9a62;
   font-size: 16px;

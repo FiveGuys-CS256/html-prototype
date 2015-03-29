@@ -14,7 +14,7 @@
 <!-- Modal -->
 <!-- Change the ID of the modal for each modal -->
 <div class="modal" id="settings-modal" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="width: 70%; height: 80%;">
     <div class="modal-header">
       <h2>Settings</h2>
     </div>
@@ -39,7 +39,6 @@
         <div class="modal-header">
             <!-- Insert name of recipe -->
             <h2>Lobster Mac 'n Cheese</h2>
-            <a href="#close" class="btn-close" aria-hidden="true">×</a> <!--CHANGED TO "#close"-->
         </div>
         <div class="modal-body">
             <div class="modal-recipe-container">
@@ -65,7 +64,6 @@
     <div class="modal-dialog" style="width:90%; height:80%;">
         <div class="modal-header">
             <h2>Select a Meal</h2>
-            <a href="#close" class="btn-close" aria-hidden="true">×</a> <!--CHANGED TO "#close"-->
         </div>
         <div class="modal-body">
             <div>
@@ -145,7 +143,7 @@
         <div id="edit-meal">Change Meal</div>
     </div>
     <div class="nav" id="settings">
-        <a href="#settings"><div id="settings-button"><img src="img/settings_cog.png" id="settings-image"></div></a>
+        <a href="#settings-modal"><div id="settings-button"><img src="img/settings_cog.png" id="settings-image"></div></a>
     </div>
 </div>
 <div id='main'>
@@ -163,9 +161,6 @@
             <tr>
                 <td></td>
             </tr>
-
-
-
         </table>
     <a href="#settings-modal" class="btn btn-big">Settings Modal!</a>
   </article>

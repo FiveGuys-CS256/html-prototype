@@ -9,9 +9,7 @@ function openPanel() {
 
     var timerelements = document.getElementsByClassName("timer");
     Array.prototype.forEach.call(timerelements, function(ele){
-            Array.prototype.forEach.call(ele.childNodes, function(el){
-                el.classList.remove("hidden");
-            });
+                ele.dataset.state="settings";
         }
     );
     document.getElementById("timerConfig").dataset.state = "open";
@@ -21,6 +19,21 @@ function openPanel() {
     var timers = document.getElementById("timers").children;
     for (i=0; i<timers.length; ++i) {
         timers[i].dataset.state = "settings";
+    }
+    var countdowntimers = document.getElementsByClassName("timerCountdown");
+    var timermins = document.getElementsByClassName("timerTimeMin");
+    var timersecs = document.getElementsByClassName("timerTimeSec");
+    for (i=0; i<countdowntimers.length; ++i) {
+        var str = countdowntimers[i].textContent;
+        var timearray = str.split(":");
+        timermins[i].value=parseInt(timearray[0]);
+        if(timermins[i].value.toString().length == 1){
+            timermins[i].value="0"+timermins[i].value;
+        }
+        timersecs[i].value=parseInt(timearray[1]);
+        if(timersecs[i].value.toString().length == 1){
+            timersecs[i].value="0"+timersecs[i].value;
+        }
     }
 }
 
@@ -44,15 +57,6 @@ function hideConfigElements() {
         for (i = 0; i < elements.length; ++i) {
             elements[i].classList.add("hidden");
         }
-        var timerelements = document.getElementsByClassName("timer");
-        Array.prototype.forEach.call(timerelements, function(ele){
-                Array.prototype.forEach.call(ele.childNodes, function(el){
-                    if(el.classList.contains("timerTitle")){}
-                    else{
-                    el.classList.add("hidden");}
-                });
-            }
-        );
     }
 }
 
@@ -75,7 +79,9 @@ function toggleTimer(){
     }
 }
 
+var currentTimerCount=0;
 function addTimer() {
+    currentTimerCount++;
     var timers = document.getElementById("timers");
     if (timers.children.length < MAX_TIMER_COUNT) {
         var newtimer = document.createElement("div");
@@ -96,37 +102,69 @@ function addTimer() {
         timerTitle.classList.add("timerTitle");
 
 
+        var timerCountdown = document.createElement("div");
+        timerCountdown.classList.add("timerCountdown");
+        timerCountdown.innerHTML="00:00";
         var timerTime = document.createElement("span");
         timerTime.classList.add("timerTime");
+        timerTime.addEventListener("change", function(){
+                setTimer(newtimer);
+        }, false);
+        /*timerTime.addEventListener("keydown", function(e){
+            if(e.keyCode === 13){
+                setTimer(newtimer);
+            }
+        }, false);*/
 
-        var timerTimeHour = document.createElement("time");
-        timerTimeHour.classList.add("timerTimeHour");
-        timerTimeHour.setAttribute("contenteditable","true");
-        timerTimeHour.innerHTML="00";
+        var timerTimeMin = document.createElement("input");
+        timerTimeMin.classList.add("timerTimeMin");
+        timerTimeMin.type="number";
+        timerTimeMin.value="00";
+        timerTimeMin.max=59;
 
         var timerColon = document.createElement("span");
         timerColon.classList.add("timerColon");
         timerColon.innerHTML=":";
 
-        var timerTimeMin = document.createElement("time");
-        timerTimeMin.classList.add("timerTimeMin");
-        timerTimeMin.setAttribute("contenteditable","true");
-        timerTimeMin.innerHTML="00";
+        var timerTimeSec = document.createElement("input");
+        timerTimeSec.classList.add("timerTimeSec");
+        timerTimeSec.type="number";
+        timerTimeSec.value="00";
+        timerTimeSec.max=59;
 
-        timerTime.appendChild(timerTimeHour);
-        timerTime.appendChild(timerColon);
         timerTime.appendChild(timerTimeMin);
+        timerTime.appendChild(timerColon);
+        timerTime.appendChild(timerTimeSec);
 
         var addMinuteButton = document.createElement("button");
         addMinuteButton.classList.add("addMinuteButton");
         addMinuteButton.innerHTML="<b>+</b> min";
+        addMinuteButton.addEventListener("click", function(){
+            var timerChildren = this.parentNode.childNodes;
+            for(var i = 0; i <timerChildren.length; i++){
+                if(timerChildren[i].classList.contains("timerTime")){
+                    for(var j = 0; j <timerChildren[i].childNodes.length; j++){
+                        var timerTimeChild = timerChildren[i].childNodes[j];
+                        if(timerTimeChild.classList.contains("timerTimeMin")){
+                            timerTimeChild.value = parseInt(timerTimeChild.value)+1;
+                            fireEvent(timerTimeChild,"change");
+                        };
+                    }
+                }
+            }
+        }, false);
 
         var cancelTimerButton = document.createElement("button");
         cancelTimerButton.classList.add("cancelTimerButton");
         cancelTimerButton.innerHTML="Cancel";
+        cancelTimerButton.addEventListener("click", function(){
+            document.getElementById("timers").removeChild(this.parentNode);
+        }, false);
 
+        timerCountdown.id="timer"+currentTimerCount;
         newtimer.appendChild(timerTitle);
         newtimer.appendChild(timerTime);
+        newtimer.appendChild(timerCountdown);
         newtimer.appendChild(addMinuteButton);
         newtimer.appendChild(cancelTimerButton);
 
@@ -134,7 +172,47 @@ function addTimer() {
         timers.appendChild(newtimer);
     }
 }
-
+function fireEvent(element,event){
+    if (document.createEventObject){
+        // dispatch for IE
+        var evt = document.createEventObject();
+        return element.fireEvent('on'+event,evt)
+    }
+    else{
+        // dispatch for firefox + others
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent(event, true, true ); // event type,bubbling,cancelable
+        return !element.dispatchEvent(evt);
+    }
+}
+function setTimer(newtimer){
+    var time;
+    var minute;
+    var second;
+    var countDown;
+    for (var i = 0; i < newtimer.childNodes.length; i++) {
+        if (newtimer.childNodes[i].className == "timerTime") {
+            time = newtimer.childNodes[i];
+        }
+        else if(newtimer.childNodes[i].className == "timerCountdown") {
+            countDown = newtimer.childNodes[i];
+        }
+    }
+    for (var i = 0; i < time.childNodes.length; i++) {
+        if(time.childNodes[i].className == "timerTimeMin") {
+            minute = parseInt(time.childNodes[i].value);
+        }
+        else if(time.childNodes[i].className == "timerTimeSec") {
+            second = parseInt(time.childNodes[i].value);
+        }
+    }
+    //countDown.innerHTML=minute.value+":"+second.value;
+    //startTimer(60*minute+second,countDown);
+    var fiveMinutes = 60 * 5;
+        display = document.getElementById(countDown.id);
+    var duration = 60*minute+second;
+    startTimer(duration, display);
+}
 function removeAllTimers(){
     var el = document.getElementById('timers');
     while( el.hasChildNodes() ){
@@ -164,4 +242,41 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds;
+    function timer() {
+        // get the number of seconds that have elapsed since
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+        if(minutes == "00" && seconds =="00"){
+            clearInterval(timerMap[display.id]);
+            display.parentNode.dataset.state="completed";
+        }
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    if(timerMap[display.id]!=null) {
+        clearInterval(timerMap[display.id]);
+    }
+    //timerMap[display.id]=timer;
+    //timerMap[display.id]();
+    timerMap[display.id]=setInterval(function(){timer()}, 1000);
+}
+var timerMap ={};
 

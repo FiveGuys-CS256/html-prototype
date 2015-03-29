@@ -118,35 +118,139 @@ body{
     transform: none;
 }
 .timerTitle{
-    font-size:30px;
+    font-size:18px;
     margin-left:10px;
     margin-right:10px;
 }
 .timerTime{
-    border: solid 1px black;
     text-align: center;
     margin-right:15px;
+    display: none;
+}
+@-webkit-keyframes completed {
+     0% {
+         background-color: red;
+         opacity:1;
+     }
+     50% {
+         background-color: white;
+     }
+     100% {
+         background-color: red;
+     }
+ }
+
+.timer[data-state="completed"]  {
+    background-color: red;
+    -webkit-animation-name: completed;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 5;
+    -webkit-animation-timing-function: ease-in-out;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    top: 93px;
+    left: -126px;
+    border: 1px black;
+    position: relative;
+    width: 125px;
+    transition: 0s ease;
+    transform: none;
+}
+.timerCountdown{
+    font-size:15px;
+    text-align: center;
+    margin-right:15px;
+    display: block;
+}
+input[type='number'] {
+     -moz-appearance:textfield;
+ }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 .timerColon{
     font-size: 18px;
-    text-align: center;
 }
 .timerTimeMin{
     font-size: 18px;
     text-align: center;
+    width:20px;
 }
-.timerTimeHour{
+.timerTimeSec{
     font-size: 18px;
-    text-align: center;
+    width:20px;
 }
 .addMinuteButton{
     width:60px;
     margin-right:15px;
     font-size:15px;
+    display: none;
 }
 .cancelTimerButton{
+    display:none;
     width:75px;
     font-size:15px;
+}
+.timer[data-state="settings"] .timerTitle{
+    font-size:20px;
+    margin-left:30px;
+    margin-right:10px;
+}
+.timer[data-state="settings-selected"] .timerTitle{
+    font-size:20px;
+    margin-left:30px;
+    margin-right:10px;
+}
+.timer[data-state="settings"] .timerTime{
+    display: inline;
+    margin-right:15px;
+}
+.timer[data-state="settings-selected"] .timerTime{
+    display: inline;
+    margin-right:15px;
+}
+.timer[data-state="settings"] .addMinuteButton{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: inline;
+}
+.timer[data-state="settings-selected"] .timerCountdown{
+    display: none;
+    margin-right:15px;
+}
+.timer[data-state="settings"] .timerCountdown{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: none;
+}
+.timer[data-state="settings-selected"] .addMinuteButton{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: inline;
+    background:#784a32;
+    border: none;
+    color: #ff9a62;
+}
+.timer[data-state="settings"] .cancelTimerButton{
+    display:inline;
+    width:75px;
+    font-size:15px;
+    background:#ff9a62;
+    border: none;
+    color: #784a32;
+}
+.timer[data-state="settings-selected"] .cancelTimerButton{
+    display:inline;
+    width:75px;
+    font-size:15px;
+    background:#784a32;
+    border: none;
+    color: #ff9a62;
 }
 
 .timer[data-state="open"] {

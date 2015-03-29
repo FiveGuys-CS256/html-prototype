@@ -6,11 +6,117 @@
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/tabs.css">
+    <link rel="stylesheet" href="css/select_a_meal.css">
     <link rel="stylesheet" href="css/timers.css"/>
+    <link rel="stylesheet" href="css/timeline.css">
     <script src="js/timers.js"></script>
 </head>
 <body>
 
+<!-- Modal -->
+<!-- Change the ID of the modal for each modal -->
+<div class="modal" id="settings-modal" aria-hidden="true">
+  <div class="modal-dialog" style="width: 70%; height: 80%;">
+    <div class="modal-header">
+      <h2>Settings</h2>
+    </div>
+    <div class="modal-body">
+      <div class="student-information">
+      Student ID <br/>
+      <input type="text" value="234325" id="student-id">
+      Class ID <br/>
+      <input type="text" value="sfl110B" id="class-id">   
+    </div>
+    <div class="modal-footer">
+      <a href="#close" class="btn">Done</a>  <!--CHANGED TO "#close"-->
+    </div>
+    </div>
+  </div>
+</div>
+<!-- /Modal -->
+
+<!-- Single Recipe Modal -->
+<div class="modal" id="single-recipe" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <!-- Insert name of recipe -->
+            <h2>Lobster Mac 'n Cheese</h2>
+        </div>
+        <div class="modal-body">
+            <div class="modal-recipe-container">
+                <div class="modal-ingredients">
+                    <!-- Insert Ingredients -->
+                </div>
+                <div class="modal-directions">
+                    <!-- Insert Directions -->
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#close" class="btn">Back</a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- /Modal -->
+
+<!-- Select a Meal Modal -->
+<!-- Change the ID of the modal for each modal -->
+<div class="modal" id="meal-modal" aria-hidden="true">
+    <div class="modal-dialog" style="width:90%; height:80%;">
+        <div class="modal-header">
+            <h2>Select a Meal</h2>
+        </div>
+        <div class="modal-body">
+            <div>
+                <div class="side-bar">
+                    <ul class="side-bar-list">
+                        <a href="#lab1" style="text-decoration:none;"><li id="lab1">Lab 1</li></a>
+                        <a href="#lab2" style="text-decoration:none;"><li id="lab2">Lab 2</li></a>
+                        <a href="#lab3" style="text-decoration:none;"><li id="lab3">Lab 3</li></a>
+                        <a href="#lab4" style="text-decoration:none;"><li id="lab4">Lab 4</li></a>
+                        <a href="#lab5" style="text-decoration:none;"><li id="lab5">Lab 5</li></a>
+                        <a href="#lab6" style="text-decoration:none;"><li id="lab6">Lab 6</li></a>
+                        <a href="#lab7" style="text-decoration:none;"><li id="lab7">Lab 7</li></a>
+                        <a href="#lab8" style="text-decoration:none;"><li id="lab8">Lab 8</li></a>
+                        <a href="#lab9" style="text-decoration:none;"><li id="lab9">Lab 9</li></a>
+                        <a href="#lab10" style="text-decoration:none;"><li id="lab10">Lab 10</li></a>
+
+                    </ul>
+                </div>
+                <div class="picture-layout">
+                    <div class="picture"><img src="http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg">
+                        <h2>
+                            New York Cheesecake
+                        </h2>
+                    </div>
+
+                    <div class="picture"><img src="http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg" >
+                        <h2>
+                            Artisan Bread
+                        </h2>
+                    </div>
+                    <div class="picture"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" >
+                        <h2>
+                            Lobster Mac 'n Cheese
+                        </h2>
+                    </div>
+                    <div class="picture"><img src="http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg" >
+                        <h2>
+                            Family Quiche
+                        </h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#close" class="btn">Start</a>  <!--CHANGED TO "#close"-->
+        </div>
+    </div>
+</div>
+</div>
+<!-- /Modal -->
 
 <!-- Modal -->
 <!-- Change the ID of the modal for each modal -->
@@ -18,7 +124,6 @@
   <div class="modal-dialog">
     <div class="modal-header">
       <h2>Modal in CSS?</h2>
-      <a href="#close" class="btn-close" aria-hidden="true">×</a> <!--CHANGED TO "#close"-->
     </div>
     <div class="modal-body">
       <p>One modal example here! :D</p>
@@ -31,10 +136,35 @@
 </div>
 <!-- /Modal -->
 
-<header>header</header>
+<div id="header">
+    <div id="decoration"></div>
+    <div class="nav">
+        <div id="title">Lab #</div>
+    </div>
+    <div class="nav">
+        <div id="edit-meal">Change Meal</div>
+    </div>
+    <div class="nav" id="settings">
+        <a href="#settings-modal"><div id="settings-button"><img src="img/settings_cog.png" id="settings-image"></div></a>
+    </div>
+</div>
 <div id='main'>
   <article>
     <a href="#modal-test" class="btn btn-big">Modal!</a>
+      <a href="#meal-modal" class="btn btn-big">Select a Meal!</a>
+        <table id="timeline">
+            <tr>
+                <th>Time</th>
+                <th><img src="http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg" ></th>
+                <th><img src="http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg" ></th>
+                <th><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" ></th>
+                <th><img src="http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg" ></th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    <a href="#settings-modal" class="btn btn-big">Settings Modal!</a>
   </article>
   <nav>
     <div class="tabs">
@@ -44,7 +174,7 @@
         
         <div class="tab-panel">
           <div class="tab-content">
-            Content!
+            Here is some good content. This where things really start to get interesting.
           </div>
         </div> 
       </div>
@@ -54,7 +184,7 @@
         
         <div class="tab-panel">
           <div class="tab-content">
-          More content!
+            This is predefined content.
           </div>
         </div>
       </div>

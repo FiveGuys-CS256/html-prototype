@@ -1,17 +1,112 @@
+/* ------------ GENERAL ELEMENTS ------------ */
 body {
-  font: 24px Helvetica;
-  background: #999999;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-image: url("../img/seamless.png");
+  background-repeat: repeat;
+  margin: 0px;
+  padding: 0px;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* ------------ CLASS ------------ */
+.nav {
+  display: inline-block;
+  float: left;
+  height: 50px;
+  width: 150px;
+  margin: 0px 0px 0px 15px;
+}
+
+.student-information {
+  color: #6C6C6C;
+  padding: 15px 0px 0px 0px;
+  margin: 0px auto;
+  width: 250px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.button {
+  margin: 40px auto;
+  width: 150px;
+  background-color: #ff9a62;
+  text-align: center;
+  padding: 10px 0px 8px 0px;
+}
+
+/* ------------ ID ------------ */
+#header {
+  height: 70px;
+  background-color: white;
+  box-shadow: 0px 3px 3px #888888;
+}
+
+#decoration {
+  height: 5px;
+  width: 100%;
+  background-color: #784a32;
+}
+
+#title {
+  margin: 6px 0px 0px 20px;
+  font-size: 38px;
+  color: #6C6C6C;
+}
+
+#edit-meal {
+  color: white;
+  margin: 18px 0px 0px 0px;
+  padding: 5px 10px;
+  background-color: #ff9a62;
+  font-size: 16px;
+  text-align: center;
+}
+
+#settings {
+  float: right;
+  width: 75px;
+}
+
+#settings-button {
+  margin-top: 6px;
+  background-color: #ff9a62;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+#settings-image {
+  margin: 8px;
+  width: 35px;
+  height: auto;
+}
+
+/* ---- STUDENT MODAL ---- */
+
+#student-id {
+  margin: 5px 0px 20px 0px;
+}
+
+#class-id {
+  margin: 5px 0px 30px 0px;
 }
 
 #main {
   min-height: 600px;
-  margin: 0px;
+  margin: 30px 0px 0px 0px;
   padding: 0px;
   display: -webkit-flex;
   display:         flex;
   -webkit-flex-flow: row;
          flex-flow: row;
 }
+
 
 #main > article {
   /*margin: 4px;*/
@@ -26,18 +121,6 @@ body {
           order: 2;
 }
 
-#main > nav {
-  /*margin: 4px;*/
-  padding: 5px;
-  border: 1px solid #8888bb;
-  border-radius: 7pt;
-  background: #ccccff;
-  -webkit-flex: 1 6 20%;
-          flex: 1 6 20%;
-  -webkit-order: 1;
-          order: 1;
-}
-
 #main > aside {
   /*margin: 4px;*/
   padding: 5px;
@@ -50,16 +133,7 @@ body {
           order: 3;
 }
 
-header, footer {
-  display: block;
-  margin: 4px;
-  /*padding: 5px;*/
-  min-height: 50px;
-  /*border: 1px solid #eebb55;*/
-  /*border-radius: 7pt;*/
-  /*background: #ffeebb;*/
-}
-
+/* ------------ MEDIA QUERIES ------------ */
 /* Too narrow to support three columns */
 @media all and (max-width: 640px) {
   #main, #page {
@@ -72,9 +146,9 @@ header, footer {
     -webkit-order: 0;
             order: 0;
   }
-
+/*
   #main > nav, #main > aside, header, footer {
     min-height: 50px;
     max-height: 50px;
-  }
+  }*/
 }

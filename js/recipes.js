@@ -52,4 +52,4 @@ allRecipes = {
             "image": "/img/a.jpg"
         }
     ]
-}
+};

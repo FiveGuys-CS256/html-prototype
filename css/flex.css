@@ -23,6 +23,10 @@ input[type="text"] {
   margin: 0px 0px 0px 15px;
 }
 
+.nav a {
+  text-decoration: none;
+}
+
 .student-information {
   color: #6C6C6C;
   padding: 15px 0px 0px 0px;
@@ -107,7 +111,6 @@ input[type="text"] {
          flex-flow: row;
 }
 
-
 #main > article {
   /*margin: 4px;*/
   padding: 5px;
@@ -146,9 +149,9 @@ input[type="text"] {
     -webkit-order: 0;
             order: 0;
   }
-/*
+
   #main > nav, #main > aside, header, footer {
     min-height: 50px;
     max-height: 50px;
-  }*/
+  }
 }

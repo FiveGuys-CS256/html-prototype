@@ -99,6 +99,12 @@ function addTimer() {
         var timerTitle = document.createElement("span");
         timerTitle.innerHTML="Title";
         timerTitle.setAttribute("contenteditable","true");
+        timerTitle.addEventListener("keypress", function(e){
+            if(e.keyCode === 13){
+                e.preventDefault();
+                this.blur();
+            }
+        });
         timerTitle.classList.add("timerTitle");
 
 

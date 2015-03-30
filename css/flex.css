@@ -18,6 +18,10 @@ h2 {
   font-weight: lighter;
 }
 
+h4 {
+  font-weight: 600; 
+}
+
 /* ------------ CLASS ------------ */
 .nav {
   display: inline-block;

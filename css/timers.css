@@ -9,6 +9,14 @@ body{
 #timerConfigBody{
 }
 
+.completed {
+    background-color: red;
+    color:white;
+    -webkit-animation-name: completed;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 5;
+    -webkit-animation-timing-function: ease-in-out
+}
 #timerConfig {
     background-color: white;
     top: 100px;
@@ -109,7 +117,7 @@ body{
     background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: 93px;
+    top: -80px;
     left: -126px;
     border: 1px black;
     position: relative;
@@ -143,23 +151,6 @@ body{
      }
  }
 
-.timer[data-state="completed"]  {
-    background-color: red;
-    color:white;
-    -webkit-animation-name: completed;
-    -webkit-animation-duration: 1000ms;
-    -webkit-animation-iteration-count: 5;
-    -webkit-animation-timing-function: ease-in-out;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    top: 93px;
-    left: -126px;
-    border: 1px black;
-    position: relative;
-    width: 125px;
-    transition: 0s ease;
-    transform: none;
-}
 .timerCountdown{
     font-size:15px;
     text-align: center;
@@ -260,7 +251,7 @@ input[type=number]::-webkit-outer-spin-button {
 .timer[data-state="open"] {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: 93px;
+    top: -80px;
     left: -126px;
     position: relative;
     width: 125px;

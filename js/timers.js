@@ -109,7 +109,7 @@ function addTimer(title, minute, second) {
         var timerTime = document.createElement("span");
         timerTime.classList.add("timerTime");
         timerTime.addEventListener("change", function(){
-                setTimer(newtimer);
+                setTimer(newtimer, "true");
         }, false);
         /*timerTime.addEventListener("keydown", function(e){
             if(e.keyCode === 13){
@@ -238,7 +238,6 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 function startTimer(duration, display) {
 
-    var first = true;
     var start = Date.now(),
         diff,
         minutes,
@@ -262,28 +261,20 @@ function startTimer(duration, display) {
         timerMin.value=minutes;}
         if(timerSec != document.activeElement){
         timerSec.value=seconds;}
-        if(minutes == "00" && seconds =="00"){
+        if(duration > 0 && minutes == "00" && seconds =="00"){
             clearInterval(timerMap[display.id]);
-            if(first == false) {
-                display.parentNode.dataset.state = "completed";
-            }
-            else{
-                display.parentNode.dataset.state = "settings-selected";
-            }
+                display.parentNode.classList.add("completed");
         }
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
             // example 05:00 not 04:59
             start = Date.now() + 1000;
         }
-        first = false;
     };
     // we don't want to wait a full second before the timer starts
     if(timerMap[display.id]!=null) {
         clearInterval(timerMap[display.id]);
     }
-    //timerMap[display.id]=timer;
-    //timerMap[display.id]();
     timerMap[display.id]=setInterval(timer, 1000);
 }
 var timerMap ={};

@@ -68,6 +68,8 @@
         }
 
       function populateIngredientList(name) {
+        populateAllIngredients();
+
         switch (name) {
         case "lobster":
           var recipe = allRecipes.Lab1[0];
@@ -86,9 +88,13 @@
           populateIngredients(recipe);
           break;
         default:
-          alert("None found");
+          // alert("None found");
           break;
         }
+      };
+
+      function populateAllIngredients() {
+        
       };
 
       function populateIngredients(recipe) {

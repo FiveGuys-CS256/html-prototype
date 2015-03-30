@@ -24,7 +24,7 @@ p {
   background-color: #FF9A62; /*peach button*/
   max-height: 40px;
   min-width: 80px;
-  margin: 60px auto 20px auto;
+  /*margin: 60px auto 20px auto;*/
   border: none;
   text-align: center;
   color: #FFFFFF; /* white text */
@@ -83,8 +83,6 @@ p {
   z-index: 11;
   transform: translate(0, -500%);
   transition: transform 0.75s ease-in;
-  height: 50%;
-  width: 50%;
   overflow: auto;
   margin: auto;
   position: absolute;
@@ -97,6 +95,10 @@ p {
 .modal-header,
 .modal-footer {
   padding: 10px 20px;
+}
+
+.modal-title {
+  margin-top: 8px;
 }
 .modal-header {
     border-top: #FF9A62 solid 10px;
@@ -112,7 +114,6 @@ p {
   font-size: 20px;
 }
 .modal-footer {
-  border-top: #eeeeee solid 1px;
   text-align: right;
 }
 

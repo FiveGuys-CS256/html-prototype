@@ -109,11 +109,14 @@ p {
     padding-left: 40px;
 }
 .modal-header h2 {
-  font-size: 20px;
+    font-size: 20px;
 }
 .modal-footer {
-  border-top: #eeeeee solid 1px;
-  text-align: right;
+    border-top: #eeeeee solid 1px;
+    text-align: right;
+    padding-bottom: 10px;
+    max-height: 60px;
+    float: bottom;
 }
 
 .modal-recipe-container {

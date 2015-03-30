@@ -29,7 +29,7 @@ allRecipes = {
                 "Melt the remaining 2 tablespoons of butter, combine them with the fresh bread crumbs, and sprinkle on the top.",
                 "Bake for 30 to 35 minutes, or until the sauce is bubbly and the macaroni is browned on the top."
             ],
-            "image": "/img/a.jpg"
+            "image": "http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg"
         },
         {
             "name": "New York Cheese Cake",
@@ -56,7 +56,7 @@ allRecipes = {
                 "Pour boiling water into roasting pan to come halfway up the sides of the springform pan and carefully transfer to oven. Bake for 1 hour until top of cheesecake is golden brown, edges are set, and center jiggles slightly. Lift cheesecake from water bath, remove foil and parchment from outside of springform, and chill cheesecake in refrigerator for at least 8 hours.",
                 "To serve, remove side of springform pan and parchment strips. Cut cheesecake with a long, thin-bladed knife."
             ],
-            "image": "/img/a.jpg"
+            "image": "http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg"
         },
         {
             "name": "Artisan Bread",
@@ -79,7 +79,7 @@ allRecipes = {
                     "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F.",
                     "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
                 ],
-            "image": "/img/a.jpg"
+            "image": "http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg"
         },
         {
             "name": "Family Quiche",
@@ -105,7 +105,38 @@ allRecipes = {
                 "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
                 "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
             ],
-            "image": "/img/a.jpg"
+            "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
+        }
+    ],
+    "Lab2": [
+        {
+            "name": "Shephards Pie",
+            "ingredients":
+            [
+                "2 pounds potatoes, such as russet, peeled and cubed",
+                "2 tablespoons sour cream or softened cream cheese",
+                "1 large egg yolk",
+                "1/2 cup cream, for a lighter version substitute vegetable or chicken broth",
+                "Salt and freshly ground black pepper",
+                "1 tablespoon extra-virgin olive oil, 1 turn of the pan",
+                "1 3/4 pounds ground beef or ground lamb",
+                "1 carrot, peeled and chopped",
+                "1 onion, chopped",
+                "2 tablespoons butter",
+                "2 tablespoons all-purpose flour",
+                "1 cup beef stock or broth",
+                "2 teaspoons Worcestershire, eyeball it",
+                "1/2 cup frozen peas, a couple of handfuls",
+                "1 teaspoon sweet paprika",
+                "2 tablespoons chopped fresh parsley leaves"
+            ],
+            "instructions":
+                [
+                    "Boil potatoes in salted water until tender, about 12 minutes. Drain potatoes and pour them into a bowl. Combine sour cream, egg yolk and cream. Add the cream mixture into potatoes and mash until potatoes are almost smooth.",
+                    "While potatoes boil, preheat a large skillet over medium high heat. Add oil to hot pan with beef or lamb. Season meat with salt and pepper. Brown and crumble meat for 3 or 4 minutes. If you are using lamb and the pan is fatty, spoon away some of the drippings. Add chopped carrot and onion to the meat. Cook veggies with meat 5 minutes, stirring frequently. In a second small skillet over medium heat cook butter and flour together 2 minutes. Whisk in broth and Worcestershire sauce. Thicken gravy 1 minute. Add gravy to meat and vegetables. Stir in peas.",
+                    "Preheat broiler to high. Fill a small rectangular casserole with meat and vegetable mixture. Spoon potatoes over meat evenly. Top potatoes with paprika and broil 6 to 8 inches from the heat until potatoes are evenly browned. Top casserole dish with chopped parsley and serve."
+                ],
+            "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/06/Shepherds-pie-plated-500-rot-500x300.jpg"
         }
     ],
     "Lab3": [
@@ -133,7 +164,7 @@ allRecipes = {
                 "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
                 "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
             ],
-            "image": "/img/a.jpg"
+            "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
         },
         {
             "name": "",
@@ -170,7 +201,7 @@ allRecipes = {
                     "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F.",
                     "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
                 ],
-            "image": "/img/a.jpg"
+            "image": "http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg"
         },
         {
             "name": "",
@@ -198,7 +229,7 @@ allRecipes = {
                     "Bake for 12 to 15 minutes",
                     "Enjoy the food of the gods"
                 ],
-            "image": "/img/a.jpg"
+            "image": "http://i2.wp.com/www.livingfrugaltips.com/wp-content/uploads/2010/05/Potato-Skin-Potato-Salad2.jpg"
         },
         {
             "name": "",
@@ -241,7 +272,7 @@ allRecipes = {
                     "Pour in the orange chicken sauce, and stir to combine. Let the sauce come to a boil, then boil for an additional minute or two until thickened. Remove from heat and serve immediately over quinoa or rice. Garnish with green onions, sesame seeds and additional orange zest.",
                     "Whisk all ingredients together until combined. If you would like the sauce to be even sweeter, add an extra 2-4 tablespoons of honey."
                 ],
-            "image": "/img/a.jpg"
+            "image": "http://slurpstreatham.co.uk/menu/Sweet-Sour-Chicken.jpg"
         },
         {
             "name": "",
@@ -286,7 +317,7 @@ allRecipes = {
                     "Coat the bottom of baking pan with butter and sprinkle with sugar. Place cinnamon roll slices close together in the pan and let rise until dough is doubled, about 45 minutes. Bake for about 30 minutes or until nicely browned.",
                     "Meanwhile, mix butter, powdered sugar, and vanilla. Add hot water 1 tablespoon at a time until the glaze reaches desired consistency. Spread over slightly cooled rolls."
                 ],
-            "image": "/img/a.jpg"
+            "image": "http://www.adweek.com/prnewser/files/2014/08/Cinnabon-Reaches-1000th-Bakery-Milestone.jpg"
         },
         {
             "name": "",
@@ -329,7 +360,7 @@ allRecipes = {
                     "Place the tortillas on a work surface. Divide the shredded chicken evenly among the tortillas and roll up each like a cigar. Spread 1/3 cup of the sauce in a 13-by-9-by-2-inch glass baking dish. Arrange the enchiladas in 1 layer, seam-side down, snugly inside the dish. Pour the rest of the sauce over the enchiladas. Drizzle the cream mixture on top and sprinkle the cheese all over.",
                     "Bake until the cheese is melted and starting to brown in spots, about 30 minutes. Serve immediately."
                 ],
-            "image": "/img/a.jpg"
+            "image": "http://hotelesimperial.com.mx/convento/img/Carnes/suizas.png"
         },
         {
             "name": "",
@@ -374,7 +405,7 @@ allRecipes = {
                     "Arrange the buns on a parchment lined sheet tray and cover them with a clean kitchen towel. Alternatively, place the buns into a large 3-level bamboo steamer lined with parchment paper, 4 buns per level. Allow the buns to rest for 10 minutes.",
                     "In the meantime, fill a bamboo or stainless steel steamer with water and bring it to a boil. Cut 12 (4-inch) rounds from some parchment paper. When ready to cook, place the buns on the parchment rounds and into the steamer."
                 ],
-            "image": "/img/a.jpg"
+            "image": "https://easemyhome.files.wordpress.com/2015/02/vegetable-momos.jpg"
         },
         {
             "name": "",

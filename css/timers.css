@@ -48,7 +48,7 @@ body{
     transition: 1s ease;
     box-shadow: -6px 0 8px gray;
     height: 75px;
-    transform: translateY(17px);
+    transform: translateY(3px);
 }
 #stopwatch_brown{
     cursor: default;
@@ -103,7 +103,7 @@ body{
     font-size: 30px;
     position: relative;
     top: 25%;
-    left: 25%;
+    left: calc(50% - 71px);
 }
 
 .timer[data-state="settings-selected"] {
@@ -261,13 +261,15 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateX(0px);
 }
 #closeConfigButton{
-    background:#ff9a62;
+    color: white;
+    margin: 18px 0px 0px 0px;
+    padding: 5px 10px;
+    background-color: #ff9a62;
+    font-size: 16px;
+    text-align: center;
     border: none;
-    color: #784a32;
     width: 20%;
-    font-size: 22px;
-    font-weight: bolder;
-    padding: 8px 0 8px 0;
+    font-weight: normal;
     border-radius: 3px;
     cursor: pointer;
     margin-top:25px;

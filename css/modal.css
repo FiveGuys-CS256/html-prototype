@@ -1,7 +1,3 @@
-/*body {*/
-  /*color: #333333;*/
-  /*font-family: 'Helvetica', arial;*/
-/*}*/
 .wrap {
   padding: 40px;
   text-align: center;
@@ -132,7 +128,15 @@ p {
 
 .modal-ingredients ul {
     list-style-type: none;
-    padding: 0px;
+    padding: 10px;   
+}
+
+.modal-ingredients li {
+  margin-bottom: 18px;
+}
+
+#single-recipe-directions li {
+  margin-bottom: 18px;
 }
 
 .modal-directions {

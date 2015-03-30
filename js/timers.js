@@ -126,7 +126,7 @@ function addTimer(title, minute, second) {
         else{
             timerTimeMin.value="00";
         }
-        timerTimeMin.max=59;
+        timerTimeMin.max=500;
 
         var timerColon = document.createElement("span");
         timerColon.classList.add("timerColon");
@@ -253,8 +253,12 @@ function startTimer(duration, display) {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
+        if(minutes <= 60) {
+            display.textContent = minutes + ":" + seconds;
+        }
+        else{
+            display.textContent = parseInt(minutes/60)+":"+parseInt(minutes%60) + ":" + seconds;
+        }
         var timerMin = display.parentNode.querySelectorAll(".timerTime .timerTimeMin").item(0);
         var timerSec = display.parentNode.querySelectorAll(".timerTime .timerTimeSec").item(0);
         if(timerMin != document.activeElement){

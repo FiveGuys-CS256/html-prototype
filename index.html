@@ -28,7 +28,7 @@
                 fillRecipe(0,2);
                 populateIngredientList("bread");
             }
-            else if(name == "Lobster Mac 'n Cheese")
+            else if(name == "Loster Mac n Cheese")
             {
                 fillRecipe(0,0);
                 populateIngredientList("lobster");
@@ -37,10 +37,6 @@
             {
                 fillRecipe(0,3);
                 populateIngredientList("quiche");
-            }
-            else
-            {
-
             }
         }
 
@@ -63,6 +59,9 @@
                 step.innerHTML = cheesecake2[i];
                 singleRecDir.appendChild(step);
             }
+
+            var singleRecImg = document.getElementById("single-recipe-image");
+            singleRecImg.src = allRecipes.Lab1[recipeNo].image;
         }
 
       function populateIngredientList(name) {
@@ -176,6 +175,7 @@
         <div class="modal-body">
             <div class="modal-recipe-container">
                 <div class="modal-ingredients">
+                    <img id="single-recipe-image">
                     <h2>Ingredients</h2>
                     <ul id="single-recipe-ingredients">
                         <!-- Insert Ingredients -->

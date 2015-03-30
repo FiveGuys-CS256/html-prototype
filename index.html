@@ -62,7 +62,7 @@
             }
 
             var singleRecImg = document.getElementById("single-recipe-image");
-            singleRecImg.src = allRecipes.Lab1[recipeNo].image;
+            singleRecImg.src = allRecipes["Lab 1"][recipeNo].image;
         }
 
       function populateIngredientList(name) {
@@ -202,12 +202,26 @@
 <!-- Change the ID of the modal for each modal -->
 <!-- TODO: remove some of that javascript cruft and just have most of it in HTML  -->
 <div class="modal" id="meal-modal" aria-hidden="true">
+  <div class="modal-dialog" style="width:1100px; height:600px;">
+    <div class="modal-header">
+      <div class="title modal-title">Select A Meal</div>
+    </div>
+    <div class="modal-body" id="select-recipe-body">
+      <div class="side-bar">
+        <ul class="side-bar-list" id="meal-modal-labs"></ul>
+      </div>
+      <div class="picture-layout" id="meal-modal-recipes"></div>
+    </div>
+    <div class="modal-footer">
+      <a href="#close" class="btn">Start</a>
+    </div>
+  </div>
 </div>
 <!-- /Modal -->
 
 <!-- Modal -->
 <!-- Change the ID of the modal for each modal -->
-<div class="modal" id="modal-test" aria-hidden="true">
+<!-- <div class="modal" id="modal-test" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-header">
       <h2>Modal in CSS?</h2>
@@ -216,11 +230,11 @@
       <p>One modal example here! :D</p>
     </div>
     <div class="modal-footer">
-      <a href="#close" class="btn">Nice!</a>  <!--CHANGED TO "#close"-->
+      <a href="#close" class="btn">Nice!</a>
     </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- /Modal -->
 
 <div id="header">

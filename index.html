@@ -24,7 +24,7 @@
             else if(name == "Artisan Bread")
             {
                 alert("when was bread ever a mistake?");
-                fillRecipe(0,3);
+                fillRecipe(0,2);
             }
             else if(name == "Loster Mac n Cheese")
             {
@@ -34,7 +34,7 @@
             else if(name == "Family Quiche")
             {
                 alert("eh... quiche... whatevs");
-                fillRecipe(0,2);
+                fillRecipe(0,3);
             }
             else
             {
@@ -62,9 +62,6 @@
                 singleRecDir.appendChild(step);
             }
         }
-      function getRecipeName(name) {
-        document.getElementById("single-recipe-name").innerHTML = name;
-      };
 
       function populateIngredientList(name) {
         switch (name) {
@@ -265,21 +262,20 @@
                   </div>
                   </div>
               </th>
-              <th><div class="mini-picture" id="image-2" onclick="getRecipeName('Artisan Bread')"><a href="#single-recipe"><img src="http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg" ></a>
+              <th><div class="mini-picture" id="image-2" onclick="getRecipe('Artisan Bread')"><a href="#single-recipe"><img src="http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg" ></a>
                   <h2 onclick="populateIngredientList('bread')">
                       Artisan Bread
                   </h2>
                   </div>
               </th>
-              <th><div class="mini-picture"  id="image-3" onclick="getRecipeName('Loster Mac n Cheese')"><a href="#single-recipe"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" ></a>
-
-                  <h2>
+              <th><div class="mini-picture"  id="image-3" onclick="getRecipe('Loster Mac n Cheese')"><a href="#single-recipe"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" ></a>
+                  <h2 onclick="populateIngredientList('lobster')">
                       Lobster Mac 'n Cheese
                   </h2>
                   </div>
               </th>
-              <th><div class="mini-picture" id="image-4" onclick="getRecipeName('Family Quiche')"><a href="#single-recipe"><img src="http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg" ></a>
-                  <h2>
+              <th><div class="mini-picture" id="image-4" onclick="getRecipe('Family Quiche')"><a href="#single-recipe"><img src="http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg" ></a>
+                  <h2 onclick="populateIngredientList('quiche')">
                       Family Quiche
                   </h2>
                   </div>

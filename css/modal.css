@@ -132,13 +132,18 @@ p {
 
 .modal-ingredients ul {
     list-style-type: none;
+    padding: 0px;
 }
 
 .modal-directions {
     float: left;
     width: 55%;
     padding: 0px;
-    margin: 10px;
+    margin: 20px;
+}
+
+.modal-directions ol {
+    padding-left: 21px;
 }
 
 /*ADDED TO STOP SCROLLING TO TOP*/

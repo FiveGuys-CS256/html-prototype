@@ -169,9 +169,18 @@ function addTimer(title, minute, second) {
         newtimer.appendChild(addMinuteButton);
         newtimer.appendChild(cancelTimerButton);
 
-        //newtimer.appendChild(timerContents);
+        if(document.querySelector(".timerConfigAnimateIn") == null){
+            newtimer.dataset.state="closed";
+        }
+        else{
+            newtimer.dataset.state="settings";
+        }
         timers.appendChild(newtimer);
-        fireEvent(timerTime,"change");
+        if(minute != "00" && second != "00") {
+        }
+        else {
+            fireEvent(timerTime, "change");
+        }
     }
 }
 function fireEvent(element,event){
@@ -217,7 +226,9 @@ window.addEventListener("DOMContentLoaded", function() {
     document.getElementById("timerConfig").addEventListener("transitionend", hideConfigElements, true);
     var add_buttons = document.querySelectorAll("[data-action='add_timer']");
     for (i=0; i<add_buttons.length; ++i) {
-        add_buttons[i].addEventListener("click", addTimer);
+        add_buttons[i].addEventListener("click", function(){
+            addTimer("title","00","00");
+        });
     }
     var clear_timers = document.querySelectorAll("[data-action='clear_timers']");
     for (i=0; i<clear_timers.length; ++i) {
@@ -226,6 +237,8 @@ window.addEventListener("DOMContentLoaded", function() {
 
 });
 function startTimer(duration, display) {
+
+    var first = true;
     var start = Date.now(),
         diff,
         minutes,
@@ -251,13 +264,19 @@ function startTimer(duration, display) {
         timerSec.value=seconds;}
         if(minutes == "00" && seconds =="00"){
             clearInterval(timerMap[display.id]);
-            display.parentNode.dataset.state="completed";
+            if(first == false) {
+                display.parentNode.dataset.state = "completed";
+            }
+            else{
+                display.parentNode.dataset.state = "settings-selected";
+            }
         }
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
             // example 05:00 not 04:59
             start = Date.now() + 1000;
         }
+        first = false;
     };
     // we don't want to wait a full second before the timer starts
     if(timerMap[display.id]!=null) {

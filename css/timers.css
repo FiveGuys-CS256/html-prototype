@@ -130,18 +130,22 @@ body{
 @-webkit-keyframes completed {
      0% {
          background-color: red;
+         color:white;
          opacity:1;
      }
      50% {
          background-color: white;
+         color:red;
      }
      100% {
          background-color: red;
+         color:white;
      }
  }
 
 .timer[data-state="completed"]  {
     background-color: red;
+    color:white;
     -webkit-animation-name: completed;
     -webkit-animation-duration: 1000ms;
     -webkit-animation-iteration-count: 5;
@@ -261,7 +265,7 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
     width: 125px;
     border: 1px black;
-    background-color: #ff9a62;
+    background-color: white;
     transition: 1s ease;
     transform: translateX(0px);
 }

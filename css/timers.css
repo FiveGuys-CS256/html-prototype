@@ -6,66 +6,280 @@ body{
     display: none;
 }
 
+#timerConfigBody{
+}
+
 #timerConfig {
+    background-color: white;
     top: 100px;
-    width: 300px;
+    width: 400px;
     left: 100%;
     position: absolute;
     border-radius: 3px;
-    padding: 20px 40px;
     border: 1px solid #d8d8d8;
     box-shadow: 0 0 8px gray;
 }
 
 .timerConfigAnimateIn {
     transition: 1s ease;
-    transform: translateX(-382px);
+    transform: translateX(-401px);
 }
 .timerConfigAnimateOut {
     transition: 1s ease;
 }
 
 #timerConfigButton {
+    display: inline;
+    background-color:white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: -75px;
+    border: 1px black;
     position: absolute;
-    bottom: 0px;
-    left: -52px;
-    box-shadow: 0 0 8px gray;
+    width: 75px;
+    transition: 1s ease;
+    box-shadow: -6px 0 8px gray;
+    height: 75px;
+    transform: translateY(17px);
 }
-
+#stopwatch_brown{
+    cursor: default;
+    color:#784a32;
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
 #timerConfigHeader {
     color: #784a32;
 }
 
 .timer {
-    border: 2px solid #784a32;
-    border-radius: 15px;
+    background-color: #e6e6e6;
+    border-radius: 0px;
     margin-bottom: 10px;
     height: 75px;
-    box-shadow: 0 0 8px gray;
+    color:#784a32;
+    font-size: 30px;
+    position: relative;
+}
+#addtimerbutton {
+    background-color: #e6e6e6;
+    border-radius: 0px;
+    height: 75px;
+    margin-top: 10px;
 }
 
-.timer:not([data-state="settings"]) {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    top: -85px;
-    left: -115px;
-    border: 1px black;
+#timers[data-state="settings"]{
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+}
+.timer[data-state="settings"]:last-of-type{
+     margin-bottom: 0;
+ }
+
+#bottom_fade {
+    z-index: 99;
+    position: fixed;
+    height: 500px;
+    bottom: 0%;
+    background-image: url("../img/bottom-fade.png");
+}
+
+.addTimerButtonContents{
+    color:#784a32;
+    font-size: 30px;
     position: relative;
+    top: 25%;
+    left: 25%;
+}
+
+.timer[data-state="settings-selected"] {
+    background-color: #ff9a62;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    height: 75px;
 }
 
 .timer[data-state="closed"] {
-    width: 75px;
-    transition: 1s ease;
+    background-color:white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    top: 93px;
+    left: -126px;
+    border: 1px black;
+    position: relative;
+    width: 125px;
+    transition: 0s ease;
+    transform: none;
+}
+.timerTitle{
+    font-size:18px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.timerTime{
+    text-align: center;
+    margin-right:15px;
+    display: none;
+}
+@-webkit-keyframes completed {
+     0% {
+         background-color: red;
+         opacity:1;
+     }
+     50% {
+         background-color: white;
+     }
+     100% {
+         background-color: red;
+     }
+ }
+
+.timer[data-state="completed"]  {
+    background-color: red;
+    -webkit-animation-name: completed;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 5;
+    -webkit-animation-timing-function: ease-in-out;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    top: 93px;
+    left: -126px;
+    border: 1px black;
+    position: relative;
+    width: 125px;
+    transition: 0s ease;
+    transform: none;
+}
+.timerCountdown{
+    font-size:15px;
+    text-align: center;
+    margin-right:15px;
+    display: block;
+}
+input[type='number'] {
+     -moz-appearance:textfield;
+ }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.timerColon{
+    font-size: 18px;
+}
+.timerTimeMin{
+    font-size: 18px;
+    text-align: center;
+    width:20px;
+}
+.timerTimeSec{
+    font-size: 18px;
+    width:20px;
+}
+.addMinuteButton{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: none;
+}
+.cancelTimerButton{
+    display:none;
+    width:75px;
+    font-size:15px;
+}
+.timer[data-state="settings"] .timerTitle{
+    font-size:20px;
+    margin-left:30px;
+    margin-right:10px;
+}
+.timer[data-state="settings-selected"] .timerTitle{
+    font-size:20px;
+    margin-left:30px;
+    margin-right:10px;
+}
+.timer[data-state="settings"] .timerTime{
+    display: inline;
+    margin-right:15px;
+}
+.timer[data-state="settings-selected"] .timerTime{
+    display: inline;
+    margin-right:15px;
+}
+.timer[data-state="settings"] .addMinuteButton{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: inline;
+}
+.timer[data-state="settings-selected"] .timerCountdown{
+    display: none;
+    margin-right:15px;
+}
+.timer[data-state="settings"] .timerCountdown{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: none;
+}
+.timer[data-state="settings-selected"] .addMinuteButton{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: inline;
+    background:#784a32;
+    border: none;
+    color: #ff9a62;
+}
+.timer[data-state="settings"] .cancelTimerButton{
+    display:inline;
+    width:75px;
+    font-size:15px;
+    background:#ff9a62;
+    border: none;
+    color: #784a32;
+}
+.timer[data-state="settings-selected"] .cancelTimerButton{
+    display:inline;
+    width:75px;
+    font-size:15px;
+    background:#784a32;
+    border: none;
+    color: #ff9a62;
 }
 
 .timer[data-state="open"] {
-    width: 200px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    top: 93px;
+    left: -126px;
+    position: relative;
+    width: 125px;
     border: 1px black;
     background-color: #ff9a62;
     transition: 1s ease;
-    transform: translateX(-125px);
+    transform: translateX(0px);
 }
-
+#closeConfigButton{
+    background:#ff9a62;
+    border: none;
+    color: #784a32;
+    width: 20%;
+    font-size: 22px;
+    font-weight: bolder;
+    padding: 8px 0 8px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top:25px;
+    margin-left:40%;
+    margin-right:40%;
+    margin-bottom:25px;
+}
 /* TODO: We don't want all the buttons to look like this so lets make the selector more specific */
 button {
 	background:#ff9a62;

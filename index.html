@@ -21,14 +21,14 @@
             if(name == "New York Cheesecake")
             {
                 fillRecipe(0,1);
-                populateIngredientList("cheescake");
+                populateIngredientList("cheesecake");
             }
             else if(name == "Artisan Bread")
             {
                 fillRecipe(0,2);
                 populateIngredientList("bread");
             }
-            else if(name == "Loster Mac n Cheese")
+            else if(name == "Lobster Mac 'n Cheese")
             {
                 fillRecipe(0,0);
                 populateIngredientList("lobster");
@@ -136,6 +136,10 @@
         populateAllIngredients();
       };
 
+      function setIdValue(id, value) {
+        document.getElementById(id).Value = value;
+      }
+
     </script>
 </head>
 <body onload="loadPage()">
@@ -155,7 +159,7 @@
       <input type="text" value="sfl110B" id="class-id">
     </div>
     <div class="modal-footer">
-      <a href="#close" class="btn">Done</a>  <!--CHANGED TO "#close"-->
+      <a href="#close"  class="btn">Done</a>  <!--CHANGED TO "#close"-->
     </div>
     </div>
   </div>
@@ -167,7 +171,7 @@
     <div class="modal-dialog" style="width:1300px; height:650px;">
         <div class="modal-header">
             <!-- Insert name of recipe -->
-            <h2><p id="single-recipe-name"></p></h2>
+            <div class="title modal-title" id="single-recipe-name"></div>
         </div>
         <div class="modal-body">
             <div class="modal-recipe-container">

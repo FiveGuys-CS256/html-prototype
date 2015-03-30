@@ -227,7 +227,11 @@ window.addEventListener("DOMContentLoaded", function() {
     var add_buttons = document.querySelectorAll("[data-action='add_timer']");
     for (i=0; i<add_buttons.length; ++i) {
         add_buttons[i].addEventListener("click", function(){
-            addTimer("title","00","00");
+            if (add_buttons[i].dataset.minutes || add_buttons[i].dataset.seconds) {
+                addTimer(add_buttons[i].dataset.title,add_buttons[i].dataset.minutes||"00",add_buttons[i].dataset.seconds||"00");
+            } else {
+                addTimer("title","00","00");
+            }
         });
     }
     var clear_timers = document.querySelectorAll("[data-action='clear_timers']");

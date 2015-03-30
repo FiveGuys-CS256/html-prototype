@@ -12,6 +12,11 @@
     <script src="js/timers.js"></script>
     <script src="js/recipes.js"></script>
     <script src="js/select-meal.js"></script>
+    <script>
+      function getRecipeName(name) {
+        document.getElementById("single-recipe-name").innerHTML = name;
+      }
+    </script>
 </head>
 <body>
 
@@ -42,7 +47,7 @@
     <div class="modal-dialog">
         <div class="modal-header">
             <!-- Insert name of recipe -->
-            <h2>Lobster Mac 'n Cheese</h2>
+            <h2><p id="single-recipe-name"></p></h2>
         </div>
         <div class="modal-body">
             <div class="modal-recipe-container">

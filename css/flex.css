@@ -91,6 +91,11 @@ input[type="text"] {
   height: auto;
 }
 
+#timeline-container {
+  height: 677px;
+  overflow: scroll;
+}
+
 /* ---- STUDENT MODAL ---- */
 
 #student-id {
@@ -117,7 +122,6 @@ input[type="text"] {
   /*border: 1px solid #cccc33;*/
   border-radius: 7pt;
   /*overflow: hidden;*/
-  background: #E3D1B1;
   -webkit-flex: 3 1 70%;
           flex: 3 1 70%;
   -webkit-order: 2;

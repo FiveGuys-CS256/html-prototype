@@ -1,0 +1,1 @@
+console.log("Javascript Object: " + allRecipes.Lab1);

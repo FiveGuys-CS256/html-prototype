@@ -94,7 +94,28 @@
       };
 
       function populateAllIngredients() {
-        
+        var html = "";
+        html += "<h4>All Ingredients</h4>";
+        html += "<ul>";
+        html += "<li>11 eggs, plus 2 egg yolks</li>";
+        html += "<li>2 3/4 cups all-purpose flour</li>";
+        html += "<li>8 1/2 oz butter</li>";
+        html += "<li>1 homemade or store-bought single-crust pie dough</li>";
+        html += "<li>2 cups medium diced yellow onion (from 1 large onion)</li>";
+        html += "<li>Coarse salt and ground pepper</li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "<li></li>";
+        html += "</ul>";
+
+        document.getElementById("ingredient-combined-view").innerHTML = list;
       };
 
       function populateIngredients(recipe) {
@@ -116,6 +137,7 @@
       function loadPage() {
         window.location.href = '#meal-modal';
         populateIngredientList('cheesecake');
+        populateAllIngredients();
       };
 
     </script>
@@ -461,7 +483,7 @@
         <label class="tab-label" for="tab-2">Combined</label>
         
         <div class="tab-panel">
-          <div class="tab-content">
+          <div class="tab-content" id="ingredient-combined-view">
             This is predefined content.
           </div>
         </div>

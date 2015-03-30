@@ -57,6 +57,55 @@ allRecipes = {
                 "To serve, remove side of springform pan and parchment strips. Cut cheesecake with a long, thin-bladed knife."
             ],
             "image": "/img/a.jpg"
+        },
+        {
+            "name": "Artisan Bread",
+            "ingredients":
+                [
+                    "2 1/4 cups (315 grams) all-purpose flour",
+                    "1 teaspoon instant yeast",
+                    "1/2 tablespoon Kosher salt",
+                    "1 – 1 1/4 cups (237 -281.25 grams) lukewarm water",
+                    "Cornmeal for dusting pizza peel or parchment paper"
+                ],
+            "instructions":
+                [
+                    "Combine 5 ounces of the flour, 1/4 teaspoon of the yeast, all of the honey, and all of the bottled water in a straight-sided container; cover loosely and refrigerate for 8 to 12 hours.",
+                    "Place the remaining 11 ounces of flour, remaining yeast, and all the salt into the bowl of a stand mixer, and add the pre-ferment from the refrigerator. Using the dough hook attachment, knead the mixture on low for 2 to 3 minutes just until it comes together. Cover the dough in the bowl with a kitchen towel and allow to rest for 20 minutes. After 20 minutes, knead the dough on medium speed for 5 to 10 minutes or until you are able to gently pull the dough into a thin sheet that light will pass through. The dough will be sticky, but not so sticky that you can't handle it.",
+                    "While the dough is kneading, pour half of the hot water into a shallow pan and place on the bottom rack of your oven.",
+                    "Grease the inside of a large straight-sided container with the vegetable oil. Place the dough ball into the container and set on the rack above the pan of water. Allow to rise until doubled in size, approximately 1 to 2 hours.",
+                    "Once the dough has doubled in size, turn it onto a counter top, lightly dust your hands with flour, and press the dough out with your knuckles; then fold 1 side in towards the middle of the mass and then the other, as if you were making a tri-fold wallet. Repeat the folding a second time. Cover the dough with a kitchen towel and allow to rest for another 10 minutes.",
+                    "Flatten dough again with your knuckles and then fold the dough in onto itself, like you are shaping something that looks like a jellyfish. Turn the dough over and squeeze the bottom together so that the top surface of the dough is smooth. Place the dough back onto the counter and begin to roll gently between your hands. Do not grab the dough but allow it to move gently back and forth between your hands, moving in a circular motion. Move the dough ball to a pizza peel or the bottom of a sheet pan that has been sprinkled with the cornmeal. Cover with the kitchen towel and allow to bench proof for 1 hour, or until you poke the dough and it quickly fills back in where you poked it.",
+                    "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F.",
+                    "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
+                ],
+            "image": "/img/a.jpg"
+        },
+        {
+            "name": "Family Quiche",
+            "ingredients":
+            [
+                "All-purpose flour, for rolling",
+                "1 homemade or store-bought single-crust pie dough",
+                "1 tablespoon unsalted butter",
+                "2 cups medium diced yellow onion (from 1 large onion)",
+                "Coarse salt and ground pepper",
+                "6 large eggs",
+                "3/4 cup heavy cream",
+                "3/4 pound bacon, cooked and crumbled",
+                "1 cup shredded Gruyere cheese (4 ounces)"
+            ],
+            "instructions":
+            [
+                "Preheat oven to 375 degrees.",
+                "Lightly flour a rolling pin and work surface and roll out dough to a 12-inch round. Place in a 9-inch pie plate, fold overhang under, and crimp edge. Place a sheet of parchment paper over dough and fill with pie weights or dried beans.",
+                "Bake until edge is dry and light golden, about 20 minutes.",
+                "Remove parchment and weights.",
+                "Meanwhile, in a large skillet, melt butter over medium-high. Add onion, season with salt and pepper, and cook until light golden, 8 to 10 minutes.",
+                "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
+                "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
+            ],
+            "image": "/img/a.jpg"
         }
     ],
     "Lab3": [

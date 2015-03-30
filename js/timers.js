@@ -20,21 +20,6 @@ function openPanel() {
     for (i=0; i<timers.length; ++i) {
         timers[i].dataset.state = "settings";
     }
-    var countdowntimers = document.getElementsByClassName("timerCountdown");
-    var timermins = document.getElementsByClassName("timerTimeMin");
-    var timersecs = document.getElementsByClassName("timerTimeSec");
-    for (i=0; i<countdowntimers.length; ++i) {
-        var str = countdowntimers[i].textContent;
-        var timearray = str.split(":");
-        timermins[i].value=parseInt(timearray[0]);
-        if(timermins[i].value.toString().length == 1){
-            timermins[i].value="0"+timermins[i].value;
-        }
-        timersecs[i].value=parseInt(timearray[1]);
-        if(timersecs[i].value.toString().length == 1){
-            timersecs[i].value="0"+timersecs[i].value;
-        }
-    }
 }
 
 function closePanel() {
@@ -146,18 +131,9 @@ function addTimer() {
         addMinuteButton.classList.add("addMinuteButton");
         addMinuteButton.innerHTML="<b>+</b> min";
         addMinuteButton.addEventListener("click", function(){
-            var timerChildren = this.parentNode.childNodes;
-            for(var i = 0; i <timerChildren.length; i++){
-                if(timerChildren[i].classList.contains("timerTime")){
-                    for(var j = 0; j <timerChildren[i].childNodes.length; j++){
-                        var timerTimeChild = timerChildren[i].childNodes[j];
-                        if(timerTimeChild.classList.contains("timerTimeMin")){
-                            timerTimeChild.value = parseInt(timerTimeChild.value)+1;
-                            fireEvent(timerTimeChild,"change");
-                        };
-                    }
-                }
-            }
+            var timerTimeMinadd = this.parentNode.querySelectorAll(".timerTimeMin").item(0);
+            timerTimeMinadd.value = parseInt(timerTimeMinadd.value)+1;
+            fireEvent(timerTimeMinadd,"change");
         }, false);
 
         var cancelTimerButton = document.createElement("button");
@@ -192,30 +168,11 @@ function fireEvent(element,event){
     }
 }
 function setTimer(newtimer){
-    var time;
-    var minute;
-    var second;
-    var countDown;
-    for (var i = 0; i < newtimer.childNodes.length; i++) {
-        if (newtimer.childNodes[i].className == "timerTime") {
-            time = newtimer.childNodes[i];
-        }
-        else if(newtimer.childNodes[i].className == "timerCountdown") {
-            countDown = newtimer.childNodes[i];
-        }
-    }
-    for (var i = 0; i < time.childNodes.length; i++) {
-        if(time.childNodes[i].className == "timerTimeMin") {
-            minute = parseInt(time.childNodes[i].value);
-        }
-        else if(time.childNodes[i].className == "timerTimeSec") {
-            second = parseInt(time.childNodes[i].value);
-        }
-    }
-    //countDown.innerHTML=minute.value+":"+second.value;
-    //startTimer(60*minute+second,countDown);
-    var fiveMinutes = 60 * 5;
-        display = document.getElementById(countDown.id);
+    var time = newtimer.querySelectorAll(".timerTime").item(0);
+    var countDown = newtimer.querySelectorAll(".timerCountdown").item(0);
+    var minute = parseInt(time.querySelectorAll(".timerTimeMin").item(0).value);
+    var second = parseInt(time.querySelectorAll(".timerTimeSec").item(0).value);
+    var display = document.getElementById(countDown.id);
     var duration = 60*minute+second;
     startTimer(duration, display);
 }
@@ -266,6 +223,12 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
+        var timerMin = display.parentNode.querySelectorAll(".timerTime .timerTimeMin").item(0);
+        var timerSec = display.parentNode.querySelectorAll(".timerTime .timerTimeSec").item(0);
+        if(timerMin != document.activeElement){
+        timerMin.value=minutes;}
+        if(timerSec != document.activeElement){
+        timerSec.value=seconds;}
         if(minutes == "00" && seconds =="00"){
             clearInterval(timerMap[display.id]);
             display.parentNode.dataset.state="completed";
@@ -282,7 +245,7 @@ function startTimer(duration, display) {
     }
     //timerMap[display.id]=timer;
     //timerMap[display.id]();
-    timerMap[display.id]=setInterval(function(){timer()}, 1000);
+    timerMap[display.id]=setInterval(timer, 1000);
 }
 var timerMap ={};
 

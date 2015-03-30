@@ -135,6 +135,11 @@ p {
   margin-bottom: 18px;
 }
 
+.modal-ingredients img {
+    height: 240px;
+    width: 380px;
+}
+
 #single-recipe-directions li {
   margin-bottom: 18px;
 }

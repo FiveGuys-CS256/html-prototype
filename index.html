@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/flex.css">
     <link rel="stylesheet" href="css/tabs.css">
     <link rel="stylesheet" href="css/select_a_meal.css">
+    <link rel="stylesheet" href="css/timers.css"/>
     <link rel="stylesheet" href="css/timeline.css">
+    <script src="js/timers.js"></script>
 </head>
 <body>
 
@@ -83,7 +85,7 @@
                     </ul>
                 </div>
                 <div class="picture-layout">
-                    <div class="picture"><img src="http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg" >
+                    <div class="picture"><img src="http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg">
                         <h2>
                             New York Cheesecake
                         </h2>
@@ -250,7 +252,7 @@
         
         <div class="tab-panel">
           <div class="tab-content">
-            Content!
+            Here is some good content. This where things really start to get interesting.
           </div>
         </div> 
       </div>
@@ -260,7 +262,7 @@
         
         <div class="tab-panel">
           <div class="tab-content">
-          More content!
+            This is predefined content.
           </div>
         </div>
       </div>
@@ -268,6 +270,38 @@
   </nav>
   <aside></aside>
 </div>
+<div id="timerConfig" class="timerConfigAnimateOut" data-state="closed">
+    <div id="timerConfigHeader">
+        <div style="height: 10px; background-color: #ff9a62;"></div>
+        <h2>&nbsp;Timer Settings</h2>
+    </div>
+    <div id="timerConfigBody">
+        <div id="timers">
+            <!--<div class="timer" data-state="closed">
+                <span class="timerContents">
+                    <span class="timerTitle">Title</span>
+                    <span class="timerTime">
+                        <time contenteditable="true" class="timerTimeHour">00</time>
+                        <time contenteditable="false" class="timerColon">:</time>
+                        <time contenteditable="true" class="timerTimeMin">00</time>
+                    </span>
+                    <button class="addMinuteButton"><b>+</b> min</button>
+                    <button class="cancelTimerButton">Cancel</button>
+                </span>
+            </div>-->
+        </div>
+            <div id="addtimerbutton" data-action="add_timer" data-state="closed" >
+                <span class="addTimerButtonContents" ><span style="font-size: 25px"><b>+</b> New Timer</span></span>
 
+            </div>
+
+        <div id="timerConfigButton">
+            <span id="stopwatch_brown"><img height="25" width="25" src="img/stopwatch_brown.png">Edit</span>
+        </div>
+    </div>
+    <button id="closeConfigButton" class="hidden">close</button>
+</div>
+
+<div> <span style="height:100px; width:100px;" contenteditable="true" id="time"></span></div>
 </body>
 </html>

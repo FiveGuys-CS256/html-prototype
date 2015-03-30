@@ -1,5 +1,5 @@
 allRecipes = {
-    "Lab1": [
+    "Lab 1": [
         {
             "name": "Lobster Mac",
             "ingredients": [
@@ -108,7 +108,7 @@ allRecipes = {
             "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
         }
     ],
-    "Lab2": [
+    "Lab 2": [
         {
             "name": "Shephards Pie",
             "ingredients":
@@ -139,7 +139,7 @@ allRecipes = {
             "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/06/Shepherds-pie-plated-500-rot-500x300.jpg"
         }
     ],
-    "Lab3": [
+    "Lab 3": [
         {
             "name": "Family Quiche",
             "ingredients":
@@ -164,10 +164,10 @@ allRecipes = {
                 "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
                 "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
             ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -176,10 +176,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         }
     ],
-    "Lab4": [
+    "Lab 4": [
         {
             "name": "Artisan Bread",
             "ingredients":
@@ -201,10 +201,10 @@ allRecipes = {
                     "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F.",
                     "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -213,10 +213,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         }
     ],
-    "Lab5": [
+    "Lab 5": [
         {
             "name": "Potato Skins",
             "ingredients":
@@ -229,10 +229,10 @@ allRecipes = {
                     "Bake for 12 to 15 minutes",
                     "Enjoy the food of the gods"
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -241,10 +241,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         }
     ],
-    "Lab6": [
+    "Lab 6": [
         {
             "name": "Orange Chicken",
             "ingredients":
@@ -272,10 +272,10 @@ allRecipes = {
                     "Pour in the orange chicken sauce, and stir to combine. Let the sauce come to a boil, then boil for an additional minute or two until thickened. Remove from heat and serve immediately over quinoa or rice. Garnish with green onions, sesame seeds and additional orange zest.",
                     "Whisk all ingredients together until combined. If you would like the sauce to be even sweeter, add an extra 2-4 tablespoons of honey."
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -284,10 +284,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         }
     ],
-    "Lab7": [
+    "Lab 7": [
         {
             "name": "Cinnamon Rolls",
             "ingredients":
@@ -317,10 +317,10 @@ allRecipes = {
                     "Coat the bottom of baking pan with butter and sprinkle with sugar. Place cinnamon roll slices close together in the pan and let rise until dough is doubled, about 45 minutes. Bake for about 30 minutes or until nicely browned.",
                     "Meanwhile, mix butter, powdered sugar, and vanilla. Add hot water 1 tablespoon at a time until the glaze reaches desired consistency. Spread over slightly cooled rolls."
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -329,10 +329,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         }
     ],
-    "Lab8": [
+    "Lab 8": [
         {
             "name": "Enchiladas Suizas",
             "ingredients":
@@ -360,10 +360,10 @@ allRecipes = {
                     "Place the tortillas on a work surface. Divide the shredded chicken evenly among the tortillas and roll up each like a cigar. Spread 1/3 cup of the sauce in a 13-by-9-by-2-inch glass baking dish. Arrange the enchiladas in 1 layer, seam-side down, snugly inside the dish. Pour the rest of the sauce over the enchiladas. Drizzle the cream mixture on top and sprinkle the cheese all over.",
                     "Bake until the cheese is melted and starting to brown in spots, about 30 minutes. Serve immediately."
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -372,10 +372,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         }
     ],
-    "Lab9": [
+    "Lab 9": [
         {
             "name": "Steamed Buns",
             "ingredients":
@@ -405,10 +405,10 @@ allRecipes = {
                     "Arrange the buns on a parchment lined sheet tray and cover them with a clean kitchen towel. Alternatively, place the buns into a large 3-level bamboo steamer lined with parchment paper, 4 buns per level. Allow the buns to rest for 10 minutes.",
                     "In the meantime, fill a bamboo or stainless steel steamer with water and bring it to a boil. Cut 12 (4-inch) rounds from some parchment paper. When ready to cook, place the buns on the parchment rounds and into the steamer."
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -417,7 +417,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "/img/placeholder.jpg"
         }
     ]
 };

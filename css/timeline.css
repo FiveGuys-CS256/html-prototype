@@ -18,6 +18,7 @@
     background:white;
     table-layout: fixed;
     width: 100px;
+    vertical-align: top;
 }
 
 #timeline th {

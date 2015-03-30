@@ -124,16 +124,20 @@ p {
 .modal-ingredients {
     float: left;
     width: 30%;
-    padding: 20px;
+    padding: 0px;
     border-width: 1px;
     border-color: #E6E6E6;
     margin: 10px;
 }
 
+.modal-ingredients ul {
+    list-style-type: none;
+}
+
 .modal-directions {
     float: left;
     width: 55%;
-    padding: 20px;
+    padding: 0px;
     margin: 10px;
 }
 

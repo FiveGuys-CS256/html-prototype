@@ -164,11 +164,7 @@ allRecipes = {
                 "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
                 "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
             ],
-<<<<<<< HEAD
-            "image": "/img/placeholder.jpg"
-=======
             "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
->>>>>>> 324825a9202264899d148e63e4f85b9671945587
         },
         {
             "name": "Place Holder",

@@ -8,10 +8,14 @@ body {
 }
 
 input[type="text"] {
-    width: 200px;
-    height: 20px;
-    padding: 10px;
-    font-size: 20px;
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+h2 {
+  font-weight: lighter;
 }
 
 /* ------------ CLASS ------------ */
@@ -92,7 +96,7 @@ input[type="text"] {
 }
 
 #timeline-container {
-  height: 677px;
+  height: 679px;
   overflow: scroll;
 }
 

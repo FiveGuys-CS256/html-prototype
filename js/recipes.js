@@ -59,32 +59,6 @@ allRecipes = {
             "image": "/img/a.jpg"
         },
         {
-            "name": "Family Quiche",
-            "ingredients":
-                [
-                    "All-purpose flour, for rolling",
-                    "1 homemade or store-bought single-crust pie dough",
-                    "1 tablespoon unsalted butter",
-                    "2 cups medium diced yellow onion (from 1 large onion)",
-                    "Coarse salt and ground pepper",
-                    "6 large eggs",
-                    "3/4 cup heavy cream",
-                    "3/4 pound bacon, cooked and crumbled",
-                    "1 cup shredded Gruyere cheese (4 ounces)"
-                ],
-            "instructions":
-                [
-                    "Preheat oven to 375 degrees.",
-                    "Lightly flour a rolling pin and work surface and roll out dough to a 12-inch round. Place in a 9-inch pie plate, fold overhang under, and crimp edge. Place a sheet of parchment paper over dough and fill with pie weights or dried beans.",
-                    "Bake until edge is dry and light golden, about 20 minutes.",
-                    "Remove parchment and weights.",
-                    "Meanwhile, in a large skillet, melt butter over medium-high. Add onion, season with salt and pepper, and cook until light golden, 8 to 10 minutes.",
-                    "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
-                    "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
-                ],
-            "image": "/img/a.jpg"
-        },
-        {
             "name": "Artisan Bread",
             "ingredients":
                 [
@@ -106,19 +80,31 @@ allRecipes = {
                     "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
                 ],
             "image": "/img/a.jpg"
-        }
-    ],
-    "Lab2": [
+        },
         {
-            "name": "",
+            "name": "Family Quiche",
             "ingredients":
-                [
-                    ""
-                ],
+            [
+                "All-purpose flour, for rolling",
+                "1 homemade or store-bought single-crust pie dough",
+                "1 tablespoon unsalted butter",
+                "2 cups medium diced yellow onion (from 1 large onion)",
+                "Coarse salt and ground pepper",
+                "6 large eggs",
+                "3/4 cup heavy cream",
+                "3/4 pound bacon, cooked and crumbled",
+                "1 cup shredded Gruyere cheese (4 ounces)"
+            ],
             "instructions":
-                [
-                    ""
-                ],
+            [
+                "Preheat oven to 375 degrees.",
+                "Lightly flour a rolling pin and work surface and roll out dough to a 12-inch round. Place in a 9-inch pie plate, fold overhang under, and crimp edge. Place a sheet of parchment paper over dough and fill with pie weights or dried beans.",
+                "Bake until edge is dry and light golden, about 20 minutes.",
+                "Remove parchment and weights.",
+                "Meanwhile, in a large skillet, melt butter over medium-high. Add onion, season with salt and pepper, and cook until light golden, 8 to 10 minutes.",
+                "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
+                "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
+            ],
             "image": "/img/a.jpg"
         }
     ],

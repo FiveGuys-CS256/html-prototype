@@ -176,7 +176,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/placeholder.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
     "Lab 4": [
@@ -213,7 +213,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/placeholder.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
     "Lab 5": [
@@ -241,7 +241,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/placeholder.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
     "Lab 6": [
@@ -284,7 +284,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/placeholder.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
     "Lab 7": [
@@ -329,7 +329,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/placeholder.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
     "Lab 8": [
@@ -372,7 +372,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/placeholder.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
     "Lab 9": [
@@ -417,7 +417,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/placeholder.jpg"
+            "image": "img/placeholder.jpg"
         }
     ]
 };

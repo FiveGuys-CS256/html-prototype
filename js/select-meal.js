@@ -36,4 +36,7 @@ window.addEventListener("DOMContentLoaded", function() {
         }
         pictures[key] = elm;
     });
+
+    var lab1 = document.getElementById("meal-modal-labs").children[0];
+    lab1.click();
 });

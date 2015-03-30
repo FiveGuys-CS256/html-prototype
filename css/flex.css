@@ -31,6 +31,10 @@ h2 {
   text-decoration: none;
 }
 
+.nav:nth-child(3) {
+  margin-left: 20px;
+}
+
 .student-information {
   color: #6C6C6C;
   padding: 15px 0px 0px 0px;

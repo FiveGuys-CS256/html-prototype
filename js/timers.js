@@ -109,7 +109,7 @@ function addTimer(title, minute, second) {
         var timerTime = document.createElement("span");
         timerTime.classList.add("timerTime");
         timerTime.addEventListener("change", function(){
-                setTimer(newtimer);
+                setTimer(newtimer, "true");
         }, false);
         /*timerTime.addEventListener("keydown", function(e){
             if(e.keyCode === 13){
@@ -169,9 +169,18 @@ function addTimer(title, minute, second) {
         newtimer.appendChild(addMinuteButton);
         newtimer.appendChild(cancelTimerButton);
 
-        //newtimer.appendChild(timerContents);
+        if(document.querySelector(".timerConfigAnimateIn") == null){
+            newtimer.dataset.state="closed";
+        }
+        else{
+            newtimer.dataset.state="settings";
+        }
         timers.appendChild(newtimer);
-        fireEvent(timerTime,"change");
+        if(minute != "00" && second != "00") {
+        }
+        else {
+            fireEvent(timerTime, "change");
+        }
     }
 }
 function fireEvent(element,event){
@@ -217,7 +226,9 @@ window.addEventListener("DOMContentLoaded", function() {
     document.getElementById("timerConfig").addEventListener("transitionend", hideConfigElements, true);
     var add_buttons = document.querySelectorAll("[data-action='add_timer']");
     for (i=0; i<add_buttons.length; ++i) {
-        add_buttons[i].addEventListener("click", addTimer);
+        add_buttons[i].addEventListener("click", function(){
+            addTimer("title","00","00");
+        });
     }
     var clear_timers = document.querySelectorAll("[data-action='clear_timers']");
     for (i=0; i<clear_timers.length; ++i) {
@@ -226,6 +237,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
 });
 function startTimer(duration, display) {
+
     var start = Date.now(),
         diff,
         minutes,
@@ -249,9 +261,9 @@ function startTimer(duration, display) {
         timerMin.value=minutes;}
         if(timerSec != document.activeElement){
         timerSec.value=seconds;}
-        if(minutes == "00" && seconds =="00"){
+        if(duration > 0 && minutes == "00" && seconds =="00"){
             clearInterval(timerMap[display.id]);
-            display.parentNode.dataset.state="completed";
+                display.parentNode.classList.add("completed");
         }
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
@@ -263,8 +275,6 @@ function startTimer(duration, display) {
     if(timerMap[display.id]!=null) {
         clearInterval(timerMap[display.id]);
     }
-    //timerMap[display.id]=timer;
-    //timerMap[display.id]();
     timerMap[display.id]=setInterval(timer, 1000);
 }
 var timerMap ={};

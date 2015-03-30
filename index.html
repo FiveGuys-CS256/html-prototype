@@ -72,20 +72,20 @@
       function populateIngredientList(name) {
         switch (name) {
         case "lobster":
-          var ingredients = allRecipes.Lab1[0].ingredients;
-          populateIngredients(ingredients);
+          var recipe = allRecipes.Lab1[0];
+          populateIngredients(recipe);
           break;
         case "cheesecake":
-          var ingredients = allRecipes.Lab1[1].ingredients;
-          populateIngredients(ingredients);
+          var recipe = allRecipes.Lab1[1];
+          populateIngredients(recipe);
           break;
         case "bread":
-          var ingredients = allRecipes.Lab1[2].ingredients;
-          populateIngredients(ingredients);
+          var recipe = allRecipes.Lab1[2];
+          populateIngredients(recipe);
           break;
         case "quiche":
-          var ingredients = allRecipes.Lab1[3].ingredients;
-          populateIngredients(ingredients);
+          var recipe = allRecipes.Lab1[3];
+          populateIngredients(recipe);
           break;
         default:
           alert("None found");
@@ -93,12 +93,15 @@
         }
       };
 
-      function populateIngredients(ingredientArray) {
-        var list = ""
+      function populateIngredients(recipe) {
+        var myName = recipe.name;
+        var list = "";
+        list += "<h4> " + myName + "</h4>";
+
         list += "<ul>";
 
-        for (var i = 0; i < ingredientArray.length; i++) {
-          list += "<li>" + ingredientArray[i] + "</li>"; 
+        for (var i = 0; i < recipe.ingredients.length; i++) {
+          list += "<li>" + recipe.ingredients[i] + "</li>"; 
         };
 
         list += "</ul>";

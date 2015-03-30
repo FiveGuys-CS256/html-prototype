@@ -65,7 +65,7 @@ function toggleTimer(){
 }
 
 var currentTimerCount=0;
-function addTimer() {
+function addTimer(title, minute, second) {
     currentTimerCount++;
     var timers = document.getElementById("timers");
     if (timers.children.length < MAX_TIMER_COUNT) {
@@ -82,7 +82,12 @@ function addTimer() {
         timerContents.classList.add("timerContents");
 
         var timerTitle = document.createElement("span");
-        timerTitle.innerHTML="Title";
+        if(title != null) {
+            timerTitle.innerHTML = title;
+        }
+        else{
+            timerTitle.innerHTML = "Title";
+        }
         timerTitle.setAttribute("contenteditable","true");
         timerTitle.addEventListener("keypress", function(e){
             if(e.keyCode === 13){
@@ -95,7 +100,12 @@ function addTimer() {
 
         var timerCountdown = document.createElement("div");
         timerCountdown.classList.add("timerCountdown");
-        timerCountdown.innerHTML="00:00";
+        if(minute != null && second != null) {
+            timerCountdown.innerHTML = minute+":"+second;
+        }
+        else{
+            timerCountdown.innerHTML = "00:00";
+        }
         var timerTime = document.createElement("span");
         timerTime.classList.add("timerTime");
         timerTime.addEventListener("change", function(){
@@ -110,7 +120,12 @@ function addTimer() {
         var timerTimeMin = document.createElement("input");
         timerTimeMin.classList.add("timerTimeMin");
         timerTimeMin.type="number";
-        timerTimeMin.value="00";
+        if(minute != null){
+            timerTimeMin.value=minute;
+        }
+        else{
+            timerTimeMin.value="00";
+        }
         timerTimeMin.max=59;
 
         var timerColon = document.createElement("span");
@@ -120,7 +135,12 @@ function addTimer() {
         var timerTimeSec = document.createElement("input");
         timerTimeSec.classList.add("timerTimeSec");
         timerTimeSec.type="number";
-        timerTimeSec.value="00";
+        if(second != null){
+            timerTimeSec.value=second;
+        }
+        else{
+            timerTimeSec.value="00";
+        }
         timerTimeSec.max=59;
 
         timerTime.appendChild(timerTimeMin);
@@ -135,7 +155,6 @@ function addTimer() {
             timerTimeMinadd.value = parseInt(timerTimeMinadd.value)+1;
             fireEvent(timerTimeMinadd,"change");
         }, false);
-
         var cancelTimerButton = document.createElement("button");
         cancelTimerButton.classList.add("cancelTimerButton");
         cancelTimerButton.innerHTML="Cancel";
@@ -152,6 +171,7 @@ function addTimer() {
 
         //newtimer.appendChild(timerContents);
         timers.appendChild(newtimer);
+        fireEvent(timerTime,"change");
     }
 }
 function fireEvent(element,event){

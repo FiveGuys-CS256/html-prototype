@@ -273,7 +273,7 @@ allRecipes = {
                 ],
             "instructions":
                 [
-                    "Preheat the oven to 350 degrees F.
+                    "Preheat the oven to 350 degrees F.",
                     "Put the tomatillos, onion and both chiles in a medium heavy saucepan, cover with water and bring to a boil over medium-high heat. Boil until the tomatillos turn an olive-green color, about 10 minutes. Drain and transfer the tomatillos, onions and chiles to a blender. Add the garlic and cilantro and blend until smooth. Season with salt and freshly ground black pepper.",
                     "Mix the Mexican crema and heavy cream together in a small bowl and season with salt. Set aside.",
                     "Heat 1 tablespoon oil in a small skillet over medium-high heat. Fry the tortillas until golden but still pliable, about 10 seconds per side, using more oil if needed. Transfer to paper towels to drain.",

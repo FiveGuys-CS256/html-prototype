@@ -5,14 +5,22 @@ body {
   background-repeat: repeat;
   margin: 0px;
   padding: 0px;
-  color: white;
 }
 
 input[type="text"] {
-    width: 200px;
-    height: 20px;
-    padding: 10px;
-    font-size: 20px;
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
+h4 {
+  margin-top: 0px;
+  font-weight: 600; 
 }
 
 /* ------------ CLASS ------------ */
@@ -20,11 +28,25 @@ input[type="text"] {
   display: inline-block;
   float: left;
   height: 50px;
-  width: 150px;
+  width: 130px;
   margin: 0px 0px 0px 15px;
 }
 
+.nav:nth-child(2) {
+  width: 110px;
+  margin-right: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav:nth-child(3) {
+  margin-left: 0px;
+}
+
 .student-information {
+  color: #6C6C6C;
   padding: 15px 0px 0px 0px;
   margin: 0px auto;
   width: 250px;
@@ -54,12 +76,14 @@ input[type="text"] {
 }
 
 #title {
-  margin: 6px 0px 0px 20px;
+  margin: 6px 0px 0px 0px;
   font-size: 38px;
   color: #6C6C6C;
 }
 
 #edit-meal {
+  width: 105px;
+  color: white;
   margin: 18px 0px 0px 0px;
   padding: 5px 10px;
   background-color: #ff9a62;
@@ -84,6 +108,11 @@ input[type="text"] {
   margin: 8px;
   width: 35px;
   height: auto;
+}
+
+#timeline-container {
+  height: 679px;
+  overflow: scroll;
 }
 
 /* ---- STUDENT MODAL ---- */
@@ -112,23 +141,10 @@ input[type="text"] {
   /*border: 1px solid #cccc33;*/
   border-radius: 7pt;
   /*overflow: hidden;*/
-  background: #dddd88;
   -webkit-flex: 3 1 70%;
           flex: 3 1 70%;
   -webkit-order: 2;
           order: 2;
-}
-
-#main > nav {
-  /*margin: 4px;*/
-  padding: 5px;
-  border: 1px solid #8888bb;
-  border-radius: 7pt;
-  background: #ccccff;
-  -webkit-flex: 1 6 20%;
-          flex: 1 6 20%;
-  -webkit-order: 1;
-          order: 1;
 }
 
 #main > aside {

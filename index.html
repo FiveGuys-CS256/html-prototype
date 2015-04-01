@@ -64,32 +64,39 @@
             var singleRecImg = document.getElementById("single-recipe-image");
             singleRecImg.src = allRecipes["Lab 1"][recipeNo].image;
         }
-
-      function populateIngredientList(name) {
-        populateAllIngredients();
-
-        switch (name) {
-        case "lobster":
-          var recipe = allRecipes["Lab 1"][0];
-          populateIngredients(recipe);
-          break;
-        case "cheesecake":
-          var recipe = allRecipes["Lab 1"][1];
-          populateIngredients(recipe);
-          break;
-        case "bread":
-          var recipe = allRecipes["Lab 1"][2];
-          populateIngredients(recipe);
-          break;
-        case "quiche":
-          var recipe = allRecipes["Lab 1"][3];
-          populateIngredients(recipe);
-          break;
-        default:
-          // alert("None found");
-          break;
+        function removeChildren(id)
+        {
+            var list = document.getElementById(id);
+            while(list.hasChildNodes())
+            {
+                var child = list.firstElementChild;
+                list.removeChild(child);
+            }
         }
-      };
+        function populateIngredientList(name) {
+            populateAllIngredients();
+            switch (name) {
+            case "lobster":
+              var recipe = allRecipes["Lab 1"][0];
+              populateIngredients(recipe);
+              break;
+            case "cheesecake":
+              var recipe = allRecipes["Lab 1"][1];
+              populateIngredients(recipe);
+              break;
+            case "bread":
+              var recipe = allRecipes["Lab 1"][2];
+              populateIngredients(recipe);
+              break;
+            case "quiche":
+              var recipe = allRecipes["Lab 1"][3];
+              populateIngredients(recipe);
+              break;
+            default:
+              // alert("None found");
+              break;
+            }
+        };
 
       function populateAllIngredients() {
         var html = "";
@@ -177,6 +184,7 @@
             <div class="modal-recipe-container">
                 <div class="modal-ingredients">
                     <img id="single-recipe-image">
+                        <!-- Insert Picture -->
                     <h2>Ingredients</h2>
                     <ul id="single-recipe-ingredients">
                         <!-- Insert Ingredients -->

@@ -1,5 +1,5 @@
 allRecipes = {
-    "Lab1": [
+    "Lab 1": [
         {
             "name": "Lobster Mac",
             "ingredients": [
@@ -108,7 +108,7 @@ allRecipes = {
             "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
         }
     ],
-    "Lab2": [
+    "Lab 2": [
         {
             "name": "Shephards Pie",
             "ingredients":
@@ -151,7 +151,7 @@ allRecipes = {
             "image": "/img/a.jpg"
         }
     ],
-    "Lab3": [
+    "Lab 3": [
         {
             "name": "Family Quiche",
             "ingredients":
@@ -179,7 +179,7 @@ allRecipes = {
             "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -188,10 +188,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
-    "Lab4": [
+    "Lab 4": [
         {
             "name": "Artisan Bread",
             "ingredients":
@@ -216,7 +216,7 @@ allRecipes = {
             "image": "http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -225,10 +225,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
-    "Lab5": [
+    "Lab 5": [
         {
             "name": "Potato Skins",
             "ingredients":
@@ -244,7 +244,7 @@ allRecipes = {
             "image": "http://i2.wp.com/www.livingfrugaltips.com/wp-content/uploads/2010/05/Potato-Skin-Potato-Salad2.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -253,10 +253,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
-    "Lab6": [
+    "Lab 6": [
         {
             "name": "Orange Chicken",
             "ingredients":
@@ -287,7 +287,7 @@ allRecipes = {
             "image": "http://slurpstreatham.co.uk/menu/Sweet-Sour-Chicken.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -296,10 +296,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
-    "Lab7": [
+    "Lab 7": [
         {
             "name": "Cinnamon Rolls",
             "ingredients":
@@ -332,7 +332,7 @@ allRecipes = {
             "image": "http://www.adweek.com/prnewser/files/2014/08/Cinnabon-Reaches-1000th-Bakery-Milestone.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -341,10 +341,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
-    "Lab8": [
+    "Lab 8": [
         {
             "name": "Enchiladas Suizas",
             "ingredients":
@@ -375,7 +375,7 @@ allRecipes = {
             "image": "http://hotelesimperial.com.mx/convento/img/Carnes/suizas.png"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -384,10 +384,10 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "img/placeholder.jpg"
         }
     ],
-    "Lab9": [
+    "Lab 9": [
         {
             "name": "Steamed Buns",
             "ingredients":
@@ -420,7 +420,7 @@ allRecipes = {
             "image": "https://easemyhome.files.wordpress.com/2015/02/vegetable-momos.jpg"
         },
         {
-            "name": "",
+            "name": "Place Holder",
             "ingredients":
                 [
                     ""
@@ -429,7 +429,7 @@ allRecipes = {
                 [
                     ""
                 ],
-            "image": "/img/a.jpg"
+            "image": "img/placeholder.jpg"
         }
     ]
 };

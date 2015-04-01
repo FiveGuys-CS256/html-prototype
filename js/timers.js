@@ -126,7 +126,7 @@ function addTimer(title, minute, second) {
         else{
             timerTimeMin.value="00";
         }
-        timerTimeMin.max=59;
+        timerTimeMin.max=500;
 
         var timerColon = document.createElement("span");
         timerColon.classList.add("timerColon");
@@ -227,7 +227,11 @@ window.addEventListener("DOMContentLoaded", function() {
     var add_buttons = document.querySelectorAll("[data-action='add_timer']");
     for (i=0; i<add_buttons.length; ++i) {
         add_buttons[i].addEventListener("click", function(){
-            addTimer("title","00","00");
+            if (this.dataset.title) {
+                addTimer(this.dataset.title,this.dataset.minutes||"00",this.dataset.seconds||"00");
+            } else {
+                addTimer("title","00","00");
+            }
         });
     }
     var clear_timers = document.querySelectorAll("[data-action='clear_timers']");
@@ -253,8 +257,12 @@ function startTimer(duration, display) {
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
+        if(minutes <= 60) {
+            display.textContent = minutes + ":" + seconds;
+        }
+        else{
+            display.textContent = parseInt(minutes/60)+":"+parseInt(minutes%60) + ":" + seconds;
+        }
         var timerMin = display.parentNode.querySelectorAll(".timerTime .timerTimeMin").item(0);
         var timerSec = display.parentNode.querySelectorAll(".timerTime .timerTimeSec").item(0);
         if(timerMin != document.activeElement){

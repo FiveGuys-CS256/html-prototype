@@ -14,6 +14,7 @@
     <script src="js/select-meal.js"></script>
     <script src="js/ingredient-view.js"></script>
     <script>
+    // James: I will refactor this code later :p
         function getRecipe(name) {
             document.getElementById("single-recipe-name").innerHTML = name;
             /* document.getElementById("single-recipe-ingredients").empty();
@@ -28,7 +29,7 @@
                 fillRecipe(0,2);
                 populateIngredientList("bread");
             }
-            else if(name == "Lobster Mac n Cheese")
+            else if(name == "Lobster Mac")
             {
                 fillRecipe(0,0);
                 populateIngredientList("lobster");
@@ -43,7 +44,7 @@
         function fillRecipe(labNo, recipeNo)
         {
             var singleRecIng = document.getElementById("single-recipe-ingredients");
-            var cheesecake = allRecipes.Lab1[recipeNo].ingredients;
+            var cheesecake = allRecipes["Lab 1"][recipeNo]["ingredients"];
 
             for (var i = 0; i < cheesecake.length; i++ ) {
                 var step = document.createElement("li");
@@ -52,7 +53,7 @@
             }
 
             var singleRecDir = document.getElementById("single-recipe-directions");
-            var cheesecake2 = allRecipes.Lab1[recipeNo].instructions;
+            var cheesecake2 = allRecipes["Lab 1"][recipeNo]["instructions"];
 
             for (var i = 0; i < cheesecake2.length; i++ ) {
                 var step = document.createElement("li");
@@ -61,7 +62,7 @@
             }
 
             var singleRecImg = document.getElementById("single-recipe-image");
-            singleRecImg.src = allRecipes.Lab1[recipeNo].image;
+            singleRecImg.src = allRecipes["Lab 1"][recipeNo].image;
         }
 
       function populateIngredientList(name) {
@@ -69,19 +70,19 @@
 
         switch (name) {
         case "lobster":
-          var recipe = allRecipes.Lab1[0];
+          var recipe = allRecipes["Lab 1"][0];
           populateIngredients(recipe);
           break;
         case "cheesecake":
-          var recipe = allRecipes.Lab1[1];
+          var recipe = allRecipes["Lab 1"][1];
           populateIngredients(recipe);
           break;
         case "bread":
-          var recipe = allRecipes.Lab1[2];
+          var recipe = allRecipes["Lab 1"][2];
           populateIngredients(recipe);
           break;
         case "quiche":
-          var recipe = allRecipes.Lab1[3];
+          var recipe = allRecipes["Lab 1"][3];
           populateIngredients(recipe);
           break;
         default:
@@ -139,9 +140,9 @@
         document.getElementById(id).Value = value;
       }
 
-    </script>
+    // </script>
 </head>
-<body onload="loadPage()">
+<body onLoad="loadPage()">
 
 <!-- Modal -->
 <!-- Change the ID of the modal for each modal -->
@@ -199,63 +200,28 @@
 
 <!-- Select a Meal Modal -->
 <!-- Change the ID of the modal for each modal -->
+<!-- TODO: remove some of that javascript cruft and just have most of it in HTML  -->
 <div class="modal" id="meal-modal" aria-hidden="true">
-    <div class="modal-dialog" style="width:1100px; height:600px;">
-        <div class="modal-header">
-            <div class="title modal-title">Select A Meal</div>
-        </div>
-        <div class="modal-body" id="select-recipe-body">
-            <div id="recipe-container">
-              <div class="side-bar">
-                <ul class="side-bar-list">
-                    <a href="#lab1" style="text-decoration:none;"><li id="lab1">Lab 1</li></a>
-                    <a href="#lab2" style="text-decoration:none;"><li id="lab2">Lab 2</li></a>
-                    <a href="#lab3" style="text-decoration:none;"><li id="lab3">Lab 3</li></a>
-                    <a href="#lab4" style="text-decoration:none;"><li id="lab4">Lab 4</li></a>
-                    <a href="#lab5" style="text-decoration:none;"><li id="lab5">Lab 5</li></a>
-                    <a href="#lab6" style="text-decoration:none;"><li id="lab6">Lab 6</li></a>
-                    <a href="#lab7" style="text-decoration:none;"><li id="lab7">Lab 7</li></a>
-                    <a href="#lab8" style="text-decoration:none;"><li id="lab8">Lab 8</li></a>
-                    <a href="#lab9" style="text-decoration:none;"><li id="lab9">Lab 9</li></a>
-                    <a href="#lab10" style="text-decoration:none;"><li id="lab10">Lab 10</li></a>
-                </ul>
-              </div>
-              <div class="picture-layout">
-                  <div class="picture"><img src="http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg">
-                      <h2>
-                          New York Cheesecake
-                      </h2>
-                  </div>
-
-                  <div class="picture"><img src="http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg" >
-                      <h2>
-                          Artisan Bread
-                      </h2>
-                  </div>
-                  <div class="picture"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" >
-                      <h2>
-                          Lobster Mac 'n Cheese
-                      </h2>
-                  </div>
-                  <div class="picture"><img src="http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg" >
-                      <h2>
-                          Family Quiche
-                      </h2>
-                  </div>
-              </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <a href="#close" class="btn">Start</a>  <!--CHANGED TO "#close"-->
-        </div>
+  <div class="modal-dialog" style="width:1100px; height:600px;">
+    <div class="modal-header">
+      <div class="title modal-title">Select A Meal</div>
     </div>
-</div>
+    <div class="modal-body" id="select-recipe-body">
+      <div class="side-bar">
+        <ul class="side-bar-list" id="meal-modal-labs"></ul>
+      </div>
+      <div class="picture-layout" id="meal-modal-recipes"></div>
+    </div>
+    <div class="modal-footer">
+      <a href="#close" class="btn">Start</a>
+    </div>
+  </div>
 </div>
 <!-- /Modal -->
 
 <!-- Modal -->
 <!-- Change the ID of the modal for each modal -->
-<div class="modal" id="modal-test" aria-hidden="true">
+<!-- <div class="modal" id="modal-test" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-header">
       <h2>Modal in CSS?</h2>
@@ -264,11 +230,11 @@
       <p>One modal example here! :D</p>
     </div>
     <div class="modal-footer">
-      <a href="#close" class="btn">Nice!</a>  <!--CHANGED TO "#close"-->
+      <a href="#close" class="btn">Nice!</a>
     </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- /Modal -->
 
 <div id="header">
@@ -305,7 +271,7 @@
                   </a>
                   </div>
               </th>
-              <th><div class="mini-picture"  id="image-3" onclick="getRecipe('Lobster Mac n Cheese')"><a href="#single-recipe"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" ></a>
+              <th><div class="mini-picture"  id="image-3" onclick="getRecipe('Lobster Mac')"><a href="#single-recipe"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" ></a>
                   <a href="#" onclick="populateIngredientList('lobster')">
                   <h2>
                       Lobster Mac 'n Cheese
@@ -323,65 +289,134 @@
               </th>
           </tr>
           <tr>
-          <td>5:00</td>
-          <td>Bake crust
-              <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" onclick="addTimer('Bake crust','05','00')">
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
+              <td>5:00</td>
+              <td>
+                  <p>1. Preheat oven to 375 degrees with rack in lower third of oven.</p>
+                  <p>2. Butter the bottom and sides of a 9- by 13-inch springform pan. Line the sides of the pan with parchment, butter the parchment.</p>
+                  <p>3. Crush graham crackers with salt and sugar. Add butter. Bake until crust is golden brown and set, 15 minutes.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="BakeCrust" data-minutes="15" data-seconds="00"></p>
+              </td>
+              <td>
+                  <p>1. Combine 5 ounces of flour, 1/4 teaspoon of the yeast, honey, and bottled water. Cover loosely and refrigerate for 8 to 12 hours.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Fridge Dough" data-minutes="600" data-seconds="00">
+                  </p>
+              </td><td>
+              </td><td>
+              </td>
+          </tr>
           <tr>
               <td>5:15</td>
-              <td></td>
-              <td></td>
+              <td>4. Remove from oven and transfer to wire rack to cool 10 minutes.
+                  <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Let Cake Cool" data-minutes="10" data-seconds="00">
+              </td>
+              <td>
+                  <p>2. Place the remaining flour, yeast, and all the salt into the bowl, and add the pre-ferment from the refrigerator.
+                      Knead the mixture on low for 2 to 3 minutes just until it comes together.
+                      Cover and allow to rest for 20 minutes.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Let Dough Rise" data-minutes="20" data-seconds="00">
+                  </p>
+              </td>
               <td></td>
               <td></td>
           </tr>
           <tr>
               <td>5:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td><p>5. Beat cream cheese, butter, and sour cream with sugar until light and smooth.
+                  Beat in eggs one at a time. Beat in remaining egg yolks, zest, and vanilla extract.</p>
+                  <p>6. Crisscross two long pieces of foil and place a piece of parchment on top. Place springform in center of foil and wrap foil tightly around bottom and sides of pan.
+                      Transfer to a roasting pan, pour filling into springform pan, and smooth the top.</p>
+                  <p>7. Pour boiling water into roasting pan to come halfway up the sides of the springform pan and carefully transfer to oven.
+                      Bake for 1 hour until top of cheesecake is golden brown, edges are set, and center jiggles slightly.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Bake Cheesecake" data-minutes="60" data-seconds="00"></p>
+              </td>
+              <td>
+                  <p>knead the dough on medium speed for 5 to 10 minutes or until you are able to gently pull the dough into a thin sheet that light will pass through.
+                      The dough will be sticky, but not so sticky that you can't handle it.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Knead Dough" data-minutes="5" data-seconds="00">
+                  </p>
+              </td>
+              <td>
+              </td>
+              <td><p>1. Preheat oven to 375 degrees.</p>
+                  <p>2. Roll out dough to a 12-inch round. Place in a 9-inch pie plate. Place a sheet of parchment paper over dough and fill with pie weights.</p>
+                  <p>3. Bake for 20 minutes.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Bake quiche crust" data-minutes="20" data-seconds="00">
+                  </p>
+              </td>
           </tr>
           <tr>
               <td>5:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td><p>8. Lift cheesecake from water bath, remove foil and parchment from outside of springform, and chill cheesecake in refrigerator for at least 8 hours.
+                  <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Let it chill" data-minutes="480" data-seconds="00"></p>
+              </td>
+              <td>
+                  <p>3. While the dough is kneading, pour half of the hot water into a shallow pan and place on the bottom rack of your oven.</p>
+                  <p>4. Grease the inside of a large straight-sided container with the vegetable oil. Place the dough ball into the container and set on the rack above the pan of water.
+                      Allow to rise until doubled in size, approximately 1 to 2 hours.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Let Rise" data-minutes="60">
+                  </p>
+              </td>
+              <td><p>1. Preheat the oven to 375 degrees F.</p>
+                  <p>2. Drizzle oil into a large pot of boiling salted water.</p>
+                  <p>3. Add the pasta and cook, 6 to 8 minutes. Drain well.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Cook pasta" data-minutes="08" data-seconds="00">
+                  </p>
+                  <p>4. Meanwhile, heat the milk in a small saucepan, but don't boil it.</p>
+                  <p>5. In a large pot, melt 6 tablespoons of butter and add the flour.</p>
+                  <p>6. Cook over low heat for 2 minutes, stirring with a whisk. Add the hot milk and cook for a minute or two more, until thickened and smooth.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Cook Mac Sauce" data-minutes="02" data-seconds="00">
+                  </p>
+              </td>
               <td></td>
             </tr>
             <tr>
                 <td>6:00</td>
-                <td>Let it chill
-                    <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" onclick="addTimer('Let it chill','06','00')">
+                <td></td>
+                <td><p>5. Once the dough has doubled in size, turn it onto a counter top, lightly dust your hands with flour, and press the dough out with your knuckles; then fold 1 side in towards the middle of the mass and then the other, as if you were making a tri-fold wallet. Repeat the folding a second time. Cover the dough with a kitchen towel and allow to rest for another 10 minutes.
+                    <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Let it chill" data-minutes="480" data-seconds="00">
+                </p>
+
                 </td>
                 <td></td>
-                <td></td>
-                <td></td>
-          </tr>
-          <tr>
-              <td>6:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
 
+                <td>
+                    <p>4. Remove parchment and weights.</p>
+                    <p>5. Meanwhile, in a large skillet, melt butter over medium-high. Add onion, season with salt and pepper, and cook 8 to 10 minutes.
+                        <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Cook Quiche Butter" data-minutes="08" data-seconds="00">
+                    </p>
+                </td>
           </tr>
           <tr>
               <td>6:15</td>
               <td></td>
+              <td>	<p>6. Flatten dough again with your knuckles and then fold the dough in onto itself, like you are shaping something that looks like a jellyfish. Turn the dough over and squeeze the bottom together so that the top surface of the dough is smooth. Place the dough back onto the counter and begin to roll gently between your hands. Do not grab the dough but allow it to move gently back and forth between your hands, moving in a circular motion. Move the dough ball to a pizza peel or the bottom of a sheet pan that has been sprinkled with the cornmeal. Cover with the kitchen towel and allow to bench proof for 1 hour, or until you poke the dough and it quickly fills back in where you poked it.
+                  <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Let it chill" data-minutes="480" data-seconds="00">
+              </p>
+              </td>
               <td></td>
-              <td></td>
-              <td></td>
+              <td><p>6. In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.</p>
+                  <p>7. Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Bake Quiche" data-minutes="40" data-seconds="00">
+                  </p>
+              </td>
 
           </tr>
           <tr>
               <td>6:30</td>
               <td></td>
-              <td></td>
-              <td></td>
+              <td><p>7. Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F.</p>
+                  <p>	8. Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Let it chill" data-minutes="480" data-seconds="00">
+                  </p>
+              </td>
+              <td><p>7. Off the heat, add the Gruyere, Cheddar, 1 tablespoon salt, the pepper, and nutmeg.</p>
+                  <p>8. Add the cooked macaroni and lobster and stir well.</p>
+                  <p>9. Place the mixture in 6 to 8 individual gratin dishes.</p>
+                  <p>10. Melt the remaining 2 tablespoons of butter, combine them with the fresh bread crumbs, and sprinkle on the top.</p>
+                  <p>11. Bake for 30 to 35 minutes.
+                      <img style="height: 20px; width:20px;"src="img/stopwatch_brown.png" data-action="add_timer" data-title="Bake LobsterMac" data-minutes="30" data-seconds="00">
+                  </p>
+              </td>
               <td></td>
 
           </tr>
@@ -390,7 +425,8 @@
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+              <td>
+              </td>
           </tr>
           <tr>
               <td>7:00</td>
@@ -505,18 +541,6 @@
     </div>
     <div id="timerConfigBody">
         <div id="timers">
-            <!--<div class="timer" data-state="closed">
-                <span class="timerContents">
-                    <span class="timerTitle">Title</span>
-                    <span class="timerTime">
-                        <time contenteditable="true" class="timerTimeHour">00</time>
-                        <time contenteditable="false" class="timerColon">:</time>
-                        <time contenteditable="true" class="timerTimeMin">00</time>
-                    </span>
-                    <button class="addMinuteButton"><b>+</b> min</button>
-                    <button class="cancelTimerButton">Cancel</button>
-                </span>
-            </div>-->
         </div>
             <div id="addtimerbutton" data-action="add_timer" data-state="closed" >
                 <span class="addTimerButtonContents" ><span style="font-size: 25px"><b>+</b> New Timer</span></span>
@@ -529,7 +553,5 @@
     </div>
     <button id="closeConfigButton" class="hidden">Close</button>
 </div>
-
-<div> <span style="height:100px; width:100px;" contenteditable="true" id="time"></span></div>
 </body>
 </html>

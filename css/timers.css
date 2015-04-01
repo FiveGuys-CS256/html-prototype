@@ -46,7 +46,6 @@ body{
     position: absolute;
     width: 75px;
     transition: 1s ease;
-    box-shadow: -6px 0 8px gray;
     height: 75px;
     transform: translateY(3px);
 }

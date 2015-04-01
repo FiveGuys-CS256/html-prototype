@@ -238,7 +238,7 @@ allRecipes = {
                 "Cut vegetables into bite-size pieces.",
                 "Puree balsamic basting vinaigrette ingredients in a blender for 30 seconds.",
                 "Place meats, shrimp, and veggies in individual bowls and set out buffet style. Instruct your guests to skewer their own kabobs and baste veggies with balsamic vinaigrette.",
-                "Grill kabobs directly over heat source for about 10 to 15 minutes, turning 1/4 rotation every 2 to 3 minutes, or until the meat and/or fish is cooked throughout.",
+                "Grill kabobs directly over heat source for about 10 to 15 minutes, turning 1/4 rotation every 2 to 3 minutes, or until the meat and/or fish is cooked throughout."
             ],
             "image": "http://blog.getfoodgenius.com/wp-content/uploads/2015/01/shish-kebab-at-istanbul-mediterranean-500x300.jpg"
         },

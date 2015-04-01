@@ -130,6 +130,11 @@
         document.getElementById("ingredient-single-view").innerHTML = list;
       };
 
+      function setLab() {
+        selectedLab = document.querySelectorAll(".lab-selected").item(0).innerHTML;
+        reloadData();
+      }
+
       function loadPage() {
         window.location.href = '#meal-modal';
         populateIngredientList('cheesecake');
@@ -138,6 +143,11 @@
 
       function setIdValue(id, value) {
         document.getElementById(id).Value = value;
+      }
+
+      // Add all data calls that need to be reloaded.
+      function reloadData() {
+        populateAllIngredients();
       }
 
     // </script>

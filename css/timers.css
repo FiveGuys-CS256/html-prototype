@@ -70,7 +70,12 @@ body{
     height: 75px;
     margin-top: 10px;
 }
-
+#timers:not([data-state="settings"]){
+    position: fixed;
+    top: 90px;
+    right: -1px;
+    direction: rtl;
+}
 #timers[data-state="settings"]{
     overflow-y: auto;
     overflow-x: hidden;
@@ -107,7 +112,7 @@ body{
     background-color: #e6e6e6;
     border-radius: 0px;
     margin-bottom: 10px;
-    min-height: 75px;
+    height: 75px;
     color:#784a32;
     font-size: 30px;
     position: relative;
@@ -116,32 +121,48 @@ body{
 .timer[data-state="open"] {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: -80px;
-    left: -126px;
     position: relative;
-    min-height: 75px;
-    width: 325px;
+    height: 75px;
+    min-width: 325px;
+    width:auto;
+    text-align: left;
+    direction:ltr;
     border: 1px black;
     background-color: white;
     transition: 1s ease;
-    transform: translateX(-200px);
+    /*125-width*/
+
 }
 .timer[data-state="closed"] {
     background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    top: -80px;
-    left: -126px;
     border: 1px black;
     position: relative;
+    direction:ltr;
+    right:0px;
     width: 125px;
     transition: 0s ease;
-    transform: none;
 }
-.timerTitle{
+.timer[data-state="closed"] .timerTitle{
+    padding-top:10px;
     font-size:18px;
-    margin-left:10px;
-    margin-right:10px;
+    margin:10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 110px;
+    display: block;
+    overflow: hidden
+}
+.timer[data-state="open"] .timerTitle{
+    padding-top:10px;
+    font-size:18px;
+    margin:10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 325px;
+    display: block;
+    overflow: hidden
 }
 .timerTime{
     text-align: center;
@@ -197,11 +218,13 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
 }
 .timer[data-state="open"] .addMinuteButton{
-    width:60px;
-    margin-right:15px;
-    font-size:15px;
-    display: block;
-    position: relative;
+    width: 60px;
+    top: 5px;
+    left: 155px;
+    margin-right: 15px;
+    font-size: 15px;
+    display: inline;
+    position: absolute;
 }
 .cancelTimerButton{
      display:none;
@@ -210,11 +233,13 @@ input[type=number]::-webkit-outer-spin-button {
     transition: none;
  }
 .timer[data-state="open"] .cancelTimerButton{
-    display:inline;
-    position: relative;
-    width:75px;
-    font-size:15px;
+    display: inline;
+    position: absolute;
+    width: 75px;
+    font-size: 15px;
     transition: none;
+    top: 5px;
+    left: 225px;
 }
 .timer[data-state="settings"] .timerTitle{
     font-size:20px;
@@ -252,8 +277,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .timer[data-state="open"] .timerCountdown{
     font-size:15px;
-    text-align: center;
-    margin-right:15px;
+    top: 30%;
+    left: 10%;
+    position: absolute;
+    margin: 15px;
     display: inline;
 }
 .timer[data-state="settings-selected"] .addMinuteButton{

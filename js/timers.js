@@ -159,6 +159,7 @@ function addTimer(title, minute, second) {
         cancelTimerButton.classList.add("cancelTimerButton");
         cancelTimerButton.innerHTML="Cancel";
         cancelTimerButton.addEventListener("click", function(){
+            clearInterval(timermap[this.id]);
             document.getElementById("timers").removeChild(this.parentNode);
         }, false);
 

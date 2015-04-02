@@ -6,24 +6,12 @@ function openPanel() {
         elements[i].classList.remove("hidden");
     }
     document.getElementById("addtimerbutton").classList.remove("hidden");
-
-    var timerelements = document.getElementsByClassName("timer");
-    Array.prototype.forEach.call(timerelements, function(ele){
-                ele.dataset.state="settings";
-        }
-    );
     document.getElementById("timerConfig").dataset.state = "open";
     document.getElementById("timerConfig").classList.add("timerConfigAnimateIn");
     document.getElementById("timerConfig").classList.remove("timerConfigAnimateOut");
-    document.getElementById("timers").dataset.state = "settings";
-    var timers = document.getElementById("timers").children;
-    for (i=0; i<timers.length; ++i) {
-        timers[i].dataset.state = "settings";
-    }
 }
 
 function closePanel() {
-    document.getElementById("timers").dataset.state = "";
     document.getElementById("timerConfig").dataset.state = "closed";
     document.getElementById("timerConfig").classList.add("timerConfigAnimateOut");
     document.getElementById("timerConfig").classList.remove("timerConfigAnimateIn");
@@ -31,36 +19,16 @@ function closePanel() {
 
 function hideConfigElements() {
     // hide the internal elements after closing the panel since it looks better that way
-    if (document.getElementById("timerConfig").dataset.state == "closed") {
-        var timers = document.getElementById("timers").children;
-        for (i=0; i<timers.length; ++i) {
-            if (timers[i].dataset.state == "settings" || timers[i].dataset.state == "settings-selected") {
-                timers[i].dataset.state = "closed";
-            }
-        }
-        var elements = document.querySelectorAll("#timerConfigBody > :not(div)");
-        for (i = 0; i < elements.length; ++i) {
-            elements[i].classList.add("hidden");
-        }
-    }
 }
 
 function toggleTimer(){
-    if (this.dataset.state == "open" || this.dataset.state == "closed") {
+    if (this.dataset.state == "selected" || this.dataset.state == "un-selected") {
         var timers = document.getElementsByClassName("timer");
-        var toggle = this.dataset.state == "open";
+        var toggle = this.dataset.state == "selected";
         for (var i = 0; i < timers.length; i++) {
-            timers[i].dataset.state = "closed";
+            timers[i].dataset.state = "un-selected";
         }
-        this.dataset.state = toggle ? "closed" : "open";
-    }
-    else if(this.dataset.state == "settings"){
-        timers = document.getElementsByClassName("timer");
-        toggle = this.dataset.state == "settings-selected";
-        for (i = 0; i < timers.length; i++) {
-            timers[i].dataset.state = "settings";
-        }
-        this.dataset.state = toggle ? "settings" : "settings-selected";
+        this.dataset.state = toggle ? "un-selected" : "selected";
     }
 }
 
@@ -71,11 +39,6 @@ function addTimer(title, minute, second) {
     if (timers.children.length < MAX_TIMER_COUNT) {
         var newtimer = document.createElement("div");
         newtimer.classList.add("timer");
-        if (document.getElementById("timerConfig").dataset.state == "open") {
-            newtimer.dataset.state = "settings";
-        } else {
-            newtimer.dataset.state = "open";
-        }
         newtimer.addEventListener("click", toggleTimer);
 
         var timerContents = document.createElement("span");
@@ -159,7 +122,7 @@ function addTimer(title, minute, second) {
         cancelTimerButton.classList.add("cancelTimerButton");
         cancelTimerButton.innerHTML="Cancel";
         cancelTimerButton.addEventListener("click", function(){
-            clearInterval(timermap[this.id]);
+            clearInterval(timerMap[this.id]);
             document.getElementById("timers").removeChild(this.parentNode);
         }, false);
 
@@ -170,12 +133,7 @@ function addTimer(title, minute, second) {
         newtimer.appendChild(addMinuteButton);
         newtimer.appendChild(cancelTimerButton);
 
-        if(document.querySelector(".timerConfigAnimateIn") == null){
-            newtimer.dataset.state="closed";
-        }
-        else{
-            newtimer.dataset.state="settings";
-        }
+            newtimer.dataset.state="un-selected";
         timers.appendChild(newtimer);
         if(minute != "00" && second != "00") {
         }
@@ -287,4 +245,8 @@ function startTimer(duration, display) {
     timerMap[display.id]=setInterval(timer, 1000);
 }
 var timerMap ={};
-
+function test() {
+    var timers = document.querySelectorAll("#timers").item(0);
+    timers.style.position="absolute";
+    timers.style.position="fixed";
+}

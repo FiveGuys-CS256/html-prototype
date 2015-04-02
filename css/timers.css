@@ -2,13 +2,6 @@ body{
 	overflow: hidden;
 }
 
-.hidden {
-    display: none;
-}
-
-#timerConfigBody{
-}
-
 .completed {
     background-color: red;
     color:white;
@@ -17,6 +10,8 @@ body{
     -webkit-animation-iteration-count: 5;
     -webkit-animation-timing-function: ease-in-out
 }
+
+/*Timer Config*/
 #timerConfig {
     background-color: white;
     top: 100px;
@@ -35,19 +30,19 @@ body{
 .timerConfigAnimateOut {
     transition: 1s ease;
 }
-
+/*Timer Config Button*/
 #timerConfigButton {
     display: inline;
     background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     left: -75px;
+    top: 10px;
     border: 1px black;
     position: absolute;
     width: 75px;
     transition: 1s ease;
     height: 75px;
-    transform: translateY(3px);
 }
 #stopwatch_brown{
     cursor: default;
@@ -60,51 +55,39 @@ body{
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
+/*Timer Config Header*/
 #timerConfigHeader {
     color: #784a32;
 }
-
-#addtimerbutton {
-    background-color: #e6e6e6;
-    border-radius: 0px;
-    height: 75px;
-    margin-top: 10px;
-}
-#timers:not([data-state="settings"]){
-    position: fixed;
-    top: 90px;
-    right: -1px;
-    direction: rtl;
-}
-#timers[data-state="settings"]{
+#timers{
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 300px;
-}
-
-#bottom_fade {
-    z-index: 99;
-    position: fixed;
-    height: 500px;
-    bottom: 0%;
-    background-image: url("../img/bottom-fade.png");
-}
-
-.addTimerButtonContents{
-    color:#784a32;
-    font-size: 30px;
+    top: auto;
+    right: auto;
+    direction: ltr;
     position: relative;
-    top: 25%;
-    left: calc(50% - 71px);
+}
+#timerConfig[data-state="closed"] #timerConfigBody{
+    position: absolute;
+    right: 100%;
+}
+#timerConfig[data-state="closed"] #timers{
+    position:absolute;
+    top: 90px;
+    right: -1px;
+    direction: rtl;
+    overflow-y: visible;
+    overflow-x: visible;
 }
 
-.timer[data-state="settings-selected"] {
+#timerConfig[data-state="open"] .timer[data-state="selected"] {
     background-color: #ff9a62;
     border-radius: 0px;
     margin-bottom: 10px;
     height: 75px;
 }
-.timer[data-state="settings"]:last-of-type{
+#timerConfig[data-state="open"] .timer:last-of-type{
     margin-bottom: 0;
 }
 
@@ -118,11 +101,12 @@ body{
     position: relative;
     transition: 1s ease;
 }
-.timer[data-state="open"] {
+#timerConfig[data-state="closed"] .timer[data-state="selected"] {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     position: relative;
     height: 75px;
+    top: 90px;
     min-width: 325px;
     width:auto;
     text-align: left;
@@ -133,18 +117,19 @@ body{
     /*125-width*/
 
 }
-.timer[data-state="closed"] {
+#timerConfig[data-state="closed"] .timer {
     background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border: 1px black;
+    top: 90px;
     position: relative;
     direction:ltr;
     right:0px;
     width: 125px;
     transition: 0s ease;
 }
-.timer[data-state="closed"] .timerTitle{
+#timerConfig[data-state="closed"] .timer[data-state="un-selected"] .timerTitle{
     padding-top:10px;
     font-size:18px;
     margin:10px;
@@ -154,7 +139,7 @@ body{
     display: block;
     overflow: hidden
 }
-.timer[data-state="open"] .timerTitle{
+#timerConfig[data-state="closed"] .timer[data-state="selected"] .timerTitle{
     padding-top:10px;
     font-size:18px;
     margin:10px;
@@ -211,20 +196,23 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 18px;
     width:20px;
 }
-.addMinuteButton{
-    width:60px;
-    margin-right:15px;
-    font-size:15px;
-    display: none;
+
+
+#addtimerbutton {
+    background-color: #e6e6e6;
+    border-radius: 0px;
+    height: 75px;
+    margin-top: 10px;
 }
-.timer[data-state="open"] .addMinuteButton{
-    width: 60px;
-    top: 5px;
-    left: 155px;
-    margin-right: 15px;
-    font-size: 15px;
-    display: inline;
-    position: absolute;
+#timerConfig[data-state="closed"] #addtimerbutton{
+    display:none;
+}
+.addTimerButtonContents{
+    color:#784a32;
+    font-size: 30px;
+    position: relative;
+    top: 25%;
+    left: calc(50% - 71px);
 }
 .cancelTimerButton{
      display:none;
@@ -232,7 +220,7 @@ input[type=number]::-webkit-outer-spin-button {
      font-size:15px;
     transition: none;
  }
-.timer[data-state="open"] .cancelTimerButton{
+#timerConfig[data-state="closed"] .cancelTimerButton{
     display: inline;
     position: absolute;
     width: 75px;
@@ -241,41 +229,50 @@ input[type=number]::-webkit-outer-spin-button {
     top: 5px;
     left: 225px;
 }
-.timer[data-state="settings"] .timerTitle{
+#timerConfig[data-state="open"] .timerTitle{
     font-size:20px;
     margin-left:30px;
     margin-right:10px;
 }
-.timer[data-state="settings-selected"] .timerTitle{
-    font-size:20px;
-    margin-left:30px;
-    margin-right:10px;
-}
-.timer[data-state="settings"] .timerTime{
+#timerConfig[data-state="open"] .timerTime{
     display: inline;
     margin-right:15px;
 }
-.timer[data-state="settings-selected"] .timerTime{
-    display: inline;
-    margin-right:15px;
-}
-.timer[data-state="settings"] .addMinuteButton{
-    width:60px;
-    margin-right:15px;
-    font-size:15px;
-    display: inline;
-}
-.timer[data-state="settings-selected"] .timerCountdown{
-    display: none;
-    margin-right:15px;
-}
-.timer[data-state="settings"] .timerCountdown{
+.addMinuteButton{
     width:60px;
     margin-right:15px;
     font-size:15px;
     display: none;
+    background:#ff9a62;
+    border: none;
+    color: #784a32;
 }
-.timer[data-state="open"] .timerCountdown{
+.timer[data-state="selected"] .addMinuteButton{
+    background:#784a32;
+    color: #ff9a62;
+}
+#timerConfig[data-state="closed"] .addMinuteButton{
+    width: 60px;
+    top: 5px;
+    left: 155px;
+    margin-right: 15px;
+    font-size: 15px;
+    display: inline;
+    position: absolute;
+}
+#timerConfig[data-state="open"]  .addMinuteButton{
+    width:60px;
+    margin-right:15px;
+    font-size:15px;
+    display: inline;
+    background:#ff9a62;
+    border: none;
+    color: #784a32;
+}
+#timerConfig[data-state="open"] .timerCountdown{
+    display: none;
+}
+.timerCountdown{
     font-size:15px;
     top: 30%;
     left: 10%;
@@ -283,16 +280,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 15px;
     display: inline;
 }
-.timer[data-state="settings-selected"] .addMinuteButton{
-    width:60px;
-    margin-right:15px;
-    font-size:15px;
-    display: inline;
-    background:#784a32;
-    border: none;
-    color: #ff9a62;
-}
-.timer[data-state="settings"] .cancelTimerButton{
+#timerConfig[data-state="open"]  .cancelTimerButton{
     display:inline;
     width:75px;
     font-size:15px;
@@ -301,7 +289,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: #784a32;
     transition: none;
 }
-.timer[data-state="settings-selected"] .cancelTimerButton{
+#timerConfig[data-state="open"] .timer[data-state="selected"] .cancelTimerButton{
     display:inline;
     width:75px;
     font-size:15px;
@@ -329,9 +317,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 /* TODO: We don't want all the buttons to look like this so lets make the selector more specific */
 button {
-	background:#ff9a62;
 	border: none;
-	color: #784a32;
 	width: 100%;
 	font-size: 22px;
 	font-weight: bolder;

@@ -32,7 +32,7 @@ body{
 }
 /*Timer Config Button*/
 #timerConfigButton {
-    display: inline;
+    display: none;
     background-color:white;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -41,7 +41,20 @@ body{
     border: 1px black;
     position: absolute;
     width: 75px;
-    transition: 1s ease;
+    transition: 0s ease;
+    height: 75px;
+}
+#timerConfig[data-state="closed"] #timerConfigButton {
+    display: inline;
+    background-color:white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: -75px;
+    top: -72px;
+    border: 1px black;
+    position: absolute;
+    width: 75px;
+    transition: 0s ease;
     height: 75px;
 }
 #stopwatch_brown{
@@ -74,7 +87,7 @@ body{
 }
 #timerConfig[data-state="closed"] #timers{
     position:absolute;
-    top: 90px;
+    top: -87px;
     right: -1px;
     direction: rtl;
     overflow-y: visible;
@@ -127,7 +140,7 @@ body{
     direction:ltr;
     right:0px;
     width: 125px;
-    transition: 0s ease;
+    transition: 1s ease;
 }
 #timerConfig[data-state="closed"] .timer[data-state="un-selected"] .timerTitle{
     padding-top:10px;
@@ -228,6 +241,8 @@ input[type=number]::-webkit-outer-spin-button {
     transition: none;
     top: 5px;
     left: 225px;
+    background:#ff9a62;
+    color: #784a32;
 }
 #timerConfig[data-state="open"] .timerTitle{
     font-size:20px;
@@ -251,6 +266,14 @@ input[type=number]::-webkit-outer-spin-button {
     background:#784a32;
     color: #ff9a62;
 }
+#timerConfig[data-state="open"] .timer[data-state="selected"] .cancelTimerButton{
+    background:#784a32;
+    color: #ff9a62;
+}
+#timerConfig[data-state="open"] .timer[data-state="selected"] .addMinuteButton{
+     background:#784a32;
+     color: #ff9a62;
+ }
 #timerConfig[data-state="closed"] .addMinuteButton{
     width: 60px;
     top: 5px;
@@ -259,6 +282,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 15px;
     display: inline;
     position: absolute;
+    background:#ff9a62;
+    color: #784a32;
 }
 #timerConfig[data-state="open"]  .addMinuteButton{
     width:60px;

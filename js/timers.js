@@ -12,22 +12,29 @@ function openPanel() {
 }
 
 function closePanel() {
-    document.getElementById("timerConfig").dataset.state = "closed";
+    var timers = document.querySelectorAll(".timer");
+    Array.prototype.forEach.call(timers, function(item){
+        item.dataset.state="un-selected";
+    });
     document.getElementById("timerConfig").classList.add("timerConfigAnimateOut");
     document.getElementById("timerConfig").classList.remove("timerConfigAnimateIn");
 }
 
 function hideConfigElements() {
-    // hide the internal elements after closing the panel since it looks better that way
+
+    if (document.getElementById("timerConfig").classList.contains("timerConfigAnimateIn")) {
+    } else {
+        document.getElementById("timerConfig").dataset.state = "closed";
+    }
 }
 
 function toggleTimer(){
     if (this.dataset.state == "selected" || this.dataset.state == "un-selected") {
         var timers = document.getElementsByClassName("timer");
         var toggle = this.dataset.state == "selected";
-        for (var i = 0; i < timers.length; i++) {
-            timers[i].dataset.state = "un-selected";
-        }
+        Array.prototype.forEach.call(timers, function(item){
+            item.dataset.state="un-selected";
+        });
         this.dataset.state = toggle ? "un-selected" : "selected";
     }
 }
@@ -117,11 +124,13 @@ function addTimer(title, minute, second) {
             var timerTimeMinadd = this.parentNode.querySelectorAll(".timerTimeMin").item(0);
             timerTimeMinadd.value = parseInt(timerTimeMinadd.value)+1;
             fireEvent(timerTimeMinadd,"change");
+            this.parentNode.dataset.state = "un-selected";
         }, false);
         var cancelTimerButton = document.createElement("button");
         cancelTimerButton.classList.add("cancelTimerButton");
         cancelTimerButton.innerHTML="Cancel";
         cancelTimerButton.addEventListener("click", function(){
+            this.parentNode.dataset.state = "un-selected";
             clearInterval(timerMap[this.id]);
             document.getElementById("timers").removeChild(this.parentNode);
         }, false);
@@ -245,8 +254,3 @@ function startTimer(duration, display) {
     timerMap[display.id]=setInterval(timer, 1000);
 }
 var timerMap ={};
-function test() {
-    var timers = document.querySelectorAll("#timers").item(0);
-    timers.style.position="absolute";
-    timers.style.position="fixed";
-}

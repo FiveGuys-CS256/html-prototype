@@ -41,7 +41,7 @@ body{
     border: 1px black;
     position: absolute;
     width: 75px;
-    transition: 0s ease;
+    transition: 1s ease;
     height: 75px;
 }
 #timerConfig[data-state="closed"] #timerConfigButton {
@@ -54,7 +54,7 @@ body{
     border: 1px black;
     position: absolute;
     width: 75px;
-    transition: 0s ease;
+    transition: 1s ease;
     height: 75px;
 }
 #stopwatch_brown{
@@ -113,6 +113,7 @@ body{
     font-size: 30px;
     position: relative;
     transition: 1s ease;
+    cursor: pointer;
 }
 #timerConfig[data-state="closed"] .timer[data-state="selected"] {
     border-top-left-radius: 15px;
@@ -127,7 +128,6 @@ body{
     border: 1px black;
     background-color: white;
     transition: 1s ease;
-    /*125-width*/
 
 }
 #timerConfig[data-state="closed"] .timer {
@@ -158,7 +158,7 @@ body{
     margin:10px;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 325px;
+    width: auto;
     display: block;
     overflow: hidden
 }
@@ -231,14 +231,14 @@ input[type=number]::-webkit-outer-spin-button {
      display:none;
      width:75px;
      font-size:15px;
-    transition: none;
+    transition: 1s ease;
  }
 #timerConfig[data-state="closed"] .cancelTimerButton{
     display: inline;
     position: absolute;
     width: 75px;
     font-size: 15px;
-    transition: none;
+    transition: 1s ease;
     top: 5px;
     left: 225px;
     background:#ff9a62;
@@ -312,7 +312,7 @@ input[type=number]::-webkit-outer-spin-button {
     background:#ff9a62;
     border: none;
     color: #784a32;
-    transition: none;
+    transition: 1s ease;
 }
 #timerConfig[data-state="open"] .timer[data-state="selected"] .cancelTimerButton{
     display:inline;

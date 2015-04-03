@@ -69,6 +69,9 @@ function addTimer(title, minute, second) {
         timerTitle.addEventListener("click",function(){
             this.parentNode.dataset.state = "un-selected";
         });
+        timerTitle.addEventListener("blur",function(){
+            this.parentNode.dataset.state = "un-selected";
+        });
 
         var timerCountdown = document.createElement("div");
         timerCountdown.classList.add("timerCountdown");

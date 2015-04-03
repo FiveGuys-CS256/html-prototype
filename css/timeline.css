@@ -41,3 +41,8 @@
 .mini-picture{
     position:relative;
 }
+
+#sticky {
+    position: fixed;
+    top: 0;
+}

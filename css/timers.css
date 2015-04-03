@@ -15,7 +15,7 @@ body{
 #timerConfig {
     background-color: white;
     top: 100px;
-    width: 400px;
+    width: 500px;
     left: 100%;
     position: absolute;
     border-radius: 3px;
@@ -25,7 +25,7 @@ body{
 
 .timerConfigAnimateIn {
     transition: 1s ease;
-    transform: translateX(-401px);
+    transform: translateX(-501px);
 }
 .timerConfigAnimateOut {
     transition: 1s ease;
@@ -114,6 +114,7 @@ body{
     position: relative;
     transition: 1s ease;
     cursor: pointer;
+    text-align: right;
 }
 #timerConfig[data-state="closed"] .timer[data-state="selected"] {
     border-top-left-radius: 15px;

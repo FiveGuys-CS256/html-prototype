@@ -1,3 +1,47 @@
+/*example to use
+ alert("total time: " + allRecipes["Lab 1"][0]['timer']['5:00'] + "   " + allRecipes["Lab 1"][0]['timedInstructions']['5:00']);*/
+
+function populateTimeline(labNo) {
+
+    var timeline = document.getElementById("timeline");
+    var output = "";
+    for (var keys in allRecipes[labNo][0]["timedInstructions"]) {                   //do this for each time slot
+
+
+
+        output += ( "<tr><td>" + keys + "</td>");
+        for (var recipeNo = 0; recipeNo < 4; recipeNo++) {                        /*per recipe loop*/
+            output += "<td>";
+
+            var instruction = allRecipes[labNo][recipeNo]["timedInstructions"][keys];
+            for (var x = 0; x < 9; x++){                                            //per instruction, add <p> tags
+
+
+                if (instruction[x] != undefined){
+                    output += ("<p>" + instruction[x] + "</p>");
+                }
+            }
+
+
+
+            var title = allRecipes[labNo][recipeNo]["timerName"][keys];
+            var minute = allRecipes[labNo][recipeNo]["timer"][keys];
+
+            if (title != ""){
+                output+= ("<img style='height: 20px; width:20px;'src='img/stopwatch_brown.png' data-action='add_timer' data-title='" + title + "' data-minutes='" + minute + "' data-seconds='00'>" );
+                output+= "</td>";
+            }
+
+            //if (allRecipes[labNo][recipeNo]["timer"][keys] != null){
+
+
+
+        }
+        output += "</tr>";
+    }
+    timeline.innerHTML = output;
+
+}
 allRecipes = {
     "Lab 1": [
         {
@@ -17,7 +61,7 @@ allRecipes = {
                 "1 1/2 cups fresh white bread crumbs (5 slices, crusts removed)"
             ],
             "instructions": [
-                "Preheat the oven to 375 degrees F.",
+                "Preheat the oven to 375 degrees F. ",
                 "Drizzle oil into a large pot of boiling salted water.",
                 "Add the pasta and cook according to the directions on the package, 6 to 8 minutes. Drain well.",
                 "Meanwhile, heat the milk in a small saucepan, but don't boil it.",
@@ -29,6 +73,49 @@ allRecipes = {
                 "Melt the remaining 2 tablespoons of butter, combine them with the fresh bread crumbs, and sprinkle on the top.",
                 "Bake for 30 to 35 minutes, or until the sauce is bubbly and the macaroni is browned on the top."
             ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [ "Preheat the oven to 375 degrees F. ",
+                    "Drizzle oil into a large pot of boiling salted water.",
+                    "Add the pasta and cook according to the directions on the package, 6 to 8 minutes. Drain well.",
+                    "Meanwhile, heat the milk in a small saucepan, but don't boil it.",],
+                '6:30' : [ "In a large pot, melt 6 tablespoons of butter and add the flour.",
+                    "Cook over low heat for 2 minutes, stirring with a whisk. Still whisking, add the hot milk and cook for a minute or two more, until thickened and smooth.",
+                    "Off the heat, add the Gruyere, Cheddar, 1 tablespoon salt, the pepper, and nutmeg.",
+                    "Add the cooked macaroni and lobster and stir well.",
+                    "Place the mixture in 6 to 8 individual gratin dishes.",
+                    "Melt the remaining 2 tablespoons of butter, combine them with the fresh bread crumbs, and sprinkle on the top.",],
+                '6:45' : ["Bake for 30 to 35 minutes, or until the sauce is bubbly and the macaroni is browned on the top."],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : ["Cook Butter Mixture"],
+                '6:45' : ["Bake Lobster Mac"],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : ["2"],
+                '6:45' : ["30"],
+                '7:00' : []
+            },
             "image": "http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg"
         },
         {
@@ -56,6 +143,47 @@ allRecipes = {
                 "Pour boiling water into roasting pan to come halfway up the sides of the springform pan and carefully transfer to oven. Bake for 1 hour until top of cheesecake is golden brown, edges are set, and center jiggles slightly. Lift cheesecake from water bath, remove foil and parchment from outside of springform, and chill cheesecake in refrigerator for at least 8 hours.",
                 "To serve, remove side of springform pan and parchment strips. Cut cheesecake with a long, thin-bladed knife."
             ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [ "Preheat oven to 375 degrees with rack in lower third of oven.",
+                    "Butter the bottom and sides of a 9- by 13-inch springform pan. Line the sides of the pan with 4-inch-high strips of parchment and butter the parchment.",
+                    "In a food processor, pulse graham crackers with salt and sugar to fine crumbs. Add butter and pulse until fully incorporated. Press evenly into bottom of prepared springform pan and bake until crust is golden brown and set, 15 minutes. Remove from oven and transfer to wire rack to cool 10 minutes.",
+                ],
+                '5:45' : [],
+                '6:00' : ["In a large stand mixer fitted with the paddle attachment, beat cream cheese, butter, and sour cream with sugar until light and smooth. Beat in eggs one at a time until fully incorporated. Beat in remaining egg yolks, zest, and vanilla extract.",
+                    "Crisscross two long pieces of foil and place a piece of parchment on top. Place springform in center of foil and wrap foil tightly around bottom and sides of pan. Transfer to a roasting pan, pour filling into springform pan, and smooth the top.",
+                    "Pour boiling water into roasting pan to come halfway up the sides of the springform pan and carefully transfer to oven. Bake for 1 hour until top of cheesecake is golden brown, edges are set, and center jiggles slightly. Lift cheesecake from water bath, remove foil and parchment from outside of springform, and chill cheesecake in refrigerator for at least 8 hours.",
+                    "To serve, remove side of springform pan and parchment strips. Cut cheesecake with a long, thin-bladed knife."],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : ["Bake Crust"],
+                '5:45' : [],
+                '6:00' : ["Bake Cheesecake"],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : ["10"],
+                '5:45' : [],
+                '6:00' : ["60"],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg"
         },
         {
@@ -79,6 +207,47 @@ allRecipes = {
                     "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F.",
                     "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
                 ],
+            timedInstructions: {
+                '5:00' : ["Place the remaining 11 ounces of flour, remaining yeast, and all the salt into the bowl of a stand mixer, and add the pre-ferment from the refrigerator. Using the dough hook attachment, knead the mixture on low for 2 to 3 minutes just until it comes together. Cover the dough in the bowl with a kitchen towel and allow to rest for 20 minutes. After 20 minutes, knead the dough on medium speed for 5 to 10 minutes or until you are able to gently pull the dough into a thin sheet that light will pass through. The dough will be sticky, but not so sticky that you can't handle it.",
+                    "While the dough is kneading, pour half of the hot water into a shallow pan and place on the bottom rack of your oven.",
+                    "Grease the inside of a large straight-sided container with the vegetable oil. Place the dough ball into the container and set on the rack above the pan of water. Allow to rise until doubled in size, approximately 1 to 2 hours.",],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [ "Once the dough has doubled in size, turn it onto a counter top, lightly dust your hands with flour, and press the dough out with your knuckles; then fold 1 side in towards the middle of the mass and then the other, as if you were making a tri-fold wallet. Repeat the folding a second time. Cover the dough with a kitchen towel and allow to rest for another 10 minutes.",
+                    "Flatten dough again with your knuckles and then fold the dough in onto itself, like you are shaping something that looks like a jellyfish. Turn the dough over and squeeze the bottom together so that the top surface of the dough is smooth. Place the dough back onto the counter and begin to roll gently between your hands. Do not grab the dough but allow it to move gently back and forth between your hands, moving in a circular motion. Move the dough ball to a pizza peel or the bottom of a sheet pan that has been sprinkled with the cornmeal. Cover with the kitchen towel and allow to bench proof for 1 hour, or until you poke the dough and it quickly fills back in where you poked it.",
+                    "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F."
+                ],
+                '6:15' : [ "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
+                ],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : ["Rise Dough"],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : ["Bake Bread"],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : ["60"],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : ["1 hour"],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg"
         },
         {
@@ -105,6 +274,48 @@ allRecipes = {
                 "In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
                 "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
             ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : ["Preheat oven to 375 degrees.",
+                    "Lightly flour a rolling pin and work surface and roll out dough to a 12-inch round. Place in a 9-inch pie plate, fold overhang under, and crimp edge. Place a sheet of parchment paper over dough and fill with pie weights or dried beans.",
+                    "Bake until edge is dry and light golden, about 20 minutes.",
+                ],
+                '5:30' : ["Remove parchment and weights.",
+                    "Meanwhile, in a large skillet, melt butter over medium-high. Add onion, season with salt and pepper, and cook until light golden, 8 to 10 minutes.",
+                ],
+                '5:45' : [],
+                '6:00' : ["In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
+                    "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
+                ],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : ["Bake Quiche Crust"],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : ["Bake Quiche"],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : ["20"],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : ["45"],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
         }
     ],
@@ -136,6 +347,45 @@ allRecipes = {
                     "While potatoes boil, preheat a large skillet over medium high heat. Add oil to hot pan with beef or lamb. Season meat with salt and pepper. Brown and crumble meat for 3 or 4 minutes. If you are using lamb and the pan is fatty, spoon away some of the drippings. Add chopped carrot and onion to the meat. Cook veggies with meat 5 minutes, stirring frequently. In a second small skillet over medium heat cook butter and flour together 2 minutes. Whisk in broth and Worcestershire sauce. Thicken gravy 1 minute. Add gravy to meat and vegetables. Stir in peas.",
                     "Preheat broiler to high. Fill a small rectangular casserole with meat and vegetable mixture. Spoon potatoes over meat evenly. Top potatoes with paprika and broil 6 to 8 inches from the heat until potatoes are evenly browned. Top casserole dish with chopped parsley and serve."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [  "Boil potatoes in salted water until tender, about 12 minutes. Drain potatoes and pour them into a bowl. Combine sour cream, egg yolk and cream. Add the cream mixture into potatoes and mash until potatoes are almost smooth.",
+                            "While potatoes boil, preheat a large skillet over medium high heat. Add oil to hot pan with beef or lamb. Season meat with salt and pepper. Brown and crumble meat for 3 or 4 minutes. If you are using lamb and the pan is fatty, spoon away some of the drippings. Add chopped carrot and onion to the meat. Cook veggies with meat 5 minutes, stirring frequently. In a second small skillet over medium heat cook butter and flour together 2 minutes. Whisk in broth and Worcestershire sauce. Thicken gravy 1 minute. Add gravy to meat and vegetables. Stir in peas.",
+
+                ],
+                '6:30' : [],
+                '6:45' : [   "Preheat broiler to high. Fill a small rectangular casserole with meat and vegetable mixture. Spoon potatoes over meat evenly. Top potatoes with paprika and broil 6 to 8 inches from the heat until potatoes are evenly browned. Top casserole dish with chopped parsley and serve."
+                ],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : ["Boil Potatoes"],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : ["12"],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/06/Shepherds-pie-plated-500-rot-500x300.jpg"
         },
         {
@@ -159,6 +409,45 @@ allRecipes = {
                     "In a large bowl, beat the melted butter, milk and egg with a fork or wire whisk until well mixed. Add the cornmeal, flour, sugar, baking powder and salt all at once; stir just until the flour is moistened (batter will be lumpy). Pour batter into the pan; use a rubber spatula to scrape batter from bowl. Spread batter evenly in pan and smooth top of batter.",
                     "Bake 20 to 25 minutes or until golden brown and a toothpick inserted in the center comes out clean. Serve warm."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [  "Heat the oven to 400°F. Spray the bottom and sides of an 8-inch square pan or 9-inch round cake pan with the cooking spray.",
+                    "In a 1-quart saucepan, heat the butter over low heat until melted.",
+                    "In a large bowl, beat the melted butter, milk and egg with a fork or wire whisk until well mixed. Add the cornmeal, flour, sugar, baking powder and salt all at once; stir just until the flour is moistened (batter will be lumpy). Pour batter into the pan; use a rubber spatula to scrape batter from bowl. Spread batter evenly in pan and smooth top of batter.",
+                ],
+                '6:15' : [],
+                '6:30' : ["Bake 20 to 25 minutes or until golden brown and a toothpick inserted in the center comes out clean. Serve warm."
+                ],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : ["Bake Potatoes"],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : ["20"],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://ak-hdl.buzzfed.com/static/2014-11/23/10/enhanced/webdr05/enhanced-12842-1416757702-3.jpg"
         },
         {
@@ -186,6 +475,44 @@ allRecipes = {
                     "Add the broth, tomatoes with their juices, lentils, bay leaf, and thyme and stir to combine. Cover and bring to a simmer, about 15 minutes. Once simmering, reduce the heat to low and continue simmering, covered, until the lentils and vegetables are soft, about 15 minutes more.",
                     "Taste and season with more salt or pepper as needed, then stir in the vinegar. Add the spinach and stir until wilted. If you prefer a creamier texture, purée half of the soup in a blender and add it back to the pot."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [ "Heat the oil in a large saucepan over medium heat until shimmering, about 3 minutes. Add the celery, carrot, and onion and cook, stirring occasionally, until the vegetables have softened, about 10 minutes. Stir in the garlic and cook until fragrant, about 1 minute. Season with several generous pinches of salt and pepper.",
+                ],
+                '5:45' : [ "Add the broth, tomatoes with their juices, lentils, bay leaf, and thyme and stir to combine. Cover and bring to a simmer, about 15 minutes. Once simmering, reduce the heat to low and continue simmering, covered, until the lentils and vegetables are soft, about 15 minutes more.",
+                ],
+                '6:00' : [],
+                '6:15' : [ "Taste and season with more salt or pepper as needed, then stir in the vinegar. Add the spinach and stir until wilted. If you prefer a creamier texture, purée half of the soup in a blender and add it back to the pot."
+                ],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.jabber.com.mt/wp-content/uploads/2015/03/Smoky-Chickpea-Red-Lentil-Vegetable-Soup1.jpg"
         },
         {
@@ -212,6 +539,41 @@ allRecipes = {
                     "Bake in the preheated oven on the baking tray for 25 minutes. Remove the foil.",
                     "Bake for an additional 20 to 30 minutes, or until the filling is bubbling and the crust is golden. Cool on a wire rack."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://foodiesnetwork.tv/wp-content/uploads/2014/02/crock-pot-cherry-pie-2-500x300.png"
         }
     ],
@@ -240,6 +602,41 @@ allRecipes = {
                 "Place meats, shrimp, and veggies in individual bowls and set out buffet style. Instruct your guests to skewer their own kabobs and baste veggies with balsamic vinaigrette.",
                 "Grill kabobs directly over heat source for about 10 to 15 minutes, turning 1/4 rotation every 2 to 3 minutes, or until the meat and/or fish is cooked throughout.",
             ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://blog.getfoodgenius.com/wp-content/uploads/2015/01/shish-kebab-at-istanbul-mediterranean-500x300.jpg"
         },
         {
@@ -260,6 +657,41 @@ allRecipes = {
                     "Thinly slice onion and add it to the bowl along with chopped fresh dill.",
                     "Combine 2½ Tbsp vinegar with 3 Tbsp extra virgin olive oil, ½ tsp garlic salt and a pinch of pepper. Whisk the dressing together with a fork. Pour dressing over salad ingredients and stir well to combine. Add more garlic salt to taste if desired. You can serve the salad right away or refrigerate until ready to serve. It even tastes great after being refrigerated overnight!"
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.feedyoursoul2.com/wp-content/uploads/2014/02/60-degree-5007-500x300.jpg"
         },
         {
@@ -284,6 +716,41 @@ allRecipes = {
                     "In medium bowl, beat remaining ingredients with electric mixer on low speed 30 seconds, scraping bowl constantly. Beat on high speed 3 minutes, scraping bowl occasionally. Pour batter over pineapple and cherries.",
                     "Bake 50 to 55 minutes or until toothpick inserted in center comes out clean. Immediately place heatproof serving plate upside down over pan; turn plate and pan over. Leave pan over cake a few minutes so brown sugar mixture can drizzle over cake; remove pan. Serve warm. Store cake loosely covered."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.tablespoon.com/~/media/Images/Articles/rup/2012/12/2012-12-14-HobbitMovieParty-RingCake1-580.jpg"
         },
         {
@@ -315,6 +782,41 @@ allRecipes = {
                     "Cook chicken breasts on rack above unlit burner, covered with lid, turning once, until just cooked through (the meat next to the tender, when opened slightly, will be moist but no longer pink), about 30 minutes total. Transfer breasts to bowl with lemon dressing and turn to coat, then transfer to platter with legs.",
                     "Grill lemon slices on rack over flames, uncovered, until grill marks appear, about 3 minutes on each side, and transfer to platter with chicken."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.mazola.com/customaspx/ImagePreview.ashx?ImageUrl=~/UploadStorage/L/Lemon%20Basil%20Grilled%20Chicken.jpg&Width=500&Height=300"
         }
     ],
@@ -354,6 +856,41 @@ allRecipes = {
                     "Pass the tomatoes through the food mill. Be sure to pass all of the pulp through the holes leaving only the stems and the seeds, and be sure to scrape the pulp off of the bottom of the food mill. That's all of the big money stuff! Add the tomatoes to the pot and rinse out 1 of the empty tomato cans with water and add that water to the pot (about 2 to 3 cups). Season generously with salt and TASTE IT!!!! Tomatoes take a lot of salt. Season in baby steps and taste every step of the way. Cook the sauce for 2 to 3 hours, stirring occasionally and tasting frequently.",
                     "Use the sauce right away on pasta or for any other tomato sauce need. This sauce can also be cooled and stored in the refrigerator for a few days and freezes really well."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://cdn.crownmediadev.com/2c/9ec7c9b19ea24a3f630829853fe9f4/H&F-Ep1180-Product-Meatballs.jpg"
         },
         {
@@ -374,6 +911,41 @@ allRecipes = {
                     "Heat the oil in a large skillet over medium heat. Add the garlic and onions and cook for 3 to 4 minutes. Reduce the heat to low and add the rice and salt. Cook over a low heat for 3 minutes, stirring constantly to make sure the rice doesn't burn. Add 2 cups of the broth and the juice and zest of 2 limes and bring it to a boil. Reduce the heat to low, cover and simmer for 10 to 15 minutes or until the rice is done. Add more liquid as needed. The rice shouldn't be sticky.",
                     "Just before serving, stir through the juice of 1 lime and lots of chopped cilantro."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.mazola.com/customaspx/ImagePreview.ashx?ImageUrl=~/UploadStorage/C/CilantroLimeRice.jpg&Width=500&Height=300"
         },
         {
@@ -394,6 +966,41 @@ allRecipes = {
                     "Turn out onto a floured surface, and knead 15 to 20 times. Pat or roll dough out to 1 inch thick. Cut biscuits with a large cutter or juice glass dipped in flour. Repeat until all dough is used. Brush off the excess flour, and place biscuits onto an ungreased baking sheet.",
                     "Bake for 13 to 15 minutes in the preheated oven, or until edges begin to brown."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.mapleridgesyrup.com/images/recipes/biscuits.jpg"
         },
         {
@@ -418,6 +1025,41 @@ allRecipes = {
                     "In a medium bowl, beat the cream cheese and lemon juice at medium-low speed with an electric mixer until smooth.",
                     "In a separate medium bowl, beat the heavy cream at medium-high speed with an electric mixer until slightly thickened. Gradually add the confectioners' sugar, beating until soft peaks form. Gently fold into the cream cheese mixture; spread over the fruit. Sprinkle with chopped pecans. Serve immediately."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://countrysidemeats.us/wp-content/uploads/2014/06/Fruit-Salad-500x300.jpg"
         }
     ],
@@ -434,6 +1076,41 @@ allRecipes = {
                     "Bake for 12 to 15 minutes",
                     "Enjoy the food of the gods"
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://i2.wp.com/www.livingfrugaltips.com/wp-content/uploads/2010/05/Potato-Skin-Potato-Salad2.jpg"
         },
         {
@@ -455,6 +1132,41 @@ allRecipes = {
                     "While the chicken is roasting, melt the butter in a small bowl along with the garlic. Pour this along with hot sauce and salt into a bowl large enough to hold all of the chicken and stir to combine.",
                     "Remove the wings from the oven and transfer to the bowl and toss with the sauce. Serve warm."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.restaurantnews.com/wp-content/uploads/2014/01/Americans-to-Eat-1-25-Billion-Chicken-Wings-for-Super-Bowl.jpg"
         }
         ,
@@ -477,6 +1189,41 @@ allRecipes = {
                 "Drain on paper towels.",
                 "Serve with sauce for dipping."
             ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "https://41.media.tumblr.com/45fa6015e6e937a109df5a15e9575da9/tumblr_mgowjrPKzj1rnh2ngo1_500.jpg"
         },
         {
@@ -524,6 +1271,41 @@ allRecipes = {
                     "Pour in the orange chicken sauce, and stir to combine. Let the sauce come to a boil, then boil for an additional minute or two until thickened. Remove from heat and serve immediately over quinoa or rice. Garnish with green onions, sesame seeds and additional orange zest.",
                     "Whisk all ingredients together until combined. If you would like the sauce to be even sweeter, add an extra 2-4 tablespoons of honey."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://slurpstreatham.co.uk/menu/Sweet-Sour-Chicken.jpg"
         },
         {
@@ -554,6 +1336,41 @@ allRecipes = {
                     "Add 2 tbsp of light soy sauce and chopped egg to rice mixture and fold in; stir-fry for 1 minute more; serve.",
                     "Set out additional soy sauce on the table, if desired."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://mingsrestaurantmenu.com/yahoo_site_admin/assets/images/Hakka20Style20Fried20Rice.346225201_std.jpg"
         },
         {
@@ -574,6 +1391,41 @@ allRecipes = {
                     "Combine garlic, cream cheese, crab, green onions, Worcestershire sauce, and soy sauce in a bowl. To prevent wonton skins from drying, prepare only 1 or 2 rangoon at a time. Place 1 teaspoon of filling onto the center of each wonton skin. Moisten the edges with water and fold the wonton skin diagonally to form a triangle, pressing edges to seal. Moisten one of the bottom corners. Create a crown by pulling both bottom corners together and sealing. Arrange the rangoon on the baking sheet and lightly spray with cooking spray.",
                     "Bake in the preheated oven until golden brown, 12 to 15 minutes."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "https://s-media-cache-ak0.pinimg.com/736x/49/5e/0f/495e0f0da25f9c3f03130e69526a5223.jpg"
         },
         {
@@ -594,6 +1446,41 @@ allRecipes = {
                     "Bake for 5 minutes or until cookie has turned a golden color 1/2 inch wide around the outer edge of the circle. The center will remain pale. While one sheet is baking, prepare the other.",
                     "Remove from oven and quickly move cookie with a wide spatula and place upside down on a wooden board. Quickly place the fortune on the cookie, close to the middle and fold the cookie in half. Place the folded edge across the rim of a measuring cup and pull the pointed edges down, one on the inside of the cup and one on the outside. Place folded cookies into the cups of a muffin tin or egg carton to hold their shape until firm."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://cdn.smosh.com/sites/default/files/legacy.images/smosh-pit/052011/fortune-cookie-11.jpg"
         }
     ],
@@ -627,6 +1514,41 @@ allRecipes = {
                     "Coat the bottom of baking pan with butter and sprinkle with sugar. Place cinnamon roll slices close together in the pan and let rise until dough is doubled, about 45 minutes. Bake for about 30 minutes or until nicely browned.",
                     "Meanwhile, mix butter, powdered sugar, and vanilla. Add hot water 1 tablespoon at a time until the glaze reaches desired consistency. Spread over slightly cooled rolls."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.adweek.com/prnewser/files/2014/08/Cinnabon-Reaches-1000th-Bakery-Milestone.jpg"
         },
         {
@@ -656,6 +1578,41 @@ allRecipes = {
                     "Beat eggs in a bowl; mix in milk, flour, parsley, basil, salt, and pepper. Slowly pour egg mixture into baking dish.",
                     "Bake in preheated oven until a knife inserted near the center comes out clean, 35 to 40 minutes. Let stand 10 minutes before cutting."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://glamorousrecipes.com/wp-content/themes/elemin/themify/img.php?src=http://glamorousrecipes.com/wp-content/uploads/2013/09/Breakfast-Casserole-Ingredients.jpg&w=500&h=300"
         },
         {
@@ -675,6 +1632,41 @@ allRecipes = {
                     "Stir together sugar, cocoa and salt in medium saucepan; stir in water. Cook over medium heat, stirring constantly, until mixture comes to a boil. Boil and stir 2 minutes. Add milk; stirring constantly, heat to serving temperature. Do Not Boil.",
                     "Remove from heat; add vanilla. Beat with rotary beater or whisk until foamy. Serve topped with marshmallows or whipped cream, if desired. Five 8-oz. servings."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.1to1languages.com/uploadimages/20140305060828-chocolate%20caliente.jpg"
         },
         {
@@ -694,6 +1686,41 @@ allRecipes = {
                 [
                     "In a small bowl, whisk together oil, cider, vinegar, and honey. Add herbs, stirring to combine. Season with salt and pepper. Refrigerate until ready to use."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://cdn.crownmediadev.com/a8/4af79af4d341aefb9674e4100c3d65/arugula-salad-500x300.jpg"
         }
     ],
@@ -725,6 +1752,41 @@ allRecipes = {
                     "Place the tortillas on a work surface. Divide the shredded chicken evenly among the tortillas and roll up each like a cigar. Spread 1/3 cup of the sauce in a 13-by-9-by-2-inch glass baking dish. Arrange the enchiladas in 1 layer, seam-side down, snugly inside the dish. Pour the rest of the sauce over the enchiladas. Drizzle the cream mixture on top and sprinkle the cheese all over.",
                     "Bake until the cheese is melted and starting to brown in spots, about 30 minutes. Serve immediately."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://hotelesimperial.com.mx/convento/img/Carnes/suizas.png"
         },
         {
@@ -749,6 +1811,41 @@ allRecipes = {
                     "Meanwhile, heat the oil in a heavy Dutch oven over medium to medium-high heat. When the oil is sizzling, add the rice and sauté, stirring frequently until lightly toasted and golden, 8 to 10 minutes. Add the jalapeño and cook until they have softened, about 2 minutes, lowering the heat if necessary. Add garlic and cook for an additional 30 seconds.",
                     "Pour the boiling tomato mixture over the rice and stir to combine. Turn heat to low and cook, covered, until liquid has evaporated and rice is done, about 15 minutes. Remove from heat and gently stir the rice. Return the cover and allow to rest undisturbed for an additional 10 minutes. Add cilantro and lime juice; fluff gently with a fork. Taste and adjust seasoning if desired. Serve with additional lime wedges."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/05/Spanish-rice-angle-500-500x300.jpg"
         },
         {
@@ -774,6 +1871,41 @@ allRecipes = {
                 [
                     "In a large saucepan heat the vegetable oil. Add the onions and cook for 2 minutes. Once the onions have softened add the garlic and jalepenos and cook for another minute. Pour the chicken broth, tomatoes and beans into the pot and bring to a boil. Once at a boil lower heat to simmer and add your chicken breasts. Cook the chicken for 20 to 25 minutes. Once chicken is cooked remove from pot. When cool enough to handle shred it and set it aside. Add lime juice and fresh cilantro to the pot. In a serving bowl add a mound of shredded chicken. Ladle soup over chicken and top with a lime wedge, grilled tortilla strips, avocado slices and cheese."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.firehousegourmet.ca/_Media/tortilla-soup_med_hr.jpeg"
         },
         {
@@ -800,6 +1932,41 @@ allRecipes = {
                     "BAKE for 50 to 60 minutes or until wooden pick inserted in middle comes out clean. Remove pan from water.",
                     "LET cool before inverting cake onto a serving dish."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "https://s-media-cache-ak0.pinimg.com/736x/e1/92/8c/e1928ce4e87aeddfc7701102129b4c80.jpg"
         }
     ],
@@ -833,6 +2000,41 @@ allRecipes = {
                     "Arrange the buns on a parchment lined sheet tray and cover them with a clean kitchen towel. Alternatively, place the buns into a large 3-level bamboo steamer lined with parchment paper, 4 buns per level. Allow the buns to rest for 10 minutes.",
                     "In the meantime, fill a bamboo or stainless steel steamer with water and bring it to a boil. Cut 12 (4-inch) rounds from some parchment paper. When ready to cook, place the buns on the parchment rounds and into the steamer."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "https://easemyhome.files.wordpress.com/2015/02/vegetable-momos.jpg"
         },
         {
@@ -864,6 +2066,41 @@ allRecipes = {
                     "Stir in the garam masala, turmeric, and sugar and continue cooking for 20 secs before tipping in the tomatoes. Continue cooking on a medium heat for about 10 mins without a lid until the tomatoes reduce and darken.",
                     "Cut the chicken thighs into 3cm chunks and add to the pan once the tomatoes have thickened to a paste. Cook for 5 mins to coat the chicken in the masala and seal in the juices, and then pour over the hot chicken stock. Simmer for 8-10 mins without a lid until the chicken is tender and the masala lightly thickened – you might need to add an extra ladleful of stock or water if the curry needs it. Sprinkle with chopped coriander and serve with Indian flatbreads or fluffy basmati rice and a pot of yogurt on the side."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/10/Plated-1-500-500x300.jpg"
         },
         {
@@ -880,6 +2117,41 @@ allRecipes = {
                     "Discard tough lower third of broccoli stem. Peel remaining stem and cut crosswise into 1/2-inch-thick slices. Cut broccoli into 2-inch florets. In a steamer set over boiling water steam broccoli, covered, until crisp-tender, 4 to 5 minutes.",
                     "While broccoli is steaming, finely chop garlic and in a small skillet combine with oil, lemon juice, and salt and pepper to taste. Heat garlic mixture over moderate heat until garlic is fragrant. In a bowl toss broccoli with garlic mixture."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://41.media.tumblr.com/tumblr_m44eaf0oic1qg16rao1_500.jpg"
         },
         {
@@ -899,6 +2171,41 @@ allRecipes = {
                     "In a medium bowl, whisk together 1/2 cup sugar and the egg yolks until well blended and it just starts to lighten in color. Add the cream a little at a time, stirring continually. Pour the liquid into 6 (7 to 8-ounce) ramekins. Place the ramekins into a large cake pan or roasting pan. Pour enough hot water into the pan to come halfway up the sides of the ramekins. Bake just until the creme brulee is set, but still trembling in the center, approximately 40 to 45 minutes. Remove the ramekins from the roasting pan and refrigerate for at least 2 hours and up to 3 days.",
                     "Remove the creme brulee from the refrigerator for at least 30 minutes prior to browning the sugar on top. Divide the remaining 1/2 cup vanilla sugar equally among the 6 dishes and spread evenly on top. Using a torch, melt the sugar and form a crispy top. Allow the creme brulee to sit for at least 5 minutes before serving."
                 ],
+            timedInstructions: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+
+
+            },
+            timerName:{
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
+            timer: {
+                '5:00' : [],
+                '5:15' : [],
+                '5:30' : [],
+                '5:45' : [],
+                '6:00' : [],
+                '6:15' : [],
+                '6:30' : [],
+                '6:45' : [],
+                '7:00' : []
+            },
             "image": "http://doanvat.info/wp-content/uploads/2014/09/10-buoc-lam-bong-ngo-creme-brulee-nham-nhap-khi-xem-phim-10-500x300.jpg"
         }
     ]

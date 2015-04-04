@@ -1,5 +1,35 @@
 /*example to use
  alert("total time: " + allRecipes["Lab 1"][0]['timer']['5:00'] + "   " + allRecipes["Lab 1"][0]['timedInstructions']['5:00']);*/
+
+function populateTimeline(labNo) {
+
+
+    alert("total time: " + allRecipes[labNo][0]['timer']['6:30']);
+    var timeline = document.getElementById("timeline");
+    var output = "";
+    for (var keys in allRecipes[labNo][0]["timedInstructions"]) {                   //do this for each time slot
+        output += ( "<tr><td>" + keys + "</td>");
+        for (var recipeNo = 0; recipeNo < 4; recipeNo++) {                        /*per recipe loop*/
+            //alert(allRecipes[labNo][recipeNo]["timedInstructions"][keys].length);
+            var title = allRecipes[labNo][recipeNo]["timerName"][keys];
+            var minute = allRecipes[labNo][recipeNo]["timer"][keys];
+
+            output += ("<td>" + allRecipes[labNo][recipeNo]["timedInstructions"][keys]);
+            if (title != ""){
+                output+= ("<img style='height: 20px; width:20px;'src='img/stopwatch_brown.png' data-action='add_timer' data-title='" + title + "' data-minutes='" + minute + "' data-seconds='00'>" + "</td>");
+
+            }
+
+            //if (allRecipes[labNo][recipeNo]["timer"][keys] != null){
+
+
+
+        }
+        output += "</tr>";
+    }
+    timeline.innerHTML = output;
+
+}
 allRecipes = {
     "Lab 1": [
         {
@@ -104,9 +134,15 @@ allRecipes = {
             timedInstructions: {
                 '5:00' : [],
                 '5:15' : [],
-                '5:30' : [],
+                '5:30' : [ "Preheat oven to 375 degrees with rack in lower third of oven.",
+                    "Butter the bottom and sides of a 9- by 13-inch springform pan. Line the sides of the pan with 4-inch-high strips of parchment and butter the parchment.",
+                    "In a food processor, pulse graham crackers with salt and sugar to fine crumbs. Add butter and pulse until fully incorporated. Press evenly into bottom of prepared springform pan and bake until crust is golden brown and set, 15 minutes. Remove from oven and transfer to wire rack to cool 10 minutes.",
+                ],
                 '5:45' : [],
-                '6:00' : [],
+                '6:00' : ["In a large stand mixer fitted with the paddle attachment, beat cream cheese, butter, and sour cream with sugar until light and smooth. Beat in eggs one at a time until fully incorporated. Beat in remaining egg yolks, zest, and vanilla extract.",
+                    "Crisscross two long pieces of foil and place a piece of parchment on top. Place springform in center of foil and wrap foil tightly around bottom and sides of pan. Transfer to a roasting pan, pour filling into springform pan, and smooth the top.",
+                    "Pour boiling water into roasting pan to come halfway up the sides of the springform pan and carefully transfer to oven. Bake for 1 hour until top of cheesecake is golden brown, edges are set, and center jiggles slightly. Lift cheesecake from water bath, remove foil and parchment from outside of springform, and chill cheesecake in refrigerator for at least 8 hours.",
+                    "To serve, remove side of springform pan and parchment strips. Cut cheesecake with a long, thin-bladed knife."],
                 '6:15' : [],
                 '6:30' : [],
                 '6:45' : [],
@@ -117,9 +153,9 @@ allRecipes = {
             timerName:{
                 '5:00' : [],
                 '5:15' : [],
-                '5:30' : [],
+                '5:30' : ["Bake Crust"],
                 '5:45' : [],
-                '6:00' : [],
+                '6:00' : ["Bake Cheesecake"],
                 '6:15' : [],
                 '6:30' : [],
                 '6:45' : [],
@@ -128,9 +164,9 @@ allRecipes = {
             timer: {
                 '5:00' : [],
                 '5:15' : [],
-                '5:30' : [],
+                '5:30' : ["10"],
                 '5:45' : [],
-                '6:00' : [],
+                '6:00' : ["60"],
                 '6:15' : [],
                 '6:30' : [],
                 '6:45' : [],
@@ -160,12 +196,18 @@ allRecipes = {
                     "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
                 ],
             timedInstructions: {
-                '5:00' : [],
+                '5:00' : ["Place the remaining 11 ounces of flour, remaining yeast, and all the salt into the bowl of a stand mixer, and add the pre-ferment from the refrigerator. Using the dough hook attachment, knead the mixture on low for 2 to 3 minutes just until it comes together. Cover the dough in the bowl with a kitchen towel and allow to rest for 20 minutes. After 20 minutes, knead the dough on medium speed for 5 to 10 minutes or until you are able to gently pull the dough into a thin sheet that light will pass through. The dough will be sticky, but not so sticky that you can't handle it.",
+                    "While the dough is kneading, pour half of the hot water into a shallow pan and place on the bottom rack of your oven.",
+                    "Grease the inside of a large straight-sided container with the vegetable oil. Place the dough ball into the container and set on the rack above the pan of water. Allow to rise until doubled in size, approximately 1 to 2 hours.",],
                 '5:15' : [],
                 '5:30' : [],
                 '5:45' : [],
-                '6:00' : [],
-                '6:15' : [],
+                '6:00' : [ "Once the dough has doubled in size, turn it onto a counter top, lightly dust your hands with flour, and press the dough out with your knuckles; then fold 1 side in towards the middle of the mass and then the other, as if you were making a tri-fold wallet. Repeat the folding a second time. Cover the dough with a kitchen towel and allow to rest for another 10 minutes.",
+                    "Flatten dough again with your knuckles and then fold the dough in onto itself, like you are shaping something that looks like a jellyfish. Turn the dough over and squeeze the bottom together so that the top surface of the dough is smooth. Place the dough back onto the counter and begin to roll gently between your hands. Do not grab the dough but allow it to move gently back and forth between your hands, moving in a circular motion. Move the dough ball to a pizza peel or the bottom of a sheet pan that has been sprinkled with the cornmeal. Cover with the kitchen towel and allow to bench proof for 1 hour, or until you poke the dough and it quickly fills back in where you poked it.",
+                    "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F."
+                ],
+                '6:15' : [ "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
+                ],
                 '6:30' : [],
                 '6:45' : [],
                 '7:00' : []
@@ -173,23 +215,23 @@ allRecipes = {
 
             },
             timerName:{
-                '5:00' : [],
+                '5:00' : ["Rise Dough"],
                 '5:15' : [],
                 '5:30' : [],
                 '5:45' : [],
                 '6:00' : [],
-                '6:15' : [],
+                '6:15' : ["Bake Bread"],
                 '6:30' : [],
                 '6:45' : [],
                 '7:00' : []
             },
             timer: {
-                '5:00' : [],
+                '5:00' : ["60"],
                 '5:15' : [],
                 '5:30' : [],
                 '5:45' : [],
                 '6:00' : [],
-                '6:15' : [],
+                '6:15' : ["1 hour"],
                 '6:30' : [],
                 '6:45' : [],
                 '7:00' : []
@@ -222,10 +264,17 @@ allRecipes = {
             ],
             timedInstructions: {
                 '5:00' : [],
-                '5:15' : [],
-                '5:30' : [],
+                '5:15' : ["Preheat oven to 375 degrees.",
+                    "Lightly flour a rolling pin and work surface and roll out dough to a 12-inch round. Place in a 9-inch pie plate, fold overhang under, and crimp edge. Place a sheet of parchment paper over dough and fill with pie weights or dried beans.",
+                    "Bake until edge is dry and light golden, about 20 minutes.",
+                ],
+                '5:30' : ["Remove parchment and weights.",
+                    "Meanwhile, in a large skillet, melt butter over medium-high. Add onion, season with salt and pepper, and cook until light golden, 8 to 10 minutes.",
+                ],
                 '5:45' : [],
-                '6:00' : [],
+                '6:00' : ["In a medium bowl, whisk together eggs and cream. Add onion, bacon, and cheese and season with 1/2 teaspoon salt and 1/4 teaspoon pepper.",
+                    "Whisk to combine, pour into crust, and bake until center of quiche is just set, 40 to 45 minutes. Serve warm or at room temperature."
+                ],
                 '6:15' : [],
                 '6:30' : [],
                 '6:45' : [],
@@ -235,10 +284,10 @@ allRecipes = {
             },
             timerName:{
                 '5:00' : [],
-                '5:15' : [],
+                '5:15' : ["Bake Quiche Crust"],
                 '5:30' : [],
                 '5:45' : [],
-                '6:00' : [],
+                '6:00' : ["Bake Quiche"],
                 '6:15' : [],
                 '6:30' : [],
                 '6:45' : [],
@@ -246,10 +295,10 @@ allRecipes = {
             },
             timer: {
                 '5:00' : [],
-                '5:15' : [],
+                '5:15' : ["20"],
                 '5:30' : [],
                 '5:45' : [],
-                '6:00' : [],
+                '6:00' : ["45"],
                 '6:15' : [],
                 '6:30' : [],
                 '6:45' : [],
@@ -292,9 +341,13 @@ allRecipes = {
                 '5:30' : [],
                 '5:45' : [],
                 '6:00' : [],
-                '6:15' : [],
+                '6:15' : [  "Boil potatoes in salted water until tender, about 12 minutes. Drain potatoes and pour them into a bowl. Combine sour cream, egg yolk and cream. Add the cream mixture into potatoes and mash until potatoes are almost smooth.",
+                            "While potatoes boil, preheat a large skillet over medium high heat. Add oil to hot pan with beef or lamb. Season meat with salt and pepper. Brown and crumble meat for 3 or 4 minutes. If you are using lamb and the pan is fatty, spoon away some of the drippings. Add chopped carrot and onion to the meat. Cook veggies with meat 5 minutes, stirring frequently. In a second small skillet over medium heat cook butter and flour together 2 minutes. Whisk in broth and Worcestershire sauce. Thicken gravy 1 minute. Add gravy to meat and vegetables. Stir in peas.",
+
+                ],
                 '6:30' : [],
-                '6:45' : [],
+                '6:45' : [   "Preheat broiler to high. Fill a small rectangular casserole with meat and vegetable mixture. Spoon potatoes over meat evenly. Top potatoes with paprika and broil 6 to 8 inches from the heat until potatoes are evenly browned. Top casserole dish with chopped parsley and serve."
+                ],
                 '7:00' : []
 
 
@@ -305,7 +358,7 @@ allRecipes = {
                 '5:30' : [],
                 '5:45' : [],
                 '6:00' : [],
-                '6:15' : [],
+                '6:15' : ["Boil Potatoes"],
                 '6:30' : [],
                 '6:45' : [],
                 '7:00' : []
@@ -316,7 +369,7 @@ allRecipes = {
                 '5:30' : [],
                 '5:45' : [],
                 '6:00' : [],
-                '6:15' : [],
+                '6:15' : ["12"],
                 '6:30' : [],
                 '6:45' : [],
                 '7:00' : []
@@ -349,9 +402,13 @@ allRecipes = {
                 '5:15' : [],
                 '5:30' : [],
                 '5:45' : [],
-                '6:00' : [],
+                '6:00' : [  "Heat the oven to 400°F. Spray the bottom and sides of an 8-inch square pan or 9-inch round cake pan with the cooking spray.",
+                    "In a 1-quart saucepan, heat the butter over low heat until melted.",
+                    "In a large bowl, beat the melted butter, milk and egg with a fork or wire whisk until well mixed. Add the cornmeal, flour, sugar, baking powder and salt all at once; stir just until the flour is moistened (batter will be lumpy). Pour batter into the pan; use a rubber spatula to scrape batter from bowl. Spread batter evenly in pan and smooth top of batter.",
+                ],
                 '6:15' : [],
-                '6:30' : [],
+                '6:30' : ["Bake 20 to 25 minutes or until golden brown and a toothpick inserted in the center comes out clean. Serve warm."
+                ],
                 '6:45' : [],
                 '7:00' : []
 
@@ -364,7 +421,7 @@ allRecipes = {
                 '5:45' : [],
                 '6:00' : [],
                 '6:15' : [],
-                '6:30' : [],
+                '6:30' : ["Bake Potatoes"],
                 '6:45' : [],
                 '7:00' : []
             },
@@ -375,7 +432,7 @@ allRecipes = {
                 '5:45' : [],
                 '6:00' : [],
                 '6:15' : [],
-                '6:30' : [],
+                '6:30' : ["20"],
                 '6:45' : [],
                 '7:00' : []
             },
@@ -409,10 +466,13 @@ allRecipes = {
             timedInstructions: {
                 '5:00' : [],
                 '5:15' : [],
-                '5:30' : [],
-                '5:45' : [],
+                '5:30' : [ "Heat the oil in a large saucepan over medium heat until shimmering, about 3 minutes. Add the celery, carrot, and onion and cook, stirring occasionally, until the vegetables have softened, about 10 minutes. Stir in the garlic and cook until fragrant, about 1 minute. Season with several generous pinches of salt and pepper.",
+                ],
+                '5:45' : [ "Add the broth, tomatoes with their juices, lentils, bay leaf, and thyme and stir to combine. Cover and bring to a simmer, about 15 minutes. Once simmering, reduce the heat to low and continue simmering, covered, until the lentils and vegetables are soft, about 15 minutes more.",
+                ],
                 '6:00' : [],
-                '6:15' : [],
+                '6:15' : [ "Taste and season with more salt or pepper as needed, then stir in the vinegar. Add the spinach and stir until wilted. If you prefer a creamier texture, purée half of the soup in a blender and add it back to the pot."
+                ],
                 '6:30' : [],
                 '6:45' : [],
                 '7:00' : []

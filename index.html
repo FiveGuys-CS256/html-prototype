@@ -14,6 +14,7 @@
     <script src="js/recipes.js"></script>
     <script src="js/select-meal.js"></script>
     <script src="js/ingredient-view.js"></script>
+    <script src="js/global.js"></script>
     <script>
     // James: I will refactor this code later :p
         function getRecipe(name) {
@@ -132,9 +133,11 @@
       };
 
       function loadPage() {
-        window.location.href = '#close';
+        populateTimeline(selectedLab);
+        window.location.href = '#meal-modal';
         populateIngredientList('cheesecake');
         populateAllIngredients();
+
       };
 
       function setIdValue(id, value) {

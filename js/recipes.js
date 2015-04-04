@@ -3,8 +3,6 @@
 
 function populateTimeline(labNo) {
 
-
-    alert("total time: " + allRecipes[labNo][0]['timer']['6:30']);
     var timeline = document.getElementById("timeline");
     var output = "";
     for (var keys in allRecipes[labNo][0]["timedInstructions"]) {                   //do this for each time slot
@@ -20,7 +18,7 @@ function populateTimeline(labNo) {
 
 
                 if (instruction[x] != undefined){
-                    alert(instruction[x]);
+                    output += ("<p>" + instruction[x] + "</p>");
                 }
             }
 

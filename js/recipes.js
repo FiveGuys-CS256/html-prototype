@@ -8,16 +8,30 @@ function populateTimeline(labNo) {
     var timeline = document.getElementById("timeline");
     var output = "";
     for (var keys in allRecipes[labNo][0]["timedInstructions"]) {                   //do this for each time slot
+
+
+
         output += ( "<tr><td>" + keys + "</td>");
         for (var recipeNo = 0; recipeNo < 4; recipeNo++) {                        /*per recipe loop*/
-            //alert(allRecipes[labNo][recipeNo]["timedInstructions"][keys].length);
+            output += "<td>";
+
+            var instruction = allRecipes[labNo][recipeNo]["timedInstructions"][keys];
+            for (var x = 0; x < 9; x++){                                            //per instruction, add <p> tags
+
+
+                if (instruction[x] != undefined){
+                    alert(instruction[x]);
+                }
+            }
+
+
+
             var title = allRecipes[labNo][recipeNo]["timerName"][keys];
             var minute = allRecipes[labNo][recipeNo]["timer"][keys];
 
-            output += ("<td>" + allRecipes[labNo][recipeNo]["timedInstructions"][keys]);
             if (title != ""){
-                output+= ("<img style='height: 20px; width:20px;'src='img/stopwatch_brown.png' data-action='add_timer' data-title='" + title + "' data-minutes='" + minute + "' data-seconds='00'>" + "</td>");
-
+                output+= ("<img style='height: 20px; width:20px;'src='img/stopwatch_brown.png' data-action='add_timer' data-title='" + title + "' data-minutes='" + minute + "' data-seconds='00'>" );
+                output+= "</td>";
             }
 
             //if (allRecipes[labNo][recipeNo]["timer"][keys] != null){

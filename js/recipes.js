@@ -37,9 +37,17 @@ allRecipes = {
                 '5:30' : [],
                 '5:45' : [],
                 '6:00' : [],
-                '6:15' : [],
-                '6:30' : [],
-                '6:45' : [],
+                '6:15' : [ "Preheat the oven to 375 degrees F. ",
+                    "Drizzle oil into a large pot of boiling salted water.",
+                    "Add the pasta and cook according to the directions on the package, 6 to 8 minutes. Drain well.",
+                    "Meanwhile, heat the milk in a small saucepan, but don't boil it.",],
+                '6:30' : [ "In a large pot, melt 6 tablespoons of butter and add the flour.",
+                    "Cook over low heat for 2 minutes, stirring with a whisk. Still whisking, add the hot milk and cook for a minute or two more, until thickened and smooth.",
+                    "Off the heat, add the Gruyere, Cheddar, 1 tablespoon salt, the pepper, and nutmeg.",
+                    "Add the cooked macaroni and lobster and stir well.",
+                    "Place the mixture in 6 to 8 individual gratin dishes.",
+                    "Melt the remaining 2 tablespoons of butter, combine them with the fresh bread crumbs, and sprinkle on the top.",],
+                '6:45' : ["Bake for 30 to 35 minutes, or until the sauce is bubbly and the macaroni is browned on the top."],
                 '7:00' : []
 
 
@@ -51,8 +59,8 @@ allRecipes = {
                 '5:45' : [],
                 '6:00' : [],
                 '6:15' : [],
-                '6:30' : [],
-                '6:45' : [],
+                '6:30' : ["Cook Butter Mixture"],
+                '6:45' : ["Bake Lobster Mac"],
                 '7:00' : []
             },
             timer: {
@@ -62,8 +70,8 @@ allRecipes = {
                 '5:45' : [],
                 '6:00' : [],
                 '6:15' : [],
-                '6:30' : [],
-                '6:45' : [],
+                '6:30' : ["2"],
+                '6:45' : ["30"],
                 '7:00' : []
             },
             "image": "http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg"

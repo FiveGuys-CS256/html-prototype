@@ -1,2 +1,2 @@
-var selectedLab = "Lab 1";
+var selectedLab = "Lab 5";
 

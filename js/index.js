@@ -110,8 +110,8 @@ function populateAllIngredients() {
     for (var i = 0; i < recipes.length; i++) {
       var ingredients = recipes[i].ingredients;
 
-      for (var i = 0; i < ingredients.length; i++) {
-        html += "<li>" + ingredients[i] + "</li>";
+      for (var k = 0; k < ingredients.length; k++) {
+        html += "<li>" + ingredients[k] + "</li>";
       };
     };
 

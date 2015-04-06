@@ -558,10 +558,7 @@ allRecipes = {
             },
             "image": "http://www.buoneforchette.com/public/ric_img_scheda/87.jpg"
         }
-    ]
-};
-
-var toAddRecipes = {
+    ],
     "Lab 6": [
         {
             "name": "Orange Chicken",

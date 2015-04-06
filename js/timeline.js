@@ -1,52 +1,71 @@
-/*example to use
- alert("total time: " + allRecipes["Lab 1"][0]['timer']['5:00'] + "   " + allRecipes["Lab 1"][0]['timedInstructions']['5:00']);*/
 
-function populateTimeline(labNo) {
 
+function populateTimeTable() {
+    var labName = document.getElementsByClassName("lab-selected")[0].innerHTML;
     var timeline = document.getElementById("timeline");
-    var output = "";
-    var test0 = 1;
-    var test1 = 1;
-    var test2 = 1;
-    var test3 = 1;
-    for (var keys in allRecipes[labNo][0]["timedInstructions"]) {                   //do this for each time slot
-        output += ( "<tr><td>" + keys + "</td>");
-
-
-        for (var recipeNo = 0; recipeNo < 4; recipeNo++) {                        /*per recipe loop*/
-            output += "<td>";
-
-            var instruction = allRecipes[labNo][recipeNo]["timedInstructions"][keys];
-            for (var x = 0; x < 9; x++){                                            //per instruction, add <p> tags
-                if (instruction[x] != undefined){
-                    if (recipeNo == 0){
-                        output += ("<p>" + test0 + ". " +  instruction[x] + "</p>");
-                        test0++;
-                    }
-                    if (recipeNo == 1){
-                        output += ("<p>" + test1 + ". " +  instruction[x] + "</p>");
-                        test1++;
-                    }
-                    if (recipeNo == 2){
-                        output += ("<p>" + test2 + ". " +  instruction[x] + "</p>");
-                        test2++;
-                    }
-                    if (recipeNo == 3){
-                        output += ("<p>" + test3 + ". " +  instruction[x] + "</p>");
-                        test3++;
-                    }
-
+    for (var i=0; i<allRecipes[labName].length; ++i) {
+        var recipe = allRecipes[labName][i];
+        var step_number = 1;
+        // add the picture to the top
+        var image_src = recipe['image'];
+        var title = recipe['name'];
+        document.getElementById("image-" + (i+1)).innerHTML = "" +
+            "<a href='#single-recipe'><img src='" + image_src + "'></a>" +
+            "<a href='#' onclick='populateIngredientList(" + i + ")'>" +
+            "<h2>" + title + "</h2>" +
+            "</a>";
+        // clear all the previous times in the table
+        for (var j=0; j<allTimes.length; ++j) {
+            var table_td = document.getElementById("timeline-" + allTimes[j].replace(':', '')).children[i+1];
+            table_td.innerHTML = "";
+        }
+        Object.keys(recipe['timedInstructions']).forEach(function(key) {
+            var instructions = recipe['timedInstructions'][key];
+            var table_td = document.getElementById("timeline-" + key.replace(':','')).children[i+1];
+            var content = "";
+            for (var j=0; j<instructions.length; ++j) {
+                content += "<p>" + step_number + ". " + instructions[j] + "</p>";
+                ++step_number;
+            }
+            if (recipe['timer'][key]) {
+                var timers = recipe['timer'][key];
+                for (var j=0; j<timers.length; ++j) {
+                    var name = recipe['timer'][key][j]['name'];
+                    var minutes = recipe['timer'][key][j]['minutes'];
+                    content += "<img style='height: 20px; width:20px;' src='img/stopwatch_brown.png' data-action='add_timer' data-title='" + name + "' data-minutes='" + minutes + "'>";
                 }
             }
-
-            var title = allRecipes[labNo][recipeNo]["timerName"][keys];
-            var minute = allRecipes[labNo][recipeNo]["timer"][keys];
-            if (title != ""){
-                output+= ("<img style='height: 20px; width:20px;'src='img/stopwatch_brown.png' data-action='add_timer' data-title='" + title + "' data-minutes='" + minute + "' data-seconds='00'>" );
-                output+= "</td>";
-            }
-        }
-        output += "</tr>";
+            table_td.innerHTML = content;
+        });
     }
-    timeline.innerHTML = output;
+    initializePresetTimers();
 }
+
+window.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("loadMealButton").addEventListener('click', populateTimeTable);
+    //document.getElementById("timeline-container").addEventListener("scroll", function() {
+    //    var header = document.getElementById("timeline-header");
+    //    if (document.getElementById("timeline-container").scrollTop > 0) {
+    //        //for (var i=0; i<header.children.length; ++i) {
+    //        //    header.children[i].style.position = "fixed";
+    //        //}
+    //
+    //        var shift = document.getElementById("timeline-500").children[1].style.width;
+    //        header.style.position = "fixed";
+    //        header.style.zIndex = "100";
+    //        header.style.width = (shift*4)+"px";
+    //        header.style.paddingLeft = '100px';
+    //
+    //        //var shift = "50px";
+    //        ////debugger;
+    //        //style.position = "fixed";
+    //        //style.width = shift;
+    //        //style.left = shift;
+    //    } else {
+    //        //style.position = "inherit";
+    //        //style.width = 'auto';
+    //        ////style.left = 'auto';
+    //    }
+    //})
+});
+

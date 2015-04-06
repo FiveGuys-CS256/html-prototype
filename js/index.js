@@ -1,3 +1,12 @@
+function setLab() {
+    selectedLab = document.querySelectorAll(".lab-selected").item(0).innerHTML;
+    console.log("Set Lab To: " + selectedLab);
+    reloadData();
+}
+
+function reloadData() {
+    populateAllIngredients();
+}
 
 function ingredientList(recipe) {
     var list = "<h4> " + recipe['name'] + "</h4>";
@@ -35,6 +44,7 @@ function singleRecipeModal(recipe_name) {
 function populateIngredientList(name) {
     var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
     var recipes = allRecipes[currentLab];
+
     for (var i=0; i < recipes.length; ++i) {
         if (recipes[i]['name'] == name) {
             var recipe = recipes[i];
@@ -65,12 +75,14 @@ function populateAllIngredients() {
 }
 
 function mealLoaded() {
+    setLab();
     populateAllIngredients();
     var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
     document.getElementById("title").innerHTML = currentLab;
     var recipes = allRecipes[currentLab];
     populateIngredientList(recipes[0]['name']);
     var singles = document.querySelectorAll("a[href='#single-recipe']");
+
     for (var i=0; i<singles.length; ++i) {
         var single = singles[i];
         single.onclick = function () { singleRecipeModal(this.nextSibling.childNodes[0].innerHTML) };

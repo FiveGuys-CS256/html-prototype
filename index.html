@@ -19,119 +19,102 @@
 
     <script>
     // James: I will refactor this code later :p
-        function getRecipe(name) {
-            document.getElementById("single-recipe-name").innerHTML = name;
-            /* document.getElementById("single-recipe-ingredients").empty();
-            document.getElementById("single-recipe-directions").empty(); */
-            if(name == "New York Cheesecake")
-            {
-                fillRecipe(0,1);
-                populateIngredientList("cheesecake");
-            }
-            else if(name == "Artisan Bread")
-            {
-                fillRecipe(0,2);
-                populateIngredientList("bread");
-            }
-            else if(name == "Lobster Mac")
-            {
-                fillRecipe(0,0);
-                populateIngredientList("lobster");
-            }
-            else if(name == "Family Quiche")
-            {
-                fillRecipe(0,3);
-                populateIngredientList("quiche");
-            }
-        }
-
-        function fillRecipe(labNo, recipeNo)
-        {
-            var singleRecIng = document.getElementById("single-recipe-ingredients");
-            var cheesecake = allRecipes["Lab 1"][recipeNo]["ingredients"];
-
-            for (var i = 0; i < cheesecake.length; i++ ) {
-                var step = document.createElement("li");
-                step.innerHTML = cheesecake[i];
-                singleRecIng.appendChild(step);
-            }
-
-            var singleRecDir = document.getElementById("single-recipe-directions");
-            var cheesecake2 = allRecipes["Lab 1"][recipeNo]["instructions"];
-
-            for (var i = 0; i < cheesecake2.length; i++ ) {
-                var step = document.createElement("li");
-                step.innerHTML = cheesecake2[i];
-                singleRecDir.appendChild(step);
-            }
-
-            var singleRecImg = document.getElementById("single-recipe-image");
-            singleRecImg.src = allRecipes["Lab 1"][recipeNo].image;
-        }
-
-      function populateIngredientList(name) {
-        populateAllIngredients();
-
-        switch (name) {
-        case "lobster":
-          var recipe = allRecipes["Lab 1"][0];
-          populateIngredients(recipe);
-          break;
-        case "cheesecake":
-          var recipe = allRecipes["Lab 1"][1];
-          populateIngredients(recipe);
-          break;
-        case "bread":
-          var recipe = allRecipes["Lab 1"][2];
-          populateIngredients(recipe);
-          break;
-        case "quiche":
-          var recipe = allRecipes["Lab 1"][3];
-          populateIngredients(recipe);
-          break;
-        default:
-          // alert("None found");
-          break;
-        }
-      };
-
-      function populateIngredients(recipe) {
-        var myName = recipe.name;
-
-        var list = "";
-        list += "<h4> " + myName + "</h4>";
-        list += "<ul>";
-
-        for (var i = 0; i < recipe.ingredients.length; i++) {
-          list += "<li>" + recipe.ingredients[i] + "</li>"; 
-        };
-
-        list += "</ul>";
-
-        document.getElementById("ingredient-single-view").innerHTML = list;
-      };
-
-      function setLab() {
-        selectedLab = document.querySelectorAll(".lab-selected").item(0).innerHTML;
-        reloadData();
+      function getRecipe(name) {
+          document.getElementById("single-recipe-name").innerHTML = name;
+          /* document.getElementById("single-recipe-ingredients").empty();
+          document.getElementById("single-recipe-directions").empty(); */
+          if(name == "New York Cheesecake")
+          {
+              fillRecipe(0,1);
+              populateIngredientList("cheesecake");
+          }
+          else if(name == "Artisan Bread")
+          {
+              fillRecipe(0,2);
+              populateIngredientList("bread");
+          }
+          else if(name == "Lobster Mac")
+          {
+              fillRecipe(0,0);
+              populateIngredientList("lobster");
+          }
+          else if(name == "Family Quiche")
+          {
+              fillRecipe(0,3);
+              populateIngredientList("quiche");
+          }
       }
 
-      function loadPage() {
-        window.location.href = '#meal-modal';
-        populateIngredientList('cheesecake');
-        populateAllIngredients();
+      function fillRecipe(labNo, recipeNo)
+      {
+          var singleRecIng = document.getElementById("single-recipe-ingredients");
+          var cheesecake = allRecipes["Lab 1"][recipeNo]["ingredients"];
+
+          for (var i = 0; i < cheesecake.length; i++ ) {
+              var step = document.createElement("li");
+              step.innerHTML = cheesecake[i];
+              singleRecIng.appendChild(step);
+          }
+
+          var singleRecDir = document.getElementById("single-recipe-directions");
+          var cheesecake2 = allRecipes["Lab 1"][recipeNo]["instructions"];
+
+          for (var i = 0; i < cheesecake2.length; i++ ) {
+              var step = document.createElement("li");
+              step.innerHTML = cheesecake2[i];
+              singleRecDir.appendChild(step);
+          }
+
+          var singleRecImg = document.getElementById("single-recipe-image");
+          singleRecImg.src = allRecipes["Lab 1"][recipeNo].image;
+      }
+
+    function populateIngredientList(name) {
+      populateAllIngredients();
+
+      switch (name) {
+      case "lobster":
+        var recipe = allRecipes["Lab 1"][0];
+        populateIngredients(recipe);
+        break;
+      case "cheesecake":
+        var recipe = allRecipes["Lab 1"][1];
+        populateIngredients(recipe);
+        break;
+      case "bread":
+        var recipe = allRecipes["Lab 1"][2];
+        populateIngredients(recipe);
+        break;
+      case "quiche":
+        var recipe = allRecipes["Lab 1"][3];
+        populateIngredients(recipe);
+        break;
+      default:
+        // alert("None found");
+        break;
+      }
+    };
+
+    function populateIngredients(recipe) {
+      var myName = recipe.name;
+
+      var list = "";
+      list += "<h4> " + myName + "</h4>";
+      list += "<ul>";
+
+      for (var i = 0; i < recipe.ingredients.length; i++) {
+        list += "<li>" + recipe.ingredients[i] + "</li>"; 
       };
 
-      function setIdValue(id, value) {
-        document.getElementById(id).Value = value;
-      }
+      list += "</ul>";
 
-      // Add all data calls that need to be reloaded.
-      function reloadData() {
-        populateAllIngredients();
-      }
+      document.getElementById("ingredient-single-view").innerHTML = list;
+    };
 
-     </script>
+    function setIdValue(id, value) {
+      document.getElementById(id).Value = value;
+    }
+   </script>
 </head>
 <body>
 

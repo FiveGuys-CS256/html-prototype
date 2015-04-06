@@ -42,18 +42,62 @@ function singleRecipeModal(recipe_name) {
     }
 }
 
-function populateIngredientList(name) {
-    var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
-    var recipes = allRecipes[currentLab];
+function populateIngredients(recipe) {
+  var myName = recipe.name;
 
-    for (var i=0; i < recipes.length; ++i) {
-        if (recipes[i]['name'] == name) {
-            var recipe = recipes[i];
-            document.getElementById("ingredient-single-view").innerHTML = ingredientList(recipe);
-            break;
-        }
-    }
-}
+  var list = "";
+  list += "<h4> " + myName + "</h4>";
+  list += "<ul>";
+
+  for (var i = 0; i < recipe.ingredients.length; i++) {
+    list += "<li>" + recipe.ingredients[i] + "</li>"; 
+  };
+
+  list += "</ul>";
+
+  document.getElementById("ingredient-single-view").innerHTML = list;
+};
+
+function populateIngredientList(name) {
+  populateAllIngredients();
+  
+  switch (name) {
+  case 0:
+    var recipe = allRecipes[selectedLab][0];
+    populateIngredients(recipe);
+    break;
+  case 1:
+    var recipe = allRecipes[selectedLab][1];
+    populateIngredients(recipe);
+    break;
+  case 2:
+    var recipe = allRecipes[selectedLab][2];
+    populateIngredients(recipe);
+    break;
+  case 3:
+    var recipe = allRecipes[selectedLab][3];
+    populateIngredients(recipe);
+    break;
+  default:
+    // alert("None found");
+    break;
+  }
+};
+
+
+
+// function populateIngredientList(name) {
+//     var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
+//     var recipes = allRecipes[currentLab];
+
+//     for (var i=0; i < recipes.length; ++i) {
+//         if (recipes[i]['name'] == name) {
+//             var recipe = recipes[i];
+//             document.getElementById("ingredient-single-view").innerHTML = ingredientList(recipe);
+//             break;
+//         }
+//     }
+// }
 
 function populateAllIngredients() {
     var html = "";
@@ -88,6 +132,10 @@ function mealLoaded() {
         var single = singles[i];
         single.onclick = function () { singleRecipeModal(this.nextSibling.childNodes[0].innerHTML) };
     }
+}
+
+function setIdValue(id, value) {
+  document.getElementById(id).Value = value;
 }
 
 window.addEventListener("DOMContentLoaded", function() {

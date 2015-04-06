@@ -192,13 +192,25 @@ function togglePanel() {
         closePanel();
     }
 }
-
+function initializePresetTimers(){
+    var add_buttons = document.querySelectorAll("img[data-action='add_timer']");
+    for (var i=0; i<add_buttons.length; ++i) {
+        //onclick= is used instead of add event to prevent multiples of same listener being added
+        add_buttons[i].onclick=function(){
+            if (this.dataset.title) {
+                addTimer(this.dataset.title,this.dataset.minutes||"00",this.dataset.seconds||"00");
+            } else {
+                addTimer("title","00","00");
+            }
+        };
+    }
+}
 window.addEventListener("DOMContentLoaded", function() {
     document.getElementById("timerConfigButton").addEventListener('click', togglePanel);
     document.getElementById("closeConfigButton").addEventListener('click', togglePanel);
     document.getElementById("timerConfig").addEventListener("transitionend", hideConfigElements, true);
     var add_buttons = document.querySelectorAll("[data-action='add_timer']");
-    for (i=0; i<add_buttons.length; ++i) {
+    for (var i=0; i<add_buttons.length; ++i) {
         add_buttons[i].addEventListener("click", function(){
             if (this.dataset.title) {
                 addTimer(this.dataset.title,this.dataset.minutes||"00",this.dataset.seconds||"00");

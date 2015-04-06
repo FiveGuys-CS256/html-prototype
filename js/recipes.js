@@ -29,10 +29,6 @@ allRecipes = {
                 "Melt the remaining 2 tablespoons of butter, combine them with the fresh bread crumbs, and sprinkle on the top.",
                 "Bake for 30 to 35 minutes, or until the sauce is bubbly and the macaroni is browned on the top."
             ],
-            "short-instructions":
-            [
-                "Preheat oven"
-            ],
             "image": "http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg"
         },
         {

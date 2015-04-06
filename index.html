@@ -13,12 +13,16 @@
     <script src="js/recipes.js"></script>
     <script src="js/select-meal.js"></script>
     <script src="js/ingredient-view.js"></script>
+    <script src="js/global.js"></script>
     <script>
     // James: I will refactor this code later :p
-        function getRecipe(name) {
-            document.getElementById("single-recipe-name").innerHTML = name;
+        function getRecipe(recipeNo) {
+            document.getElementById("single-recipe-name").innerHTML = allRecipes[selectedLab][recipeNo].name;
+
+            fillRecipe(recipeNo);
             /* document.getElementById("single-recipe-ingredients").empty();
             document.getElementById("single-recipe-directions").empty(); */
+            /*
             if(name == "New York Cheesecake")
             {
                 fillRecipe(0,1);
@@ -39,30 +43,29 @@
                 fillRecipe(0,3);
                 populateIngredientList("quiche");
             }
+            */
         }
 
-        function fillRecipe(labNo, recipeNo)
+        function fillRecipe(recipeNo)
         {
             var singleRecIng = document.getElementById("single-recipe-ingredients");
-            var cheesecake = allRecipes["Lab 1"][recipeNo]["ingredients"];
-
+            var cheesecake = allRecipes[selectedLab][recipeNo]["ingredients"];
+            // removeChildren("single-recipe-ingredients");
             for (var i = 0; i < cheesecake.length; i++ ) {
                 var step = document.createElement("li");
                 step.innerHTML = cheesecake[i];
                 singleRecIng.appendChild(step);
             }
-
             var singleRecDir = document.getElementById("single-recipe-directions");
-            var cheesecake2 = allRecipes["Lab 1"][recipeNo]["instructions"];
-
+            var cheesecake2 = allRecipes[selectedLab][recipeNo]["instructions"];
+            // removeChildren("single-recipe-directions");
             for (var i = 0; i < cheesecake2.length; i++ ) {
                 var step = document.createElement("li");
                 step.innerHTML = cheesecake2[i];
                 singleRecDir.appendChild(step);
             }
-
             var singleRecImg = document.getElementById("single-recipe-image");
-            singleRecImg.src = allRecipes["Lab 1"][recipeNo].image;
+            singleRecImg.src = allRecipes[selectedLab][recipeNo].image;
         }
         function removeChildren(id)
         {
@@ -262,7 +265,7 @@
       <table id="timeline">
           <tr>
               <th style="background:none; border-style:none;"></th>
-              <th><div class="mini-picture" id="image-1" onclick="getRecipe('New York Cheesecake')"><a href="#single-recipe"><img src="http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg" ></a>
+              <th><div class="mini-picture" id="image-1" onclick="getRecipe(0)"><a href="#single-recipe"><img src="http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg" ></a>
                   <a href="#" onclick="populateIngredientList('cheesecake')">
                       <h2>
                       New York Cheesecake
@@ -270,7 +273,7 @@
                   </a>
                   </div>
               </th>
-              <th><div class="mini-picture" id="image-2" onclick="getRecipe('Artisan Bread')"><a href="#single-recipe"><img src="http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg" ></a>
+              <th><div class="mini-picture" id="image-2" onclick="getRecipe(1)"><a href="#single-recipe"><img src="http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg" ></a>
                   <a href="#" onclick="populateIngredientList('bread')">
                   <h2>
                       Artisan Bread
@@ -278,7 +281,7 @@
                   </a>
                   </div>
               </th>
-              <th><div class="mini-picture"  id="image-3" onclick="getRecipe('Lobster Mac')"><a href="#single-recipe"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" ></a>
+              <th><div class="mini-picture"  id="image-3" onclick="getRecipe(2)"><a href="#single-recipe"><img src="http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg" ></a>
                   <a href="#" onclick="populateIngredientList('lobster')">
                   <h2>
                       Lobster Mac 'n Cheese
@@ -286,7 +289,7 @@
                   </a>
                   </div>
               </th>
-              <th><div class="mini-picture" id="image-4" onclick="getRecipe('Family Quiche')"><a href="#single-recipe"><img src="http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg" ></a>
+              <th><div class="mini-picture" id="image-4" onclick="getRecipe(3)"><a href="#single-recipe"><img src="http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg" ></a>
                   <a href="#" onclick="populateIngredientList('quiche')">
                   <h2>
                       Family Quiche

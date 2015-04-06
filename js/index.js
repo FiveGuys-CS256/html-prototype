@@ -1,3 +1,12 @@
+function setLab() {
+    selectedLab = document.querySelectorAll(".lab-selected").item(0).innerHTML;
+    console.log("Set Lab To: " + selectedLab);
+    reloadData();
+}
+
+function reloadData() {
+    populateAllIngredients();
+}
 
 function ingredientList(recipe) {
     var list = "<h4> " + recipe['name'] + "</h4>";
@@ -35,6 +44,7 @@ function singleRecipeModal(recipe_name) {
 function populateIngredientList(name) {
     var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
     var recipes = allRecipes[currentLab];
+
     for (var i=0; i < recipes.length; ++i) {
         if (recipes[i]['name'] == name) {
             var recipe = recipes[i];
@@ -45,34 +55,34 @@ function populateIngredientList(name) {
 }
 
 function populateAllIngredients() {
-    var html = "<h4>All Ingredients</h4>" +
-        "<ul>" +
-            "<li>11 eggs, plus 2 egg yolks</li>" +
-            "<li>2 3/4 cups all-purpose flour</li>" +
-            "<li>8 1/2 oz butter</li>" +
-            "<li>1 homemade or store-bought single-crust pie dough</li>" +
-            "<li>2 cups medium diced yellow onion (from 1 large onion)</li>" +
-            "<li>Coarse salt and ground pepper</li>" +
-            "<li>1 teaspoon vanilla extract</li>" +
-            "<li>Zest of 1 lemon</li>" +
-            "<li>1 3/4 cups granulated sugar</li>" +
-            "<li>8 ounces sour cream, room temperature</li>" +
-            "<li>2 1/2 pounds cream cheese (5 8-ounce packages)</li>" +
-            "<li>1/3 cup sugar</li>" +
-            "<li>4 ounces graham crackers</li>" +
-            "<li>...</li>" +
-        "</ul>";
+    var html = "";
+    html = "<h4>All Ingredients</h4>";
+    html += "<ul>";
+
+    var recipes = allRecipes[selectedLab];
+
+    for (var i = 0; i < recipes.length; i++) {
+      var ingredients = recipes[i].ingredients;
+
+      for (var i = 0; i < ingredients.length; i++) {
+        html += "<li>" + ingredients[i] + "</li>";
+      };
+    };
+
+    html += "</ul>";
 
     document.getElementById("ingredient-combined-view").innerHTML = html;
 }
 
 function mealLoaded() {
+    setLab();
     populateAllIngredients();
     var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
     document.getElementById("title").innerHTML = currentLab;
     var recipes = allRecipes[currentLab];
     populateIngredientList(recipes[0]['name']);
     var singles = document.querySelectorAll("a[href='#single-recipe']");
+
     for (var i=0; i<singles.length; ++i) {
         var single = singles[i];
         single.onclick = function () { singleRecipeModal(this.nextSibling.childNodes[0].innerHTML) };

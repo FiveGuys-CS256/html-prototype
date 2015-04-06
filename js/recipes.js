@@ -83,16 +83,6 @@ allRecipes = {
                 "1 – 1 1/4 cups (237 -281.25 grams) lukewarm water",
                 "Cornmeal for dusting pizza peel or parchment paper"
             ],
-            "instructions": [
-                "Combine 5 ounces of the flour, 1/4 teaspoon of the yeast, all of the honey, and all of the bottled water in a straight-sided container; cover loosely and refrigerate.",
-                "Place the remaining 11 ounces of flour, remaining yeast, and all the salt into the bowl of a stand mixer, and add the pre-ferment from the refrigerator. Using the dough hook attachment, knead the mixture on low for 2 to 3 minutes just until it comes together. Cover the dough in the bowl with a kitchen towel and allow to rest for 20 minutes. After 20 minutes, knead the dough on medium speed for 5 to 10 minutes or until you are able to gently pull the dough into a thin sheet that light will pass through. The dough will be sticky, but not so sticky that you can't handle it.",
-                "While the dough is kneading, pour half of the hot water into a shallow pan and place on the bottom rack of your oven.",
-                "Grease the inside of a large straight-sided container with the vegetable oil. Place the dough ball into the container and set on the rack above the pan of water. Allow to rise until doubled in size, approximately 1 to 2 hours.",
-                "Once the dough has doubled in size, turn it onto a counter top, lightly dust your hands with flour, and press the dough out with your knuckles; then fold 1 side in towards the middle of the mass and then the other, as if you were making a tri-fold wallet. Repeat the folding a second time. Cover the dough with a kitchen towel and allow to rest for another 10 minutes.",
-                "Flatten dough again with your knuckles and then fold the dough in onto itself, like you are shaping something that looks like a jellyfish. Turn the dough over and squeeze the bottom together so that the top surface of the dough is smooth. Place the dough back onto the counter and begin to roll gently between your hands. Do not grab the dough but allow it to move gently back and forth between your hands, moving in a circular motion. Move the dough ball to a pizza peel or the bottom of a sheet pan that has been sprinkled with the cornmeal. Cover with the kitchen towel and allow to bench proof for 1 hour, or until you poke the dough and it quickly fills back in where you poked it.",
-                "Place an unglazed terra cotta dish upside down into the oven and heat the oven to 400 degrees F.",
-                "Combine the 1/3 cup of water and the cornstarch in a small bowl. Uncover the dough and brush the surface with this mixture. Gently slash the top surface of the dough ball in several places, approximately 1/3 to 1/2-inch deep. Add more of the hot water to the shallow pan if it has evaporated. Slide the bread onto the terra cotta dish in the oven and bake for 50 to 60 minutes. Once the bread has reached an internal temperature of 205 to 210 degrees F, remove to a cooling rack and allow to sit for 30 minutes before slicing."
-            ],
             timedInstructions: {
                 '5:00': ["Combine 5 ounces of the flour, 1/4 teaspoon of the yeast, all of the honey, and all of the bottled water in a straight-sided container; cover loosely and refrigerate for 8 to 12 hours."],
                 '5:15': ["Place the remaining 11 ounces of flour, remaining yeast, and all the salt into the bowl of a stand mixer, and add the pre-ferment from the refrigerator. Using the dough hook attachment, knead the mixture on low for 2 to 3 minutes just until it comes together. Cover the dough in the bowl with a kitchen towel and allow to rest for 20 minutes."],
@@ -266,10 +256,7 @@ allRecipes = {
             },
             "image": "http://foodiesnetwork.tv/wp-content/uploads/2014/02/crock-pot-cherry-pie-2-500x300.png"
         }
-    ]
-};
-
-var toAddRecipes = {
+    ],
     "Lab 3": [
         {
             "name": "Shish Kabobs",
@@ -283,15 +270,6 @@ var toAddRecipes = {
                 "1/2 teaspoon salt",
                 "1/2 teaspoon freshly ground black pepper",
                 "1 pound sirloin steak, cut into 1-inch cubes"
-            ],
-            "instructions": [
-                "Whisk together all of the Dijon-rosemary steak ingredients (except the steak) in a bowl. Toss the steak in the mixture until evenly coated. Cover and marinate in refrigerator for 2 hours.",
-                "Whisk together all of the citrus-tarragon chicken ingredients (except the chicken) in a bowl. Toss the chicken in the mixture until evenly coated. Cover and marinate in refrigerator for 2 hours.",
-                "Whisk together all of the lemon garlic shrimp ingredients (except the shrimp) in a bowl. Toss the shrimp in the mixture until evenly coated. Cover and marinate in refrigerator for 2 hours.",
-                "Cut vegetables into bite-size pieces.",
-                "Puree balsamic basting vinaigrette ingredients in a blender for 30 seconds.",
-                "Place meats, shrimp, and veggies in individual bowls and set out buffet style. Instruct your guests to skewer their own kabobs and baste veggies with balsamic vinaigrette.",
-                "Grill kabobs directly over heat source for about 10 to 15 minutes, turning 1/4 rotation every 2 to 3 minutes, or until the meat and/or fish is cooked throughout."
             ],
             timedInstructions: {
                 '5:00': ["Whisk together all of the Dijon-rosemary steak ingredients (except the steak) in a bowl. Toss the steak in the mixture until evenly coated. Cover and marinate in refrigerator for 2 hours.",
@@ -313,26 +291,15 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': ["Marinate meet"],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': ["Grill Kabobs"],
-                '7:00': []
-            },
             timer: {
-                '5:00': ["120"],
+                '5:00': [{"name":"Marinate Meat","minutes":"120"}],
                 '5:15': [],
                 '5:30': [],
                 '5:45': [],
                 '6:00': [],
                 '6:15': [],
                 '6:30': [],
-                '6:45': ["10"],
+                '6:45': [{"name":"GrillKabobs","minutes":"10"}],
                 '7:00': []
             },
             "image": "http://blog.getfoodgenius.com/wp-content/uploads/2015/01/shish-kebab-at-istanbul-mediterranean-500x300.jpg"
@@ -347,11 +314,6 @@ var toAddRecipes = {
                 "3 Tbsp extra virgin olive oil",
                 "½ tsp garlic salt, or to taste",
                 "Pinch of black pepper"
-            ],
-            "instructions": [
-                "Remove the tops and seeds from bell peppers, then cut them in half lengthwise and cut into thin strips. It was quicker to stack two bell peppers and cut two halves at a time. Transfer sliced bell peppers to a large mixing bowl.",
-                "Thinly slice onion and add it to the bowl along with chopped fresh dill.",
-                "Combine 2½ Tbsp vinegar with 3 Tbsp extra virgin olive oil, ½ tsp garlic salt and a pinch of pepper. Whisk the dressing together with a fork. Pour dressing over salad ingredients and stir well to combine. Add more garlic salt to taste if desired. You can serve the salad right away or refrigerate until ready to serve. It even tastes great after being refrigerated overnight!"
             ],
             timedInstructions: {
                 '5:00': [],
@@ -369,21 +331,10 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': ["Refrigerate Salad"],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': [],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
                 '5:15': [],
-                '5:30': ["90"],
+                '5:30': [{"name":"Refrigerate Salad","minutes":"90"}],
                 '5:45': [],
                 '6:00': [],
                 '6:15': [],
@@ -408,11 +359,6 @@ var toAddRecipes = {
                 "3/4 cup milk",
                 "1 egg"
             ],
-            "instructions": [
-                "Heat oven to 350°F. In 9-inch square pan, melt butter in oven. Sprinkle brown sugar evenly over melted butter. Arrange pineapple slices over brown sugar. Place cherry in center of each pineapple slice.",
-                "In medium bowl, beat remaining ingredients with electric mixer on low speed 30 seconds, scraping bowl constantly. Beat on high speed 3 minutes, scraping bowl occasionally. Pour batter over pineapple and cherries.",
-                "Bake 50 to 55 minutes or until toothpick inserted in center comes out clean. Immediately place heatproof serving plate upside down over pan; turn plate and pan over. Leave pan over cake a few minutes so brown sugar mixture can drizzle over cake; remove pan. Serve warm. Store cake loosely covered."
-            ],
             timedInstructions: {
                 '5:00': [],
                 '5:15': ["Heat oven to 350°F. In 9-inch square pan, melt butter in oven. Sprinkle brown sugar evenly over melted butter. Arrange pineapple slices over brown sugar. Place cherry in center of each pineapple slice."
@@ -429,23 +375,12 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': ["Bake Cake"],
-                '6:15': [],
-                '6:30': [],
-                '6:45': [],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
                 '5:15': [],
                 '5:30': [],
                 '5:45': [],
-                '6:00': ["60"],
+                '6:00': [{"name":"Bake Cake","minutes":"60"}],
                 '6:15': [],
                 '6:30': [],
                 '6:45': [],
@@ -465,20 +400,6 @@ var toAddRecipes = {
                 "12 whole chicken legs (7 lb)",
                 "8 chicken breast halves with skin and bones (8 lb)",
                 "5 lemons, cut crosswise into 1/3-inch-thick slices"
-            ],
-            "instructions": [
-                "Whisk together lemon juice, oregano, garlic, 1/2 tablespoon salt, and 1/2 teaspoon pepper in a large bowl and add oil in a slow stream, whisking.",
-                "Discard excess fat from chicken and season with remaining 1 1/2 tablespoons salt and 1 1/2 teaspoons pepper.",
-                "Open vents on bottom of grill and on lid. Light a large chimney starter of charcoal briquettes (80 to 100) and pour them evenly over 1 side of bottom rack.",
-                "Sear chicken legs in 3 batches on lightly oiled grill rack over coals, uncovered, turning once, until well browned, 6 to 8 minutes total, then transfer as cooked to a tray.",
-                "Put all browned legs on side of grill with no coals underneath and cook, covered with lid, turning occasionally, until just cooked through, 15 to 25 minutes more. Transfer legs to bowl with lemon dressing and turn to coat, then transfer to a serving platter and keep warm, loosely covered with foil, while cooking breasts.",
-                "Add 15 briquettes evenly to coals and wait until they just light, about 5 minutes. ",
-                "Sear chicken breasts, starting with skin sides down, in 2 batches on rack over coals, uncovered, turning once, until well browned, 6 to 8 minutes total, then transfer as cooked to tray.",
-                "Put all browned chicken breasts on side of grill with no coals underneath and cook, covered with lid, turning occasionally, until just cooked through, 12 to 15 minutes more. Transfer breasts to bowl with lemon dressing and turn to coat, then transfer to platter with legs.",
-                "Grill lemon slices on rack over coals, uncovered, until grill marks appear, about 3 minutes on each side, and transfer to platter with chicken.",
-                "Preheat all burners on high, then adjust heat to moderately high. Turn off 1 burner and arrange chicken legs on lightly oiled rack above it. Cook, covered with lid, turning legs once, until cooked through, about 40 minutes total.",
-                "Cook chicken breasts on rack above unlit burner, covered with lid, turning once, until just cooked through (the meat next to the tender, when opened slightly, will be moist but no longer pink), about 30 minutes total. Transfer breasts to bowl with lemon dressing and turn to coat, then transfer to platter with legs.",
-                "Grill lemon slices on rack over flames, uncovered, until grill marks appear, about 3 minutes on each side, and transfer to platter with chicken."
             ],
             timedInstructions: {
                 '5:00': ["Whisk together lemon juice, oregano, garlic, 1/2 tablespoon salt, and 1/2 teaspoon pepper in a large bowl and add oil in a slow stream, whisking.",
@@ -504,25 +425,14 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': ["Charcoal Ready"],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': ["Cook Legs/Breasts"],
-                '6:45': [],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
-                '5:15': ["15"],
+                '5:15': [{"name":"Charcoal Ready","minutes":"15"}],
                 '5:30': [],
                 '5:45': [],
                 '6:00': [],
                 '6:15': [],
-                '6:30': ["40"],
+                '6:30': [{"name":"Cook Legs/Breasts","minutes":"40"}],
                 '6:45': [],
                 '7:00': []
             },
@@ -554,15 +464,6 @@ var toAddRecipes = {
                 "4 large garlic cloves, smashed and chopped",
                 "4 (28-ounce) cans Italian plum San Marzano tomatoes"
             ],
-            "instructions": [
-                "Coat a large saute pan with olive oil, add the onions and bring to a medium-high heat. Season the onions generously with salt and cook for about 5 to 7 minutes. The onions should be very soft and aromatic but have no color. Add the garlic and the crushed red pepper and saute for another 1 to 2 minutes. Turn off heat and allow to cool.",
-                "In a large bowl combine the meats, eggs, Parmigiano, parsley and bread crumbs. It works well to squish the mixture with your hands. Add the onion mixture and season generously with salt and squish some more. Add the water and do 1 final really good squish. The mixture should be quite wet.",
-                "Preheat the oven to 350 degrees F.",
-                "Shape the meat into desired size. Some people like 'em big some people like 'em small. I prefer meatballs slightly larger than a golf ball. Coat a large saute pan with olive oil and bring to a medium-high heat. Brown the meatballs on all sides. Place them on a cookie sheet and bake them in the preheated oven for about 15 minutes or until the meatballs are cooked all the way through. If using right away, add them to your big pot of marinara sauce. If not using right away, they can be frozen for later use. Serve with pasta and sauce or just eat them straight out of the pot! YUM!",
-                "Coat a large saucepot with olive oil and add the pancetta. Bring the pot to a medium-high heat and cook the pancetta for 4 to 5 minutes. Add the onions, season generously with salt and stir to coat with olive oil. Cook the onions for 6 to 7 minutes stirring frequently. The onions should become very soft and aromatic but have no color. Add the garlic and cook for another 2 to 3 minutes stirring frequently.",
-                "Pass the tomatoes through the food mill. Be sure to pass all of the pulp through the holes leaving only the stems and the seeds, and be sure to scrape the pulp off of the bottom of the food mill. That's all of the big money stuff! Add the tomatoes to the pot and rinse out 1 of the empty tomato cans with water and add that water to the pot (about 2 to 3 cups). Season generously with salt and TASTE IT!!!! Tomatoes take a lot of salt. Season in baby steps and taste every step of the way. Cook the sauce for 2 to 3 hours, stirring occasionally and tasting frequently."
-
-            ],
             timedInstructions: {
                 '5:00': [],
                 '5:15': [],
@@ -582,26 +483,15 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': ["Cook with onions"],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': ["Sauce Ready"],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
                 '5:15': [],
-                '5:30': ["6"],
+                '5:30': [{"name":"Cook with onions","minutes":"6"}],
                 '5:45': [],
                 '6:00': [],
                 '6:15': [],
                 '6:30': [],
-                '6:45': ["120"],
+                '6:45': [{"name":"Sauce Ready","minutes":"120"}],
                 '7:00': []
             },
             "image": "http://cdn.crownmediadev.com/2c/9ec7c9b19ea24a3f630829853fe9f4/H&F-Ep1180-Product-Meatballs.jpg"
@@ -618,17 +508,16 @@ var toAddRecipes = {
                 "Juice of 3 limes and zest of 2 limes (hold back juice of 1 lime for garnish)",
                 "Chopped fresh cilantro, for garnish"
             ],
-            "instructions": [
-                "Heat the oil in a large skillet over medium heat. Add the garlic and onions and cook for 3 to 4 minutes. Reduce the heat to low and add the rice and salt. Cook over a low heat for 3 minutes, stirring constantly to make sure the rice doesn't burn. Add 2 cups of the broth and the juice and zest of 2 limes and bring it to a boil. Reduce the heat to low, cover and simmer for 10 to 15 minutes or until the rice is done. Add more liquid as needed. The rice shouldn't be sticky.",
-                "Just before serving, stir through the juice of 1 lime and lots of chopped cilantro."
-            ],
             timedInstructions: {
                 '5:00': [],
                 '5:15': [],
                 '5:30': [],
                 '5:45': [],
                 '6:00': [],
-                '6:15': ["Heat the oil in a large skillet over medium heat. Add the garlic and onions and cook for 3 to 4 minutes. Reduce the heat to low and add the rice and salt. Cook over a low heat for 3 minutes, stirring constantly to make sure the rice doesn't burn. Add 2 cups of the broth and the juice and zest of 2 limes and bring it to a boil. Reduce the heat to low, cover and simmer for 10 to 15 minutes or until the rice is done. Add more liquid as needed. The rice shouldn't be sticky."
+                '6:15': ["Heat the oil in a large skillet over medium heat. Add the garlic and onions and cook for 3 to 4 minutes. " +
+                "Reduce the heat to low and add the rice and salt. Cook over a low heat for 3 minutes, stirring constantly to make sure the rice doesn't burn. " +
+                "Add 2 cups of the broth and the juice and zest of 2 limes and bring it to a boil. " +
+                "Reduce the heat to low, cover and simmer for 10 to 15 minutes or until the rice is done. Add more liquid as needed. The rice shouldn't be sticky."
                 ],
                 '6:30': [],
                 '6:45': [],
@@ -637,24 +526,13 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': [],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
                 '5:15': [],
                 '5:30': [],
                 '5:45': [],
                 '6:00': [],
-                '6:15': [],
+                '6:15': [{"name":"Cook onions, then rice","minutes":"15"}],
                 '6:30': [],
                 '6:45': [],
                 '7:00': []
@@ -670,12 +548,6 @@ var toAddRecipes = {
                 "1 tablespoon white sugar",
                 "1/3 cup shortening",
                 "1 cup milk"
-            ],
-            "instructions": [
-                "Preheat oven to 425 degrees F (220 degrees C).",
-                "In a large bowl, whisk together the flour, baking powder, salt, and sugar. Cut in the shortening until the mixture resembles coarse meal. Gradually stir in milk until dough pulls away from the side of the bowl.",
-                "Turn out onto a floured surface, and knead 15 to 20 times. Pat or roll dough out to 1 inch thick. Cut biscuits with a large cutter or juice glass dipped in flour. Repeat until all dough is used. Brush off the excess flour, and place biscuits onto an ungreased baking sheet.",
-                "Bake for 13 to 15 minutes in the preheated oven, or until edges begin to brown."
             ],
             timedInstructions: {
                 '5:00': ["Preheat oven to 425 degrees F (220 degrees C)."
@@ -694,17 +566,6 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': ["Biscuits Done"],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
                 '5:15': [],
@@ -713,7 +574,7 @@ var toAddRecipes = {
                 '6:00': [],
                 '6:15': [],
                 '6:30': [],
-                '6:45': ["13"],
+                '6:45': [{"name":"Biscuits Done","minutes":"13"}],
                 '7:00': []
             },
             "image": "http://www.mapleridgesyrup.com/images/recipes/biscuits.jpg"
@@ -733,11 +594,6 @@ var toAddRecipes = {
                 "1/4 cup confectioners' sugar",
                 "1/2 cup chopped pecans"
             ],
-            "instructions": [
-                "In a serving bowl, combine the blueberries, blackberries, cantaloupe, grapes, strawberries, and starfruit.",
-                "In a medium bowl, beat the cream cheese and lemon juice at medium-low speed with an electric mixer until smooth.",
-                "In a separate medium bowl, beat the heavy cream at medium-high speed with an electric mixer until slightly thickened. Gradually add the confectioners' sugar, beating until soft peaks form. Gently fold into the cream cheese mixture; spread over the fruit. Sprinkle with chopped pecans. Serve immediately."
-            ],
             timedInstructions: {
                 '5:00': [],
                 '5:15': [],
@@ -753,17 +609,6 @@ var toAddRecipes = {
                 '7:00': []
 
 
-            },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': [],
-                '7:00': []
             },
             timer: {
                 '5:00': [],
@@ -785,11 +630,6 @@ var toAddRecipes = {
             "ingredients": [
                 "TGIF Frozen Potato Skins"
             ],
-            "instructions": [
-                "Preheat oven to 450",
-                "Bake for 12 to 15 minutes",
-                "Enjoy the food of the gods"
-            ],
             timedInstructions: {
                 '5:00': ["Preheat oven to 450"
                 ],
@@ -806,17 +646,6 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': ["Heavenly Goodness Done"],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
                 '5:15': [],
@@ -825,7 +654,7 @@ var toAddRecipes = {
                 '6:00': [],
                 '6:15': [],
                 '6:30': [],
-                '6:45': ["12"],
+                '6:45': [{"name":"Heavenly Goodness Done","minutes":"12"}],
                 '7:00': []
             },
             "image": "http://i2.wp.com/www.livingfrugaltips.com/wp-content/uploads/2010/05/Potato-Skin-Potato-Salad2.jpg"
@@ -838,14 +667,6 @@ var toAddRecipes = {
                 "1 small clove garlic, minced",
                 "1/4 cup hot sauce",
                 "1/2 teaspoon kosher salt"
-            ],
-            "instructions": [
-                "Place a 6-quart saucepan with a steamer basket and 1-inch of water in the bottom, over high heat, cover and bring to a boil.",
-                "Remove the tips of the wings and discard or save for making stock. Using kitchen shears, or a knife, separate the wings at the joint. Place the wings into the steamer basket, cover, reduce the heat to medium and steam for 10 minutes. Remove the wings from the basket and carefully pat dry. Lay the wings out on a cooling rack set in a half sheet pan lined with paper towels and place in the refrigerator for 1 hour.",
-                "Preheat the oven to 425 degrees F.",
-                "Replace the paper towels with parchment paper. Roast on the middle rack of the oven for 20 minutes. Turn the wings over and cook another 20 minutes or until meat is cooked through and the skin is golden brown.",
-                "While the chicken is roasting, melt the butter in a small bowl along with the garlic. Pour this along with hot sauce and salt into a bowl large enough to hold all of the chicken and stir to combine.",
-                "Remove the wings from the oven and transfer to the bowl and toss with the sauce. Serve warm."
             ],
             timedInstructions: {
                 '5:00': ["Place a 6-quart saucepan with a steamer basket and 1-inch of water in the bottom, over high heat, cover and bring to a boil."
@@ -866,24 +687,13 @@ var toAddRecipes = {
 
 
             },
-            timerName: {
-                '5:00': [],
-                '5:15': ["Refrigerate Wings"],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': ["Roast Wings"],
-                '6:30': [],
-                '6:45': [],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
-                '5:15': ["60"],
+                '5:15': [{"name":"Refrigerate Wings","minutes":"60"}],
                 '5:30': [],
                 '5:45': [],
                 '6:00': [],
-                '6:15': ["20"],
+                '6:15': [{"name":"Roast Wings","minutes":"20"}],
                 '6:30': [],
                 '6:45': [],
                 '7:00': []
@@ -901,14 +711,6 @@ var toAddRecipes = {
                 "1 lb mozzarella cheese, cut into 3/4 inch x 3/4 inch strips (or you can use string cheese and cut each in half)",
                 "1 cup vegetable oil",
                 "1 cup jarred pizza sauce or 1 cup marinara sauce"
-            ],
-            "instructions": [
-                "Whisk eggs and milk together.",
-                "Coat each piece of cheese with flour, then dip in egg and then roll in bread crumbs.",
-                "Dip in egg and crumbs again.",
-                "Heat oil in skillet and cook sticks for about a minute on each side, or until golden and before cheese starts to leak.",
-                "Drain on paper towels.",
-                "Serve with sauce for dipping."
             ],
             timedInstructions: {
                 '5:00': [],
@@ -928,17 +730,6 @@ var toAddRecipes = {
                 ]
 
 
-            },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': [],
-                '7:00': []
             },
             timer: {
                 '5:00': [],
@@ -963,10 +754,6 @@ var toAddRecipes = {
                 "3 tablespoons grated cheese, Parmigiano or Romano, optional",
                 "Chopped fresh parsley"
             ],
-            "instructions": [
-                "Combine garlic, butter, and oil in a microwave safe dish or in a small saucepan. Heat garlic and butter and oil in microwave for 1 minute or in a small pot over moderate-low heat for 3 minutes.",
-                "Toast split bread under broiler. Remove bread when it is toasted golden brown in color. Brush bread liberally with garlic oil. Sprinkle with cheese, if using, and parsley. If you added cheese, return to broiler and brown 30 seconds. Cut into chunks and serve."
-            ],
             timedInstructions: {
                 '5:00': [],
                 '5:15': [],
@@ -980,17 +767,6 @@ var toAddRecipes = {
                 ],
                 '7:00': []
             },
-            timerName: {
-                '5:00': [],
-                '5:15': [],
-                '5:30': [],
-                '5:45': [],
-                '6:00': [],
-                '6:15': [],
-                '6:30': [],
-                '6:45': [],
-                '7:00': []
-            },
             timer: {
                 '5:00': [],
                 '5:15': [],
@@ -999,12 +775,15 @@ var toAddRecipes = {
                 '6:00': [],
                 '6:15': [],
                 '6:30': [],
-                '6:45': [],
+                '6:45': [{"name":"Remove bread","minutes":"5"}],
                 '7:00': []
             },
             "image": "http://www.buoneforchette.com/public/ric_img_scheda/87.jpg"
         }
-    ],
+    ]
+};
+
+var toAddRecipes = {
     "Lab 6": [
         {
             "name": "Orange Chicken",

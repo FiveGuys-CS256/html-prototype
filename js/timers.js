@@ -58,7 +58,7 @@ function addTimer(title, minute, second) {
         else{
             timerTitle.innerHTML = "Title";
         }
-        timerTitle.setAttribute("contenteditable","true");
+        //timerTitle.setAttribute("contenteditable","true");
         timerTitle.addEventListener("keypress", function(e){
             if(e.keyCode === 13){
                 e.preventDefault();

@@ -144,6 +144,9 @@ body{
     transition: 1s ease;
 }
 #timerConfig[data-state="closed"] .timer[data-state="un-selected"] .timerTitle{
+    -webkit-user-modify: read-only;
+    -moz-user-modify: read-only;
+    user-modify: read-only;
     padding-top:10px;
     font-size:18px;
     margin:10px;
@@ -154,6 +157,9 @@ body{
     overflow: hidden
 }
 #timerConfig[data-state="closed"] .timer[data-state="selected"] .timerTitle{
+    -webkit-user-modify: read-write;
+    -moz-user-modify: read-write;
+    user-modify: read-write;
     padding-top:10px;
     font-size:18px;
     margin:10px;
@@ -249,6 +255,9 @@ input[type=number]::-webkit-outer-spin-button {
     font-size:20px;
     margin-left:30px;
     margin-right:10px;
+    -webkit-user-modify: read-write;
+    -moz-user-modify: read-write;
+    user-modify: read-write;
 }
 #timerConfig[data-state="open"] .timerTime{
     display: inline;

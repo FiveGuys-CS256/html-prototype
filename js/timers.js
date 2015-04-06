@@ -193,7 +193,7 @@ function togglePanel() {
     }
 }
 function initializePresetTimers(){
-    var add_buttons = document.querySelectorAll("img[data-action='add_timer']");
+    var add_buttons = document.querySelectorAll("[data-action='add_timer']");
     for (var i=0; i<add_buttons.length; ++i) {
         //onclick= is used instead of add event to prevent multiples of same listener being added
         add_buttons[i].onclick=function(){
@@ -209,16 +209,8 @@ window.addEventListener("DOMContentLoaded", function() {
     document.getElementById("timerConfigButton").addEventListener('click', togglePanel);
     document.getElementById("closeConfigButton").addEventListener('click', togglePanel);
     document.getElementById("timerConfig").addEventListener("transitionend", hideConfigElements, true);
-    var add_buttons = document.querySelectorAll("[data-action='add_timer']");
-    for (var i=0; i<add_buttons.length; ++i) {
-        add_buttons[i].addEventListener("click", function(){
-            if (this.dataset.title) {
-                addTimer(this.dataset.title,this.dataset.minutes||"00",this.dataset.seconds||"00");
-            } else {
-                addTimer("title","00","00");
-            }
-        });
-    }
+    // this is called in the populateTimeTable instead now
+    //document.getElementById("loadMealButton").addEventListener('click', initializePresetTimers);
     var clear_timers = document.querySelectorAll("[data-action='clear_timers']");
     for (i=0; i<clear_timers.length; ++i) {
         clear_timers[i].addEventListener("click", removeAllTimers);
@@ -263,7 +255,7 @@ function startTimer(duration, display) {
             // example 05:00 not 04:59
             start = Date.now() + 1000;
         }
-    };
+    }
     // we don't want to wait a full second before the timer starts
     if(timerMap[display.id]!=null) {
         clearInterval(timerMap[display.id]);

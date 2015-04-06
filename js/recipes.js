@@ -266,10 +266,7 @@ allRecipes = {
             },
             "image": "http://foodiesnetwork.tv/wp-content/uploads/2014/02/crock-pot-cherry-pie-2-500x300.png"
         }
-    ]
-};
-
-var toAddRecipes = {
+    ],
     "Lab 3": [
         {
             "name": "Shish Kabobs",

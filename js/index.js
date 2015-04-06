@@ -5,6 +5,7 @@ function setLab() {
 }
 
 function reloadData() {
+    populateIngredientList(0);
     populateAllIngredients();
 }
 

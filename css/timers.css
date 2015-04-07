@@ -154,7 +154,8 @@ body{
     text-overflow: ellipsis;
     width: 110px;
     display: block;
-    overflow: hidden
+    overflow: hidden;
+    text-align: left;
 }
 #timerConfig[data-state="closed"] .timer[data-state="selected"] .timerTitle{
     -webkit-user-modify: read-write;

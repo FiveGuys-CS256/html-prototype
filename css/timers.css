@@ -154,7 +154,8 @@ body{
     text-overflow: ellipsis;
     width: 110px;
     display: block;
-    overflow: hidden
+    overflow: hidden;
+    text-align: left;
 }
 #timerConfig[data-state="closed"] .timer[data-state="selected"] .timerTitle{
     -webkit-user-modify: read-write;
@@ -358,6 +359,34 @@ button {
 	font-weight: bolder;
 	padding: 8px 0 8px 0;
 	border-radius: 3px;
+    color: #784a32;
+    background-color: #ff9a62;
 	cursor: pointer;
 	margin-top:25px;
 }
+
+
+#dialogoverlay{
+    display: none;
+    opacity: .8;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    width: 100%;
+    z-index: 10;
+}
+#dialogbox{
+    border-top: #FF9A62 solid 10px;
+    display: none;
+    position: fixed;
+    background: #FFF;
+    border-radius:7px;
+    box-shadow: 0 0 8px gray;
+    width:550px;
+    z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: #FFF; text-align: center; font-size:40px; padding:10px; color:#784a32; }
+#dialogbox > div > #dialogboxbody{ background: #FFF; padding:20px; color:#784a32; }
+#dialogbox > div > #dialogboxfoot{ background: #FFF; padding:10px; text-align:right; }

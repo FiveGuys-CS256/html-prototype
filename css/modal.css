@@ -16,6 +16,11 @@ h1 {
 p {
   margin-bottom: 20px;
 }
+
+#logoutButton {
+  background-color: #6E6E6E;
+}
+
 .btn {
   background-color: #FF9A62; /*peach button*/
   max-height: 40px;
@@ -111,6 +116,10 @@ p {
 }
 .modal-footer {
   text-align: right;
+}
+
+.modal-footer div {
+  display: inline-block;
 }
 
 .modal-recipe-container {

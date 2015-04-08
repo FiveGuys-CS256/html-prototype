@@ -514,7 +514,7 @@ allRecipes = {
                 '5:15': [{"name": "Refrigerate Wings", "minutes":"60"}],
                 '6:15': [{"name": "Roast Wings", "minutes": "20"}]
             },
-            "image": "http://www.restaurantnews.com/wp-content/uploads/2014/01/Americans-to-Eat-1-25-Billion-Chicken-Wings-for-Super-Bowl.jpg"
+            "image": "http://www.restaurantmagazine.com/wp-content/uploads/2013/10/Outback-Steakhouse-Tassies-Buffalo-Chicken-Bites.jpg"
         }
         ,
         {

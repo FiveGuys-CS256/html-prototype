@@ -1,1 +1,1 @@
-var selectedLab = 'Lab1';
+var selectedLab = 'Lab 1';

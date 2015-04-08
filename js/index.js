@@ -63,7 +63,8 @@ function populateIngredients(recipe) {
 /*
 document.getElementById("drop-down-list").onchange = function()
 {
-    var sheet=document.getElementById("myList").value;
+    var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
+    var sheet=document.getElementById("drop-down-list").value;
 
     if(sheet=="first"){
         populateIngredients(allRecipes[currentLab][0]);
@@ -87,13 +88,11 @@ function createDropDown()
 {
     var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
     var dropDownHTML = "";
-    dropDownHTML += "<select id='drop-down-list'>";
     dropDownHTML += "<option value='first'>" + allRecipes[currentLab][0].name + "</option>";
     dropDownHTML += "<option value='second'>" + allRecipes[currentLab][1].name + "</option>";
     dropDownHTML += "<option value='third'>" + allRecipes[currentLab][2].name + "</option>";
     dropDownHTML += "<option value='fourth'>" + allRecipes[currentLab][3].name + "</option>";
-    dropDownHTML += "</select>";
-    document.getElementById("drop-down").innerHTML = dropDownHTML;
+    document.getElementById("drop-down-list").innerHTML = dropDownHTML;
 }
 
 function populateIngredientList(name) {

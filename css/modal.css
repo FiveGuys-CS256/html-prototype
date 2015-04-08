@@ -161,7 +161,7 @@ p {
 }
 
 .modal-ingredients img {
-    height: 240px;
+    height: auto;
     width: 300px;
 }
 

@@ -7,6 +7,7 @@ function setLab() {
 function reloadData() {
     populateIngredientList(0);
     populateAllIngredients();
+    createDropDown();
 }
 
 function ingredientList(recipe) {
@@ -46,9 +47,9 @@ function singleRecipeModal(recipe_name) {
 
 function populateIngredients(recipe) {
   var myName = recipe.name;
-
+    alert(recipe);
   var list = "";
-  list += "<h4> " + myName + "</h4>";
+  // list += "<h4> " + myName + "</h4>";
   list += "<ul>";
 
   for (var i = 0; i < recipe.ingredients.length; i++) {
@@ -59,6 +60,41 @@ function populateIngredients(recipe) {
 
   document.getElementById("ingredient-single-view").innerHTML = list;
 };
+/*
+document.getElementById("drop-down-list").onchange = function()
+{
+    var sheet=document.getElementById("myList").value;
+
+    if(sheet=="first"){
+        populateIngredients(allRecipes[currentLab][0]);
+        alert("first");
+    }
+    else if(sheet=="second"){
+        populateIngredients(allRecipes[currentLab][1]);
+        alert("second");
+    }
+    else if(sheet=="third"){
+        populateIngredients(allRecipes[currentLab][2]);
+        alert("third");
+    }
+    else{
+        populateIngredients(allRecipes[currentLab][3]);
+        alert("other");
+    }
+}
+*/
+function createDropDown()
+{
+    var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
+    var dropDownHTML = "";
+    dropDownHTML += "<select id='drop-down-list'>";
+    dropDownHTML += "<option value='first'>" + allRecipes[currentLab][0].name + "</option>";
+    dropDownHTML += "<option value='second'>" + allRecipes[currentLab][1].name + "</option>";
+    dropDownHTML += "<option value='third'>" + allRecipes[currentLab][2].name + "</option>";
+    dropDownHTML += "<option value='fourth'>" + allRecipes[currentLab][3].name + "</option>";
+    dropDownHTML += "</select>";
+    document.getElementById("drop-down").innerHTML = dropDownHTML;
+}
 
 function populateIngredientList(name) {
   var clickEvent = new MouseEvent("click", {

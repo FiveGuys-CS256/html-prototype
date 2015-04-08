@@ -171,6 +171,27 @@ h4 {
   overflow: scroll;
 }
 
+#ingredient-combined-view {
+  overflow: scroll;
+}
+
+#ingredient-single-view {
+  overflow: scroll;
+}
+
+#timeline-header {
+  width: 50px;
+}
+
+#spacer {
+  width: 20%;
+  height: 10px;
+}
+
+#logout {
+  float: left;
+}
+
 /* ---- STUDENT MODAL ---- */
 
 #student-id {

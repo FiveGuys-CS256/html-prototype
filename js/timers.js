@@ -41,120 +41,135 @@ function toggleTimer(){
 
 var currentTimerCount=0;
 function addTimer(title, minute, second) {
-    currentTimerCount++;
-    var timers = document.getElementById("timers");
-    if (timers.children.length < MAX_TIMER_COUNT) {
-        var newtimer = document.createElement("div");
-        newtimer.classList.add("timer");
-        newtimer.addEventListener("click", toggleTimer);
+    var exists = false;
+    var timerTitles = document.getElementsByClassName("timerTitle");
+    if(timerTitles.length >0) {
+        var i = 0;
+        while(i<timerTitles.length && exists==false){
+            var text = timerTitles[i].innerHTML;
+            exists = text==title;
+            i++;
+        };
+    }
+    if(exists==false) {
+        currentTimerCount++;
+        var timers = document.getElementById("timers");
+        if (timers.children.length < MAX_TIMER_COUNT) {
+            var newtimer = document.createElement("div");
+            newtimer.classList.add("timer");
+            newtimer.addEventListener("click", toggleTimer);
 
-        var timerContents = document.createElement("span");
-        timerContents.classList.add("timerContents");
+            var timerContents = document.createElement("span");
+            timerContents.classList.add("timerContents");
 
-        var timerTitle = document.createElement("span");
-        if(title != null) {
-            timerTitle.innerHTML = title;
-        }
-        else{
-            timerTitle.innerHTML = "Title";
-        }
-        timerTitle.setAttribute("contenteditable","true");
-        timerTitle.addEventListener("keypress", function(e){
-            if(e.keyCode === 13){
-                e.preventDefault();
-                this.blur();
+            var timerTitle = document.createElement("span");
+            if (title != null) {
+                timerTitle.innerHTML = title;
             }
-        });
-        timerTitle.classList.add("timerTitle");
-        timerTitle.addEventListener("click",function(){
-            this.parentNode.dataset.state = "un-selected";
-        });
-        timerTitle.addEventListener("blur",function(){
-            this.parentNode.dataset.state = "un-selected";
-        });
+            else {
+                timerTitle.innerHTML = "Title";
+            }
+            timerTitle.setAttribute("contenteditable", "false");
+            timerTitle.addEventListener("keypress", function (e) {
+                if (e.keyCode === 13) {
+                    e.preventDefault();
+                    this.blur();
+                }
+            });
+            timerTitle.classList.add("timerTitle");
+            timerTitle.addEventListener("click", function () {
+                this.parentNode.dataset.state = "un-selected";
+            });
+            timerTitle.addEventListener("blur", function () {
+                this.parentNode.dataset.state = "un-selected";
+            });
 
-        var timerCountdown = document.createElement("div");
-        timerCountdown.classList.add("timerCountdown");
-        if(minute != null && second != null) {
-            timerCountdown.innerHTML = minute+":"+second;
-        }
-        else{
-            timerCountdown.innerHTML = "00:00";
-        }
-        var timerTime = document.createElement("span");
-        timerTime.classList.add("timerTime");
-        timerTime.addEventListener("change", function(){
+            var timerCountdown = document.createElement("div");
+            timerCountdown.classList.add("timerCountdown");
+            if (minute != null && second != null) {
+                timerCountdown.innerHTML = minute + ":" + second;
+            }
+            else {
+                timerCountdown.innerHTML = "00:00";
+            }
+            var timerTime = document.createElement("span");
+            timerTime.classList.add("timerTime");
+            timerTime.addEventListener("change", function () {
                 setTimer(newtimer, "true");
-        }, false);
-        /*timerTime.addEventListener("keydown", function(e){
-            if(e.keyCode === 13){
-                setTimer(newtimer);
+            }, false);
+            /*timerTime.addEventListener("keydown", function(e){
+             if(e.keyCode === 13){
+             setTimer(newtimer);
+             }
+             }, false);*/
+
+            var timerTimeMin = document.createElement("input");
+            timerTimeMin.classList.add("timerTimeMin");
+            timerTimeMin.type = "number";
+            if (minute != null) {
+                timerTimeMin.value = minute;
             }
-        }, false);*/
+            else {
+                timerTimeMin.value = "00";
+            }
+            timerTimeMin.max = 500;
 
-        var timerTimeMin = document.createElement("input");
-        timerTimeMin.classList.add("timerTimeMin");
-        timerTimeMin.type="number";
-        if(minute != null){
-            timerTimeMin.value=minute;
-        }
-        else{
-            timerTimeMin.value="00";
-        }
-        timerTimeMin.max=500;
+            var timerColon = document.createElement("span");
+            timerColon.classList.add("timerColon");
+            timerColon.innerHTML = ":";
 
-        var timerColon = document.createElement("span");
-        timerColon.classList.add("timerColon");
-        timerColon.innerHTML=":";
+            var timerTimeSec = document.createElement("input");
+            timerTimeSec.classList.add("timerTimeSec");
+            timerTimeSec.type = "number";
+            if (second != null) {
+                timerTimeSec.value = second;
+            }
+            else {
+                timerTimeSec.value = "00";
+            }
+            timerTimeSec.max = 59;
 
-        var timerTimeSec = document.createElement("input");
-        timerTimeSec.classList.add("timerTimeSec");
-        timerTimeSec.type="number";
-        if(second != null){
-            timerTimeSec.value=second;
-        }
-        else{
-            timerTimeSec.value="00";
-        }
-        timerTimeSec.max=59;
+            timerTime.appendChild(timerTimeMin);
+            timerTime.appendChild(timerColon);
+            timerTime.appendChild(timerTimeSec);
 
-        timerTime.appendChild(timerTimeMin);
-        timerTime.appendChild(timerColon);
-        timerTime.appendChild(timerTimeSec);
+            var addMinuteButton = document.createElement("button");
+            addMinuteButton.classList.add("addMinuteButton");
+            addMinuteButton.innerHTML = "<b>+</b> min";
+            addMinuteButton.addEventListener("click", function () {
+                var timerTimeMinadd = this.parentNode.querySelectorAll(".timerTimeMin").item(0);
+                timerTimeMinadd.value = parseInt(timerTimeMinadd.value) + 1;
+                fireEvent(timerTimeMinadd, "change");
+                this.parentNode.dataset.state = "un-selected";
+            }, false);
+            var cancelTimerButton = document.createElement("button");
+            cancelTimerButton.classList.add("cancelTimerButton");
+            cancelTimerButton.innerHTML = "Cancel";
+            cancelTimerButton.addEventListener("click", function () {
+                this.parentNode.dataset.state = "un-selected";
+                Confirm.render('Cancel Timer?', 'cancelTimer', this.parentNode);
+            }, false);
 
-        var addMinuteButton = document.createElement("button");
-        addMinuteButton.classList.add("addMinuteButton");
-        addMinuteButton.innerHTML="<b>+</b> min";
-        addMinuteButton.addEventListener("click", function(){
-            var timerTimeMinadd = this.parentNode.querySelectorAll(".timerTimeMin").item(0);
-            timerTimeMinadd.value = parseInt(timerTimeMinadd.value)+1;
-            fireEvent(timerTimeMinadd,"change");
-            this.parentNode.dataset.state = "un-selected";
-        }, false);
-        var cancelTimerButton = document.createElement("button");
-        cancelTimerButton.classList.add("cancelTimerButton");
-        cancelTimerButton.innerHTML="Cancel";
-        cancelTimerButton.addEventListener("click", function(){
-            this.parentNode.dataset.state = "un-selected";
-            clearInterval(timerMap[this.id]);
-            document.getElementById("timers").removeChild(this.parentNode);
-        }, false);
+            timerCountdown.id = "timer" + currentTimerCount;
+            newtimer.appendChild(timerTitle);
+            newtimer.appendChild(timerTime);
+            newtimer.appendChild(timerCountdown);
+            newtimer.appendChild(addMinuteButton);
+            newtimer.appendChild(cancelTimerButton);
 
-        timerCountdown.id="timer"+currentTimerCount;
-        newtimer.appendChild(timerTitle);
-        newtimer.appendChild(timerTime);
-        newtimer.appendChild(timerCountdown);
-        newtimer.appendChild(addMinuteButton);
-        newtimer.appendChild(cancelTimerButton);
-
-            newtimer.dataset.state="un-selected";
-        timers.appendChild(newtimer);
-        if(minute != "00" && second != "00") {
-        }
-        else {
-            fireEvent(timerTime, "change");
+            newtimer.dataset.state = "un-selected";
+            timers.appendChild(newtimer);
+            if (minute != "00" && second != "00") {
+            }
+            else {
+                fireEvent(timerTime, "change");
+            }
         }
     }
+}
+function cancelTimer(timer){
+    clearInterval(timerMap[timer.id]);
+    document.getElementById("timers").removeChild(timer);
 }
 function fireEvent(element,event){
     if (document.createEventObject){
@@ -263,3 +278,59 @@ function startTimer(duration, display) {
     timerMap[display.id]=setInterval(timer, 1000);
 }
 var timerMap ={};
+
+function CustomAlert(){
+    this.render = function(dialog){
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogoverlay = document.getElementById('dialogoverlay');
+        var dialogbox = document.getElementById('dialogbox');
+        dialogoverlay.style.display = "block";
+        dialogoverlay.style.height = winH+"px";
+        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+        dialogbox.style.top = "100px";
+        dialogbox.style.display = "block";
+        document.getElementById('dialogboxhead').innerHTML = "Acknowledge This Message";
+        document.getElementById('dialogboxbody').innerHTML = dialog;
+        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+    }
+    this.ok = function(){
+        document.getElementById('dialogbox').style.display = "none";
+        document.getElementById('dialogoverlay').style.display = "none";
+    }
+}
+var Alert = new CustomAlert();
+function deletePost(id){
+    var db_id = id.replace("post_", "");
+    // Run Ajax request here to delete post from database
+    document.body.removeChild(document.getElementById(id));
+}
+function CustomConfirm(){
+    this.render = function(dialog,op,id){
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogoverlay = document.getElementById('dialogoverlay');
+        var dialogbox = document.getElementById('dialogbox');
+        dialogoverlay.style.display = "block";
+        dialogoverlay.style.height = winH+"px";
+        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+        dialogbox.style.top = "100px";
+        dialogbox.style.display = "block";
+
+        document.getElementById('dialogboxhead').innerHTML =dialog;
+        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Confirm.yes(\''+op+'\',\''+id+'\')">Yes</button> <button onclick="Confirm.no()">No</button>';
+    }
+    this.no = function(){
+        document.getElementById('dialogbox').style.display = "none";
+        document.getElementById('dialogoverlay').style.display = "none";
+    }
+    this.yes = function(op,id){
+        if(op == "cancelTimer"){
+            cancelTimer(document.querySelector(".timer[data-state='selected']"));
+        }
+        document.getElementById('dialogbox').style.display = "none";
+        document.getElementById('dialogoverlay').style.display = "none";
+    }
+}
+var Confirm = new CustomConfirm();
+

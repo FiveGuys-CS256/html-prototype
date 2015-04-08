@@ -29,8 +29,10 @@ function singleRecipeModal(recipe_name) {
             document.getElementById("single-recipe-ingredients").innerHTML = ingredientList(recipe);
             document.getElementById("single-recipe-image").src = recipe['image'];
             var singleRecDir = document.getElementById("single-recipe-directions");
+            singleRecDir.innerHTML = ""; // Prevent duplicate instructions.
             Object.keys(recipe['timedInstructions']).forEach(function (key) {
                 var instructions = recipe['timedInstructions'][key];
+                
                 for (var k=0; k<instructions.length; ++k) {
                     var li = document.createElement("li");
                     li.appendChild(document.createTextNode(instructions[k]));

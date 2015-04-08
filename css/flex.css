@@ -179,8 +179,12 @@ h4 {
   overflow: scroll;
 }
 
+#timeline-header {
+  width: 50px;
+}
+
 #spacer {
-  width: 197px;
+  width: 20%;
   height: 10px;
 }
 

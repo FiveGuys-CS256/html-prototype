@@ -61,6 +61,15 @@ function populateIngredients(recipe) {
 };
 
 function populateIngredientList(name) {
+  var clickEvent = new MouseEvent("click", {
+    "view": window,
+    "bubbles": true,
+    "cancelable": false
+  });
+
+  var element = document.getElementById("singleIngredientView");
+  element.dispatchEvent(clickEvent);
+
   populateAllIngredients();
   
   switch (name) {

@@ -47,7 +47,6 @@ function singleRecipeModal(recipe_name) {
 
 function populateIngredients(recipe) {
   var myName = recipe.name;
-    alert(recipe);
   var list = "";
   // list += "<h4> " + myName + "</h4>";
   list += "<ul>";

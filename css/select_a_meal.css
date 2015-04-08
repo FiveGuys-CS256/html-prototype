@@ -41,7 +41,9 @@
 .side-bar-active {
     background: sandybrown;
 }
-
+.lab-selected{
+    background:#4e4e4e !important;
+}
 .picture:nth-child(odd) {
     margin-left: 10px;
     margin-top: 15px;

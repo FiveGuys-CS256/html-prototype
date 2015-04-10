@@ -9,6 +9,7 @@ function openPanel() {
     document.getElementById("timerConfig").dataset.state = "open";
     document.getElementById("timerConfig").classList.add("timerConfigAnimateIn");
     document.getElementById("timerConfig").classList.remove("timerConfigAnimateOut");
+
 }
 
 function closePanel() {
@@ -36,6 +37,9 @@ function toggleTimer(){
             item.dataset.state="un-selected";
         });
         this.dataset.state = toggle ? "un-selected" : "selected";
+        if(this.dataset.state == "selected"){
+            this.querySelector(".timerTitle").contentEditable="true";
+        }
     }
 }
 
@@ -65,6 +69,7 @@ function addTimer(title, minute, second) {
             var timerTitle = document.createElement("span");
             if (title != null) {
                 timerTitle.innerHTML = title;
+                timerTitle.setAttribute("onClick","validate(this)");
             }
             else {
                 timerTitle.innerHTML = "Title";
@@ -334,3 +339,8 @@ function CustomConfirm(){
 }
 var Confirm = new CustomConfirm();
 
+function validate(element){
+    if (element.parentNode.dataset.state = "selected") {
+        document.execCommand('selectAll', false, null);
+    }
+}

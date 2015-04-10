@@ -3,6 +3,7 @@
     background-color: #e6e6e6;
     padding: 0px;
     height: 450px;
+    width: 100%;
 }
 
 .side-bar {
@@ -38,8 +39,10 @@
     color:inherit;
 }
 
-.side-bar-active {
-    background: sandybrown;
+.lab-selected {
+    background:#e6e6e6 !important;
+    color:#4e4e4e;
+
 }
 
 .picture:nth-child(odd) {

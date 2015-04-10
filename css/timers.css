@@ -8,7 +8,11 @@ body{
     -webkit-animation-name: completed;
     -webkit-animation-duration: 1000ms;
     -webkit-animation-iteration-count: 5;
-    -webkit-animation-timing-function: ease-in-out
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: completed;
+    -moz-animation-duration: 1000ms;
+    -moz-animation-iteration-count: 5;
+    -moz-animation-timing-function: ease-in-out
 }
 
 /*Timer Config*/
@@ -26,6 +30,8 @@ body{
 .timerConfigAnimateIn {
     transition: 1s ease;
     transform: translateX(-501px);
+    -moz-transition: 1s ease;
+    -moz-transform: translateX(-501px);
 }
 .timerConfigAnimateOut {
     transition: 1s ease;
@@ -42,6 +48,7 @@ body{
     position: absolute;
     width: 75px;
     transition: 1s ease;
+    -moz-transition: 1s ease;
     height: 75px;
 }
 #timerConfig[data-state="closed"] #timerConfigButton {
@@ -55,6 +62,7 @@ body{
     position: absolute;
     width: 75px;
     transition: 1s ease;
+    -moz-transition: 1s ease;
     height: 75px;
 }
 #stopwatch_brown{
@@ -66,7 +74,8 @@ body{
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
 }
 /*Timer Config Header*/
 #timerConfigHeader {
@@ -113,6 +122,7 @@ body{
     font-size: 30px;
     position: relative;
     transition: 1s ease;
+    -moz-transition: 1s ease;
     cursor: pointer;
     text-align: right;
 }
@@ -129,6 +139,7 @@ body{
     border: 1px black;
     background-color: white;
     transition: 1s ease;
+    -moz-transition: 1s ease;
 
 }
 #timerConfig[data-state="closed"] .timer {
@@ -142,6 +153,7 @@ body{
     right:0px;
     width: 125px;
     transition: 1s ease;
+    -moz-transition: 1s ease;
 }
 #timerConfig[data-state="closed"] .timer[data-state="un-selected"] .timerTitle{
     -webkit-user-modify: read-only;
@@ -190,6 +202,36 @@ body{
          color:white;
      }
  }
+@keyframes completed {
+    0% {
+        background-color: red;
+        color:white;
+        opacity:1;
+    }
+    50% {
+        background-color: white;
+        color:red;
+    }
+    100% {
+        background-color: red;
+        color:white;
+    }
+}
+@-moz-keyframes completed {
+    0% {
+        background-color: red;
+        color:white;
+        opacity:1;
+    }
+    50% {
+        background-color: white;
+        color:red;
+    }
+    100% {
+        background-color: red;
+        color:white;
+    }
+}
 
 .timerCountdown{
     font-size:15px;

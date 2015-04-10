@@ -8,7 +8,11 @@ body{
     -webkit-animation-name: completed;
     -webkit-animation-duration: 1000ms;
     -webkit-animation-iteration-count: 5;
-    -webkit-animation-timing-function: ease-in-out
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: completed;
+    -moz-animation-duration: 1000ms;
+    -moz-animation-iteration-count: 5;
+    -moz-animation-timing-function: ease-in-out
 }
 
 /*Timer Config*/
@@ -190,6 +194,36 @@ body{
          color:white;
      }
  }
+@keyframes completed {
+    0% {
+        background-color: red;
+        color:white;
+        opacity:1;
+    }
+    50% {
+        background-color: white;
+        color:red;
+    }
+    100% {
+        background-color: red;
+        color:white;
+    }
+}
+@-moz-keyframes completed {
+    0% {
+        background-color: red;
+        color:white;
+        opacity:1;
+    }
+    50% {
+        background-color: white;
+        color:red;
+    }
+    100% {
+        background-color: red;
+        color:white;
+    }
+}
 
 .timerCountdown{
     font-size:15px;

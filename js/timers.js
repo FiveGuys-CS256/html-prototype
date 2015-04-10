@@ -36,6 +36,9 @@ function toggleTimer(){
             item.dataset.state="un-selected";
         });
         this.dataset.state = toggle ? "un-selected" : "selected";
+        if(this.dataset.state == "selected"){
+            this.querySelector(".timerTitle").contentEditable="true";
+        }
     }
 }
 

@@ -59,30 +59,9 @@ function populateIngredients(recipe) {
 
   document.getElementById("ingredient-single-view").innerHTML = list;
 };
-/*
-document.getElementById("drop-down-list").onchange = function()
-{
-    var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
-    var sheet=document.getElementById("drop-down-list").value;
 
-    if(sheet=="first"){
-        populateIngredients(allRecipes[currentLab][0]);
-        alert("first");
-    }
-    else if(sheet=="second"){
-        populateIngredients(allRecipes[currentLab][1]);
-        alert("second");
-    }
-    else if(sheet=="third"){
-        populateIngredients(allRecipes[currentLab][2]);
-        alert("third");
-    }
-    else{
-        populateIngredients(allRecipes[currentLab][3]);
-        alert("other");
-    }
-}
-*/
+
+
 function createDropDown()
 {
     var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
@@ -186,4 +165,22 @@ function setIdValue(id, value) {
 window.addEventListener("DOMContentLoaded", function() {
     window.location.href = '#meal-modal';
     document.getElementById("loadMealButton").addEventListener('click', mealLoaded);
+    document.getElementById("drop-down-list").onchange = function()
+    {
+        var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
+        var sheet=document.getElementById("drop-down-list").value;
+
+        if(sheet=="first"){
+            populateIngredients(allRecipes[currentLab][0]);
+        }
+        else if(sheet=="second"){
+            populateIngredients(allRecipes[currentLab][1]);
+        }
+        else if(sheet=="third"){
+            populateIngredients(allRecipes[currentLab][2]);
+        }
+        else{
+            populateIngredients(allRecipes[currentLab][3]);
+        }
+    }
 });

@@ -38,7 +38,7 @@ allRecipes = {
                 '6:30': [{"name": "Cook Butter Mixture", "minutes": "2"}],
                 '6:45': [{"name": "Bake Lobster Mac", "minutes": "30"}]
             },
-            "image": "http://www.calendarislandsmainelobster.com/rotator-masthead/images/Maine_Lobster_Mac_n_Cheese.jpg"
+            "image": "img/Lobster_Mac.jpg"
         },
         {
             "name": "New York Cheese Cake",
@@ -72,7 +72,7 @@ allRecipes = {
                 '5:30': [{"name": "Bake Crust", "minutes": "10"}],
                 '6:00': [{"name": "Bake Cheesecake", "minutes": "60"}]
             },
-            "image": "http://www.dzai.com.br/static/conteudos/2013/05/14/99/99872/posts/61826a4f3540c85560e7cf5616574e75.jpg"
+            "image": "img/New_York_Cheescake.jpg"
         },
         {
             "name": "Artisan Bread",
@@ -99,7 +99,7 @@ allRecipes = {
                 '6:15': [{"name": "Rise Dough", "minutes": "60"}],
                 '6:30': [{"name": "Bake Bread", "minutes": "60"}]
             },
-            "image": "http://www.bbc.co.uk/staticarchive/16d6061f7fc1eb83e5524b5b18a06688b5787b0d.jpg"
+            "image": "img/Artisan_Bread.jpg"
         },
         {
             "name": "Family Quiche",
@@ -131,7 +131,7 @@ allRecipes = {
                 '5:15': [{"name": "Bake Quiche Crust", "minutes": "20"}],
                 '6:00': [{"name": "Bake Quiche", "minutes": "45"}]
             },
-            "image": "http://www.prettychef.fr/wp-content/uploads/2015/02/recette-quiche-lardons-choux-bruxelles-00-500x300.jpg"
+            "image": "img/Quiche.jpg"
         }
     ],
     "Lab 2": [
@@ -165,7 +165,7 @@ allRecipes = {
             timer: {
                 '6:15': [{"name": "Boil Potatoes", "minutes": "12"}]
             },
-            "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/06/Shepherds-pie-plated-500-rot-500x300.jpg"
+            "image": "img/Shepherds_Pie.jpg"
         },
         {
             "name": "Corn Bread",
@@ -191,7 +191,7 @@ allRecipes = {
             timer: {
                 '6:30': [{"name": "Bake Potatoes", "minutes": "20"}]
             },
-            "image": "http://ak-hdl.buzzfed.com/static/2014-11/23/10/enhanced/webdr05/enhanced-12842-1416757702-3.jpg"
+            "image": "img/Corn_Bread.jpg"
         },
         {
             "name": "Lentil Soup",
@@ -220,7 +220,7 @@ allRecipes = {
                 ]
             },
             timer: {},
-            "image": "http://www.jabber.com.mt/wp-content/uploads/2015/03/Smoky-Chickpea-Red-Lentil-Vegetable-Soup1.jpg"
+            "image": "img/Lentil_Soup.jpg"
         },
         {
             "name": "Mixed Berry Pie",
@@ -254,7 +254,7 @@ allRecipes = {
                 '6:15': [{"name": "Bake Pie", "minutes": "25"}],
                 '6:45': [{"name": "Bake Pie", "minutes": "20"}]
             },
-            "image": "http://foodiesnetwork.tv/wp-content/uploads/2014/02/crock-pot-cherry-pie-2-500x300.png"
+            "image": "img/Cherry_Pie.png"
         }
     ],
     "Lab 3": [
@@ -284,7 +284,7 @@ allRecipes = {
                 '5:00': [{"name": "Marinate meat", "minutes": "120"}],
                 '6:45': [{"name": "Grill Kabobs", "minutes":"10"}]
             },
-            "image": "http://blog.getfoodgenius.com/wp-content/uploads/2015/01/shish-kebab-at-istanbul-mediterranean-500x300.jpg"
+            "image": "img/Kebabs.jpg"
         },
         {
             "name": "Bell Pepper Salad",
@@ -305,7 +305,7 @@ allRecipes = {
             timer: {
                 '5:30': [{"name": "Refrigerate Salad", "minutes": "90"}]
             },
-            "image": "http://www.feedyoursoul2.com/wp-content/uploads/2014/02/60-degree-5007-500x300.jpg"
+            "image": "img/Pepper_Salad.jpg"
         },
         {
             "name": "Pineapple Upside Down Cake",
@@ -330,7 +330,7 @@ allRecipes = {
             timer: {
                 '6:00': [{"name": "Bake Cake", "minutes": "60"}]
             },
-            "image": "http://www.tablespoon.com/~/media/Images/Articles/rup/2012/12/2012-12-14-HobbitMovieParty-RingCake1-580.jpg"
+            "image": "img/Pineapple_Cake.jpg"
         },
         {
             "name": "Grilled Chicken",
@@ -363,7 +363,7 @@ allRecipes = {
                 '5:15': [{"name": "Charcoal Ready", "minutes":"15"}],
                 '6:30': [{"name": "Cook Legs/Breasts", "minutes": "40"}]
             },
-            "image": "http://www.mazola.com/customaspx/ImagePreview.ashx?ImageUrl=~/UploadStorage/L/Lemon%20Basil%20Grilled%20Chicken.jpg&Width=500&Height=300"
+            "image": "img/Grilled_Chicken.jpg"
         }
     ],
     "Lab 4": [
@@ -411,7 +411,7 @@ allRecipes = {
                 '5:30': [{"name": "Cook with onions", "minutes": "6"}],
                 '6:45': [{"name": "Sauce Ready", "minutes": "120"}]
             },
-            "image": "http://cdn.crownmediadev.com/2c/9ec7c9b19ea24a3f630829853fe9f4/H&F-Ep1180-Product-Meatballs.jpg"
+            "image": "img/Meatballs.jpg"
         },
         {
             "name": "Lime Rice",
@@ -430,7 +430,7 @@ allRecipes = {
                 '7:00': ["Just before serving, stir through the juice of 1 lime and lots of chopped cilantro."]
             },
             timer: {},
-            "image": "http://www.mazola.com/customaspx/ImagePreview.ashx?ImageUrl=~/UploadStorage/C/CilantroLimeRice.jpg&Width=500&Height=300"
+            "image": "img/Lime_Rice.jpg"
         },
         {
             "name": "Biscuits",
@@ -451,7 +451,7 @@ allRecipes = {
             timer: {
                 '6:45': [{"name": "Biscuits Done", "minutes": "13"}]
             },
-            "image": "http://www.mapleridgesyrup.com/images/recipes/biscuits.jpg"
+            "image": "img/Biscuits.jpg"
         },
         {
             "name": "Fruit Salad",
@@ -474,7 +474,7 @@ allRecipes = {
                 '6:45': ["In a separate medium bowl, beat the heavy cream at medium-high speed with an electric mixer until slightly thickened. Gradually add the confectioners' sugar, beating until soft peaks form. Gently fold into the cream cheese mixture; spread over the fruit. Sprinkle with chopped pecans. Serve immediately."]
             },
             timer: {},
-            "image": "http://countrysidemeats.us/wp-content/uploads/2014/06/Fruit-Salad-500x300.jpg"
+            "image": "img/Fruit_Salad.jpg"
         }
     ],
     "Lab 5": [
@@ -491,7 +491,7 @@ allRecipes = {
             timer: {
                 '6:45': [{"name": "Heavenly Goodness Done", "minutes": "12"}]
             },
-            "image": "http://i2.wp.com/www.livingfrugaltips.com/wp-content/uploads/2010/05/Potato-Skin-Potato-Salad2.jpg"
+            "image": "img/Tater_Skins.jpg"
         },
         {
             "name": "Buffalo Wings",
@@ -514,7 +514,7 @@ allRecipes = {
                 '5:15': [{"name": "Refrigerate Wings", "minutes":"60"}],
                 '6:15': [{"name": "Roast Wings", "minutes": "20"}]
             },
-            "image": "http://www.restaurantmagazine.com/wp-content/uploads/2013/10/Outback-Steakhouse-Tassies-Buffalo-Chicken-Bites.jpg"
+            "image": "img/Buffalo_Wings.jpg"
         }
         ,
         {
@@ -537,7 +537,7 @@ allRecipes = {
                 '7:00': ["Serve with sauce for dipping."]
             },
             timer: {},
-            "image": "https://41.media.tumblr.com/45fa6015e6e937a109df5a15e9575da9/tumblr_mgowjrPKzj1rnh2ngo1_500.jpg"
+            "image": "img/Cheese_Sticks.jpg"
         },
         {
             "name": "Garlic Bread",
@@ -556,7 +556,7 @@ allRecipes = {
             timer: {
                 '6:45': [{"name": "Broil Bread", "minutes": "1"}]
             },
-            "image": "http://www.buoneforchette.com/public/ric_img_scheda/87.jpg"
+            "image": "img/Garlic_Bread.jpg"
         }
     ],
     "Lab 6": [
@@ -596,7 +596,7 @@ allRecipes = {
             timer: {
                 '6:00': [{"name": "Saute Chicken", "minutes": "4"}]
             },
-            "image": "http://slurpstreatham.co.uk/menu/Sweet-Sour-Chicken.jpg"
+            "image": "img/Sweet_Sour_Chicken.jpg"
         },
         {
             "name": "Fried Rice",
@@ -639,7 +639,7 @@ allRecipes = {
                 '6:30': [{"name": "Stir Fry Meat", "minutes": "2"}],
                 '6:45': [{"name": "Stir Fry Rice", "minutes": "3"}]
             },
-            "image": "http://mingsrestaurantmenu.com/yahoo_site_admin/assets/images/Hakka20Style20Fried20Rice.346225201_std.jpg"
+            "image": "img/Fried_Rice.jpg"
         },
         {
             "name": "Crab Wontons",
@@ -669,7 +669,7 @@ allRecipes = {
             timer: {
                 '6:45': [{"name": "Bake Crab Won Tons", "minutes": "12"}]
             },
-            "image": "https://s-media-cache-ak0.pinimg.com/736x/49/5e/0f/495e0f0da25f9c3f03130e69526a5223.jpg"
+            "image": "img/Crab_Wontons.jpg"
         },
         {
             "name": "Fortune Cookie",
@@ -699,7 +699,7 @@ allRecipes = {
             timer: {
                 '6:30': [{"name": "Bake Cookie", "minutes": "5"}]
             },
-            "image": "http://cdn.smosh.com/sites/default/files/legacy.images/smosh-pit/052011/fortune-cookie-11.jpg"
+            "image": "img/Fortune_Cookie.jpg"
         }
     ],
     "Lab 7": [
@@ -746,7 +746,7 @@ allRecipes = {
                 '6:15': [{"name": "Let Cinnamon Rolls Rise", "minutes": "45"}],
                 '6:45': [{"name": "Bake Cinnamon Rolls", "minutes": "30"}]
             },
-            "image": "http://www.adweek.com/prnewser/files/2014/08/Cinnabon-Reaches-1000th-Bakery-Milestone.jpg"
+            "image": "img/Cinnamon_Rolls.jpg"
         },
         {
             "name": "Egg Casserole",
@@ -788,7 +788,7 @@ allRecipes = {
                 '5:30': [{"name": "Cook Butter and Vegetables", "minutes": "5"}],
                 '6:00': [{"name": "Bake Casserole", "minutes": "35"}]
             },
-            "image": "http://glamorousrecipes.com/wp-content/themes/elemin/themify/img.php?src=http://glamorousrecipes.com/wp-content/uploads/2013/09/Breakfast-Casserole-Ingredients.jpg&w=500&h=300"
+            "image": "img/Egg_Casserole.php"
         },
         {
             "name": "Hot Chocolate",
@@ -812,7 +812,7 @@ allRecipes = {
             timer: {
                 '6:45': [{"name": "Boil and Stir Water", "minutes": "2"}]
             },
-            "image": "http://www.1to1languages.com/uploadimages/20140305060828-chocolate%20caliente.jpg"
+            "image": "img/Hot_Chocolate.jpg"
         },
         {
             "name": "Christmas Salad",
@@ -833,7 +833,7 @@ allRecipes = {
                 '5:00': ["In a small bowl, whisk together oil, cider, vinegar, and honey. Add herbs, stirring to combine. Season with salt and pepper. Refrigerate until ready to use."]
             },
             timer: {},
-            "image": "http://cdn.crownmediadev.com/a8/4af79af4d341aefb9674e4100c3d65/arugula-salad-500x300.jpg"
+            "image": "img/Salad.jpg"
         }
     ],
     "Lab 8": [
@@ -876,7 +876,7 @@ allRecipes = {
                 '5:15': [{"name": "Boil Tomatillos", "minutes": "10"}],
                 '6:30': [{"name": "Bake Enchiladas", "minutes": "30"}]
             },
-            "image": "http://hotelesimperial.com.mx/convento/img/Carnes/suizas.png"
+            "image": "img/Suizas.png"
         },
         {
             "name": "Mexican Rice",
@@ -915,7 +915,7 @@ allRecipes = {
                 '6:15': [{"name": "Boil Tomato Mixture", "minutes": "15"}],
                 '6:45': [{"name": "Allow Rice to Cool", "minutes": "10"}]
             },
-            "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/05/Spanish-rice-angle-500-500x300.jpg"
+            "image": "img/Spanish_Rice.jpg"
         },
         {
             "name": "Tortilla Soup",
@@ -955,7 +955,7 @@ allRecipes = {
                 '5:30': [{"name": "Cook Onions", "minutes": "2"}],
                 '6:15': [{"name": "Simmer Chicken Breasts", "minutes": "20"}]
             },
-            "image": "http://www.firehousegourmet.ca/_Media/tortilla-soup_med_hr.jpeg"
+            "image": "img/Tortilla_Soup.jpeg"
         },
         {
             "name": "Pastel Imposible",
@@ -995,7 +995,7 @@ allRecipes = {
                 '5:15': [{"name": "Stir Sugar", "minutes": "3"}],
                 '6:00': [{"name": "Bake Pastel Imposible", "minutes": "50"}]
             },
-            "image": "https://s-media-cache-ak0.pinimg.com/736x/e1/92/8c/e1928ce4e87aeddfc7701102129b4c80.jpg"
+            "image": "img/Flan.jpg"
         }
     ],
     "Lab 9": [
@@ -1043,7 +1043,7 @@ allRecipes = {
                 '5:45': [{"name": "Allow Dough to Rise", "minutes": "60"}],
                 '6:30': [{"name": "Allow Buns to Rest", "minutes": "10"}]
             },
-            "image": "https://easemyhome.files.wordpress.com/2015/02/vegetable-momos.jpg"
+            "image": "img/Steamed_Buns.jpg"
         },
         {
             "name": "Chicken Curry",
@@ -1088,7 +1088,7 @@ allRecipes = {
                 '6:30': [{"name": "Cook Chicken in Masala", "minutes": "5"}],
                 '6:45': [{"name": "Let Chicken Simmer", "minutes": "8"}]
             },
-            "image": "http://www.feedyoursoul2.com/wp-content/uploads/2013/10/Plated-1-500-500x300.jpg"
+            "image": "img/Curry.jpg"
         },
         {
             "name": "Steamed Broccoli",
@@ -1109,7 +1109,7 @@ allRecipes = {
             timer: {
                 '6:00': [{"name": "Steam Brocoli", "minutes": "5"}]
             },
-            "image": "http://41.media.tumblr.com/tumblr_m44eaf0oic1qg16rao1_500.jpg"
+            "image": "img/Steamed_Brocoli.jpg"
         },
         {
             "name": "Creme Brulee",
@@ -1135,7 +1135,7 @@ allRecipes = {
                 '6:00': [{"name": "Allow Vanilla to Sit", "minutes": "15"}],
                 '6:30': [{"name": "Bake Creme Brulee", "minutes": "45"}]
             },
-            "image": "http://doanvat.info/wp-content/uploads/2014/09/10-buoc-lam-bong-ngo-creme-brulee-nham-nhap-khi-xem-phim-10-500x300.jpg"
+            "image": "img/Creme_Brulee.jpg"
         }
     ]
 };

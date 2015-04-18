@@ -40,11 +40,8 @@
 }
 
 .lab-selected {
-    background:#e6e6e6 !important;
-    color: white;
-}
-.lab-selected{
     background:#4e4e4e !important;
+    color: white;
 }
 .picture:nth-child(odd) {
     margin-left: 10px;

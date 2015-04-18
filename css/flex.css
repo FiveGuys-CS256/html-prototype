@@ -176,7 +176,8 @@ h4 {
 }
 
 #ingredient-single-view {
-  overflow: scroll;
+  overflow: auto;
+  height: 100%;
 }
 
 #timeline-header {

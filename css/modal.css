@@ -184,7 +184,7 @@ p {
 
 #modal-scroller {
   overflow: auto;
-  height: 87%;
+  height: 536px;
 }
 
 /*ADDED TO STOP SCROLLING TO TOP*/

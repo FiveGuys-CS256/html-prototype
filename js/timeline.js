@@ -11,7 +11,7 @@ function populateTimeTable() {
         var title = recipe['name'];
         document.getElementById("image-" + (i+1)).innerHTML = "" +
             "<a href='#single-recipe'><img src='" + image_src + "'></a>" +
-            "<a href='#' onclick='populateIngredientList(" + i + ")'>" +
+            "<a href='#single-recipe'>" +
             "<h2>" + title + "</h2>" +
             "</a>";
         // clear all the previous times in the table

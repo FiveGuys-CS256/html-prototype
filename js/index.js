@@ -7,6 +7,7 @@ function setLab() {
 function reloadData() {
     populateIngredientList(0);
     populateAllIngredients();
+    createDropDown();
 }
 
 function ingredientList(recipe) {
@@ -46,9 +47,8 @@ function singleRecipeModal(recipe_name) {
 
 function populateIngredients(recipe) {
   var myName = recipe.name;
-
   var list = "";
-  list += "<h4> " + myName + "</h4>";
+  // list += "<h4> " + myName + "</h4>";
   list += "<ul>";
 
   for (var i = 0; i < recipe.ingredients.length; i++) {
@@ -59,6 +59,19 @@ function populateIngredients(recipe) {
 
   document.getElementById("ingredient-single-view").innerHTML = list;
 };
+
+
+
+function createDropDown()
+{
+    var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
+    var dropDownHTML = "";
+    dropDownHTML += "<option value='first'>" + allRecipes[currentLab][0].name + "</option>";
+    dropDownHTML += "<option value='second'>" + allRecipes[currentLab][1].name + "</option>";
+    dropDownHTML += "<option value='third'>" + allRecipes[currentLab][2].name + "</option>";
+    dropDownHTML += "<option value='fourth'>" + allRecipes[currentLab][3].name + "</option>";
+    document.getElementById("drop-down-list").innerHTML = dropDownHTML;
+}
 
 function populateIngredientList(name) {
   var clickEvent = new MouseEvent("click", {
@@ -141,7 +154,7 @@ function mealLoaded() {
 
     for (var i=0; i<singles.length; ++i) {
         var single = singles[i];
-        single.onclick = function () { singleRecipeModal(this.nextSibling.childNodes[0].innerHTML) };
+        single.onclick = function () { singleRecipeModal(this.parentNode.querySelector("h2").innerHTML) };
     }
 }
 
@@ -152,4 +165,22 @@ function setIdValue(id, value) {
 window.addEventListener("DOMContentLoaded", function() {
     window.location.href = '#meal-modal';
     document.getElementById("loadMealButton").addEventListener('click', mealLoaded);
+    document.getElementById("drop-down-list").onchange = function()
+    {
+        var currentLab = document.getElementsByClassName("lab-selected")[0].innerHTML;
+        var sheet=document.getElementById("drop-down-list").value;
+
+        if(sheet=="first"){
+            populateIngredients(allRecipes[currentLab][0]);
+        }
+        else if(sheet=="second"){
+            populateIngredients(allRecipes[currentLab][1]);
+        }
+        else if(sheet=="third"){
+            populateIngredients(allRecipes[currentLab][2]);
+        }
+        else{
+            populateIngredients(allRecipes[currentLab][3]);
+        }
+    }
 });

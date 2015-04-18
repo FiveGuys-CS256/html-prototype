@@ -154,7 +154,7 @@ function mealLoaded() {
 
     for (var i=0; i<singles.length; ++i) {
         var single = singles[i];
-        single.onclick = function () { singleRecipeModal(this.nextSibling.childNodes[0].innerHTML) };
+        single.onclick = function () { singleRecipeModal(this.parentNode.querySelector("h2").innerHTML) };
     }
 }
 
